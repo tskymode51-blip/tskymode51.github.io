@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Ubuntu × OBD2 でクルマ診断！</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.8em;
+    }
+    header {
+      background-color: #E95420; /* Ubuntuオレンジ */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #E95420;
+      margin-top: 40px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ubuntu × OBD2 でクルマ診断！</h1>
+    <p>ダイハツネイキッド & トヨタiQ でテスト</p>
+  </header>
+
+  <div class="content">
+    <p>
+      こんにちは！今回はUbuntuノートPCを使って、<br>
+      クルマ（ダイハツ ネイキッド / トヨタ iQ）の<br>
+      故障診断やリアルタイムデータ表示に挑戦しました 🚗💨
+    </p>
+
+    <h2>🔧 準備したもの</h2>
+    <ul>
+      <li>Ubuntu ノートPC</li>
+      <li>USB OBD2 アダプター</li>
+      <li>Python + OBD ライブラリ</li>
+    </ul>
+
+    <img src="https://raw.githubusercontent.com/seiji/example/main/images/obd2_laptop.png" alt="UbuntuノートPCとOBD2接続イメージ">
+
+    <h2>💻 セットアップ手順</h2>
+    <ol>
+      <li>Ubuntu に Python 環境を準備</li>
+      <li>「python-OBD」ライブラリをインストール</li>
+      <li>USB-OBD2 アダプターを車に接続</li>
+      <li>ターミナルで接続確認！</li>
+    </ol>
+
+    <h2>📊 表示できるデータ</h2>
+    <p>
+      エンジン回転数、速度、水温、バッテリー電圧などが<br>
+      リアルタイムで見られます！  
+    </p>
+
+    <h2>🚙 感想</h2>
+    <p>
+      最初はちょっと難しかったけど、<br>
+      データが数字で動くのを見るとテンション上がります！<br>
+      故障診断コードも見れるのでDIY整備にも便利✨
+    </p>
+  </div>
+
+  <footer>
+    © 2025 ダイハツネイキッドライフ with Ubuntu
+  </footer>
+</body>
+</html>
