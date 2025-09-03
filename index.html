@@ -2,53 +2,94 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>AI ✕ Ubuntuで遊ぶダイハツネイキッドライフ</title>
+  <title>Ubuntu ✕ ダイハツネイキッドライフ</title>
   <style>
     body {
-      margin: 0;
       font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
       background-color: #E95420; /* Ubuntuオレンジ */
       color: white;
+      padding: 20px;
       text-align: center;
     }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
     .container {
-      padding: 60px 20px;
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
     }
-    h1 {
-      font-size: 2.8em;
-      margin: 20px 0 40px 0;
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: transform 0.2s;
     }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6em;
+    .card:hover {
+      transform: translateY(-5px);
     }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #f8d9ce;
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h2 {
+      margin: 0 0 10px;
+      font-size: 1.4em;
+      color: #E95420;
+    }
+    .card-content p {
+      margin: 0;
+      color: #555;
+    }
+    .card-content a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #E95420;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- ロゴ -->
-    <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" 
-         alt="Ubuntu Logo" 
-         style="height:100px; display:block; margin:0 auto 20px auto;">
-    
-    <!-- タイトル -->
-    <h1>AI ✕ Ubuntuで遊ぶダイハツネイキッドライフ</h1>
-    
-    <!-- 紹介文 -->
-    <p>
-      みんカラに憧れて、あのクオリティーを目標に日々奮闘中！<br>
-      UbuntuとAIを組み合わせて、ネイキッドライフをもっと楽しく！
-    </p>
-  </div>
+  <header>
+    <h1>Ubuntu ✕ ダイハツネイキッドライフ</h1>
+    <p>みんカラ風ブログで愛車と遊ぶ！</p>
+  </header>
 
-  <!-- フッター -->
-  <footer>
-    © 2025 ダイハツネイキッドライフ with Ubuntu
-  </footer>
+  <div class="container">
+
+    <!-- OBD2 記事カード -->
+    <div class="card">
+      <img src="https://placehold.co/800x400/orange/white?text=OBD2+DIY" alt="OBD2 記事画像">
+      <div class="card-content">
+        <h2>UbuntuでOBD2を遊ぶ</h2>
+        <p>愛車のネイキッドとUbuntuをつなぐ！DIYログ第一弾。</p>
+        <a href="obd2.html">続きを読む →</a>
+      </div>
+    </div>
+
+    <!-- 今後の記事サンプル -->
+    <div class="card">
+      <img src="https://placehold.co/800x400/grey/white?text=Coming+Soon" alt="Coming Soon">
+      <div class="card-content">
+        <h2>次の記事タイトル（例：内装DIY）</h2>
+        <p>ここに記事の紹介文が入ります。</p>
+        <a href="#">準備中…</a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
