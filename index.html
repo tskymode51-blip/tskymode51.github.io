@@ -13,12 +13,26 @@
     header {
       background-color: #E95420; /* Ubuntuオレンジ */
       color: white;
-      padding: 20px;
+      padding: 100px 20px;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
+    header img {
+      width: 200px;  /* ロゴ大きめ */
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+    header hr {
+      border: none;
+      height: 4px; /* 太さ */
+      background-color: white; /* 白色のライン */
+      width: 60%; /* 少し短めで中央寄せ */
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+    header p {
+      margin: 10px 0 0 0;
+      font-size: 1.8em; /* サブタイトルを大きめに */
+      font-weight: bold;
     }
     .container {
       width: 90%;
@@ -64,7 +78,9 @@
 </head>
 <body>
   <header>
-    <h1>Ubuntu ✕ ダイハツネイキッドライフ</h1>
+    <!-- Ubuntuロゴ -->
+    <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu Logo">
+    <hr> <!-- 白い太線 -->
     <p>みんカラ風ブログで愛車と遊ぶ！</p>
   </header>
 
