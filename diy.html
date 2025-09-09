@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Ubuntu ✕ ダイハツネイキッドライフ</title>
+  <title>DIYページ - Ubuntu ✕ ダイハツネイキッドライフ</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
       margin: 0;
-      background-color: #fdfdfd;
+      background-color: #fafafa;
       color: #333;
     }
 
@@ -15,23 +15,18 @@
     header {
       background-color: #E95420; /* Ubuntuオレンジ */
       color: white;
-      padding: 60px 20px 30px 20px;
+      padding: 40px 20px 20px 20px;
       text-align: center;
     }
-    header img {
-      width: 160px;
-      display: block;
-      margin: 0 auto 15px auto;
-    }
     header h1 {
-      margin: 10px 0 0 0;
-      font-size: 2.5em;
+      margin: 0;
+      font-size: 2em;
       font-weight: bold;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     header p {
       margin: 10px 0 0 0;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #FFD84D;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
       font-weight: bold;
@@ -62,65 +57,39 @@
       color: #FFD84D;
     }
 
-    /* --- コンテンツコンテナ --- */
+    /* --- コンテンツ --- */
     .container {
       width: 95%;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 30px auto;
     }
 
-    /* --- 5列カード --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
-    .card {
+    article {
       background: white;
       border-radius: 12px;
+      padding: 20px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 30px;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 15px rgba(233,84,32,0.4);
+    article h2 {
+      color: #E95420;
+      border-bottom: 2px solid #E95420;
+      padding-bottom: 5px;
     }
-    .card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
+    article img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
     }
-    .card h3 {
-      background: #E95420;
-      color: white;
-      margin: 0;
-      padding: 10px;
-      font-size: 1em;
-    }
-    .card p {
-      padding: 10px;
-      font-size: 0.85em;
-      color: #555;
-      margin: 0;
-    }
-    .card a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-    .card a:hover h3 {
-      background: #c64214;
+    article p {
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Ubuntuロゴ -->
-    <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu Logo">
-    <h1>Ubuntu ✕ ダイハツネイキッドライフ</h1>
-    <p>DIYとUbuntuで広がるカー体験</p>
+    <h1>DIYページ</h1>
+    <p>UbuntuとカーライフのDIY記録</p>
   </header>
 
   <!-- ナビゲーション -->
@@ -135,44 +104,33 @@
   </nav>
 
   <div class="container">
-    <!-- 横並び5項目カード -->
-    <div class="grid">
-      <div class="card">
-        <a href="obd2.html">
-          <img src="https://placehold.co/200x120/orange/white?text=OBD2" alt="OBD2">
-          <h3>OBD2 記録</h3>
-          <p>Ubuntuとつなぐ車両診断DIY</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="diy1.html">
-          <img src="https://placehold.co/200x120/orange/white?text=DIY1" alt="DIY1">
-          <h3>DIY 1</h3>
-          <p>ネイキッド×Ubuntu 記録</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="diy2.html">
-          <img src="https://placehold.co/200x120/orange/white?text=DIY2" alt="DIY2">
-          <h3>DIY 2</h3>
-          <p>メンテナンスログ</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="review.html">
-          <img src="https://placehold.co/200x120/orange/white?text=Review" alt="パーツレビュー">
-          <h3>パーツレビュー</h3>
-          <p>おすすめパーツの紹介</p>
-        </a>
-      </div>
-      <div class="card">
-        <a href="audio.html">
-          <img src="https://placehold.co/200x120/orange/white?text=Audio" alt="オーディオカスタム">
-          <h3>オーディオカスタム</h3>
-          <p>DIYで楽しむ音響カスタム</p>
-        </a>
-      </div>
-    </div>
+    <!-- DIY記事例 -->
+    <article>
+      <h2>アンプ取り付け</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=AMP+DIY" alt="アンプ取り付け">
+      <p>
+        オーディオの音質改善を狙ってアンプを取り付けました。<br>
+        配線の取り回しは大変でしたが、完成後の迫力ある音に大満足！
+      </p>
+    </article>
+
+    <article>
+      <h2>ウーハーボックス製作</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=Subwoofer+Box" alt="ウーハーボックス製作">
+      <p>
+        MDF板を使ってウーハーボックスを自作しました。<br>
+        サイズの計算から塗装まで一通り挑戦。DIYの達成感は格別です！
+      </p>
+    </article>
+
+    <article>
+      <h2>内装カスタム</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=Interior+DIY" alt="内装カスタム">
+      <p>
+        シートカバーやLED照明を取り付けて、車内をより快適にカスタム。<br>
+        小さな工夫が毎日の運転を楽しくしてくれます。
+      </p>
+    </article>
   </div>
 </body>
 </html>
