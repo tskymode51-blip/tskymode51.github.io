@@ -48,6 +48,7 @@
       max-width: 1000px;
       margin: 30px auto;
     }
+    /* --- 大きいカード --- */
     .card {
       background: white;
       border-radius: 15px;
@@ -64,9 +65,6 @@
       width: 100%;
       height: auto;
       display: block;
-    }
-    .card-content {
-      padding: 0;
     }
     .card-title {
       background-color: #E95420;
@@ -95,12 +93,43 @@
     .card-body a:hover {
       text-decoration: underline;
     }
-    /* 横並び5項目 */
+
+    /* --- 小さいカード5列 --- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr); /* 5列に並べる */
       gap: 15px;
       margin-top: 40px;
+    }
+    .small-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .small-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(233,84,32,0.4);
+    }
+    .small-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+    .small-card h3 {
+      background: #E95420;
+      color: white;
+      font-size: 1em;
+      margin: 0;
+      padding: 8px;
+    }
+    .small-card p {
+      font-size: 0.8em;
+      padding: 8px;
+      color: #555;
+      margin: 0;
     }
   </style>
 </head>
@@ -115,48 +144,21 @@
 
   <div class="container">
 
-    <!-- OBD2 記事カード -->
+    <!-- 大きいカード例 -->
     <div class="card">
       <img src="https://placehold.co/800x400/orange/white?text=OBD2+DIY" alt="OBD2 記事画像">
-      <div class="card-content">
-        <h2 class="card-title">UbuntuでOBD2を遊ぶ</h2>
-        <div class="card-body">
-          <p>愛車のネイキッドとUbuntuをつなぐ！DIYログ第一弾。</p>
-          <a href="obd2.html">続きを読む →</a>
-        </div>
+      <h2 class="card-title">UbuntuでOBD2を遊ぶ</h2>
+      <div class="card-body">
+        <p>愛車のネイキッドとUbuntuをつなぐ！DIYログ第一弾。</p>
+        <a href="obd2.html">続きを読む →</a>
       </div>
     </div>
 
-    <!-- 今後の記事サンプル -->
-    <div class="card">
-      <img src="https://placehold.co/800x400/grey/white?text=Coming+Soon" alt="Coming Soon">
-      <div class="card-content">
-        <h2 class="card-title">次の記事タイトル（例：内装DIY）</h2>
-        <div class="card-body">
-          <p>ここに記事の紹介文が入ります。</p>
-          <a href="#">準備中…</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 横並び5項目 -->
+    <!-- 小さいカード5列 -->
     <div class="grid">
-      <div class="card">
-        <img src="https://placehold.co/200x150/orange/white?text=DIY1" alt="DIY1">
-        <div class="card-content">
-          <h2 class="card-title">DIY 1</h2>
-          <div class="card-body">
-            <p>ネイキッド×Ubuntu 記録</p>
-            <a href="#">続きを読む</a>
-          </div>
-        </div>
+      <div class="small-card">
+        <img src="https://placehold.co/150x100/orange/white?text=DIY1" alt="DIY1">
+        <h3>DIY 1</h3>
+        <p>ネイキッド×Ubuntu 記録</p>
       </div>
-      <div class="card">
-        <img src="https://placehold.co/200x150/orange/white?text=DIY2" alt="DIY2">
-        <div class="card-content">
-          <h2 class="card-title">DIY 2</h2>
-          <div class="card-body">
-            <p>メンテナンス記録</p>
-            <a href="#">続きを読む</a>
-          </div>
-        </div>
+      <div class="small-card
