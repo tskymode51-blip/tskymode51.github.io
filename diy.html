@@ -10,50 +10,69 @@
       background-color: #fdfdfd;
       color: #333;
     }
+
+    /* --- ヘッダー --- */
     header {
       background-color: #E95420; /* Ubuntuオレンジ */
       color: white;
-      padding: 100px 20px;
+      padding: 60px 20px 30px 20px;
       text-align: center;
     }
     header img {
-      width: 200px;
+      width: 160px;
       display: block;
-      margin: 0 auto 20px auto;
-    }
-    header hr {
-      border: none;
-      height: 4px;
-      background-color: white;
-      width: 60%;
-      margin: 20px auto;
-      border-radius: 2px;
+      margin: 0 auto 15px auto;
     }
     header h1 {
       margin: 10px 0 0 0;
-      font-size: 2.8em;
+      font-size: 2.5em;
       font-weight: bold;
-      color: white;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     header p {
       margin: 10px 0 0 0;
-      font-size: 1.4em;
-      color: #FFD84D; /* 黄色アクセント */
+      font-size: 1.2em;
+      color: #FFD84D;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
       font-weight: bold;
     }
 
+    /* --- ナビゲーション --- */
+    nav {
+      background: #333;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #FFD84D;
+    }
+
+    /* --- コンテンツコンテナ --- */
     .container {
       width: 95%;
       max-width: 1200px;
       margin: 30px auto;
     }
 
-    /* --- 5列カードレイアウト --- */
+    /* --- 5列カード --- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5列 */
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
     }
     .card {
@@ -86,20 +105,74 @@
       color: #555;
       margin: 0;
     }
+    .card a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .card a:hover h3 {
+      background: #c64214;
+    }
   </style>
 </head>
 <body>
   <header>
     <!-- Ubuntuロゴ -->
     <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu Logo">
-    <hr>
     <h1>Ubuntu ✕ ダイハツネイキッドライフ</h1>
     <p>DIYとUbuntuで広がるカー体験</p>
   </header>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="obd2.html">OBD2</a></li>
+      <li><a href="diy.html">DIY</a></li>
+      <li><a href="review.html">パーツレビュー</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
   <div class="container">
     <!-- 横並び5項目カード -->
     <div class="grid">
       <div class="card">
-        <img src="https://placehold.co/200x120/orange/white?text=OBD2" alt="OBD2">
-        <h3>OBD2 記録</h3>
+        <a href="obd2.html">
+          <img src="https://placehold.co/200x120/orange/white?text=OBD2" alt="OBD2">
+          <h3>OBD2 記録</h3>
+          <p>Ubuntuとつなぐ車両診断DIY</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="diy1.html">
+          <img src="https://placehold.co/200x120/orange/white?text=DIY1" alt="DIY1">
+          <h3>DIY 1</h3>
+          <p>ネイキッド×Ubuntu 記録</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="diy2.html">
+          <img src="https://placehold.co/200x120/orange/white?text=DIY2" alt="DIY2">
+          <h3>DIY 2</h3>
+          <p>メンテナンスログ</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="review.html">
+          <img src="https://placehold.co/200x120/orange/white?text=Review" alt="パーツレビュー">
+          <h3>パーツレビュー</h3>
+          <p>おすすめパーツの紹介</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="audio.html">
+          <img src="https://placehold.co/200x120/orange/white?text=Audio" alt="オーディオカスタム">
+          <h3>オーディオカスタム</h3>
+          <p>DIYで楽しむ音響カスタム</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
