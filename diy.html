@@ -2,52 +2,161 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>🔧 DIY整備 - Ubuntu × Car Life</title>
+  <title>Ubuntu ✕ ダイハツネイキッドライフ</title>
   <style>
     body {
-      margin: 0;
       font-family: "Helvetica Neue", Arial, sans-serif;
-      background-color: #222;
-      color: #fff;
+      margin: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: #E95420; /* Ubuntuオレンジ */
+      color: white;
+      padding: 100px 20px;
       text-align: center;
     }
+    header img {
+      width: 200px;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+    header hr {
+      border: none;
+      height: 4px;
+      background-color: white;
+      width: 60%;
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+    header h1 {
+      margin: 10px 0 0 0;
+      font-size: 2.8em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    header p {
+      margin: 10px 0 0 0;
+      font-size: 1.4em;
+      color: #FFD84D; /* 黄色アクセント */
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      font-weight: bold;
+    }
     .container {
-      padding: 40px 20px;
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
     }
-    h1 {
-      font-size: 2.4em;
-      margin-bottom: 20px;
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    p {
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(233,84,32,0.5);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-content {
+      padding: 0;
+    }
+    .card-title {
+      background-color: #E95420;
+      color: white;
+      padding: 12px 15px;
       font-size: 1.2em;
-      line-height: 1.6em;
+      font-weight: bold;
+      margin: 0;
     }
-    footer {
-      margin-top: 60px;
+    .card-body {
+      padding: 10px;
+    }
+    .card-body p {
+      margin: 0;
+      color: #555;
       font-size: 0.9em;
-      color: #aaa;
+    }
+    .card-body a {
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #E95420;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    .card-body a:hover {
+      text-decoration: underline;
+    }
+    /* 横並び5項目 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <!-- ナビゲーションバー -->
-  <nav style="background:#333; padding:10px; text-align:center;">
-    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">🏠 ホーム</a>
-    <a href="obd2.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">🚗 OBD2診断</a>
-    <a href="diy.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">🔧 DIY整備</a>
-  </nav>
+  <header>
+    <!-- Ubuntuロゴ -->
+    <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu Logo">
+    <hr>
+    <h1>Ubuntu ✕ ダイハツネイキッドライフ</h1>
+    <p>DIYとUbuntuで広がるカー体験</p>
+  </header>
 
-  <!-- メインコンテンツ -->
   <div class="container">
-    <h1>🔧 DIY整備</h1>
-    <p>ここでは、ネイキッドやiQでのDIY整備記録をまとめます！</p>
-    <p>例: オイル交換、バッテリー交換、電装DIYなど</p>
-  </div>
 
-  <!-- フッター -->
-  <footer>
-    © 2025 ダイハツネイキッドライフ with Ubuntu
-  </footer>
-</body>
-</html>
+    <!-- OBD2 記事カード -->
+    <div class="card">
+      <img src="https://placehold.co/800x400/orange/white?text=OBD2+DIY" alt="OBD2 記事画像">
+      <div class="card-content">
+        <h2 class="card-title">UbuntuでOBD2を遊ぶ</h2>
+        <div class="card-body">
+          <p>愛車のネイキッドとUbuntuをつなぐ！DIYログ第一弾。</p>
+          <a href="obd2.html">続きを読む →</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- 今後の記事サンプル -->
+    <div class="card">
+      <img src="https://placehold.co/800x400/grey/white?text=Coming+Soon" alt="Coming Soon">
+      <div class="card-content">
+        <h2 class="card-title">次の記事タイトル（例：内装DIY）</h2>
+        <div class="card-body">
+          <p>ここに記事の紹介文が入ります。</p>
+          <a href="#">準備中…</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 横並び5項目 -->
+    <div class="grid">
+      <div class="card">
+        <img src="https://placehold.co/200x150/orange/white?text=DIY1" alt="DIY1">
+        <div class="card-content">
+          <h2 class="card-title">DIY 1</h2>
+          <div class="card-body">
+            <p>ネイキッド×Ubuntu 記録</p>
+            <a href="#">続きを読む</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/200x150/orange/white?text=DIY2" alt="DIY2">
+        <div class="card-content">
+          <h2 class="card-title">DIY 2</h2>
+          <div class="card-body">
+            <p>メンテナンス記録</p>
+            <a href="#">続きを読む</a>
+          </div>
+        </div>
