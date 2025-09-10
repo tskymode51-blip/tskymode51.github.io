@@ -60,4 +60,77 @@
     /* --- コンテンツ --- */
     .container {
       width: 95%;
-      max-wid
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    article {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+    }
+    article h2 {
+      color: #E95420;
+      border-bottom: 2px solid #E95420;
+      padding-bottom: 5px;
+    }
+    article img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    article p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OBD2でクルマ診断！</h1>
+    <p>UbuntuとAIで広がるカーライフ</p>
+  </header>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="obd2.html">OBD2</a></li>
+      <li><a href="diy.html">DIY</a></li>
+      <li><a href="review.html">パーツレビュー</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- 記事例 -->
+    <article>
+      <h2>車両診断のはじめ方</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=OBD2+診断" alt="OBD2診断">
+      <p>
+        OBD2アダプターを使ってクルマの状態を診断します。<br>
+        Ubuntu上で動くツールを使えば、リアルタイムにデータを確認することも可能です。
+      </p>
+    </article>
+
+    <article>
+      <h2>エラーコードの読み取り</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=Error+Code" alt="エラーコード">
+      <p>
+        チェックランプが点灯した際に、OBD2を接続してエラーコードを読み取ります。<br>
+        コードから原因を特定し、修理の方向性を決めることができます。
+      </p>
+    </article>
+
+    <article>
+      <h2>AIを活用した診断サポート</h2>
+      <img src="https://placehold.co/800x400/orange/white?text=AI+Car+Diagnosis" alt="AI診断">
+      <p>
+        ChatGPTなどのAIを使って、OBD2から取得したエラーコードを解析。<br>
+        修理方法やパーツ交換のアドバイスを得られるのも魅力です。
+      </p>
+    </article>
+  </div>
+</body>
+</html>
