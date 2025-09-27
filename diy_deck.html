@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>デッキ取り付け - DIY記事</title>
+  <title>デッキ取り付け - DIY記事（スライダー版）</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -12,6 +12,7 @@
       padding: 0;
       line-height: 1.7;
     }
+
     header {
       background-color: #E95420; /* Ubuntuオレンジ */
       color: white;
@@ -19,6 +20,7 @@
       text-align: center;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
     }
+
     .container {
       max-width: 900px;
       margin: 30px auto;
@@ -27,22 +29,65 @@
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
-    img {
-      display: block;
-      margin: 25px auto;
-      width: 800px;   /* 横サイズ */
-      height: auto;  /* 縦は自動調整 */
-      border-radius: 8px;
-    }
+
     h2 {
       color: #E95420;
       border-bottom: 2px solid #E95420;
       padding-bottom: 5px;
       margin-top: 20px;
     }
+
     p {
       margin: 15px 0;
     }
+
+    /* --- スライダー部分 --- */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 30px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .slider-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
   </style>
 </head>
 <body>
@@ -52,8 +97,22 @@
   </header>
 
   <div class="container">
-    <h2>完成写真</h2>
-    <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/dekc1_HDR.jpg" alt="デッキ取り付け完成写真">
+    <h2>完成写真スライダー</h2>
+
+    <!-- スライダーここから -->
+    <div class="slider">
+      <div class="slides">
+        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/dekc1_HDR.jpg" alt="デッキ">
+        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/subwoofer1.jpg" alt="サブウーハー1">
+        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/subwoofer2.jpg" alt="サブウーハー2">
+        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/tuwiter1.jpg" alt="トゥイーター">
+        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/wooferhaisen.jpg" alt="ウーハー配線">
+      </div>
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
+    </div>
+    <!-- スライダーここまで -->
+
     <h2>作業記録</h2>
     <p>
       今回はカロッツェリア製のデッキを取り付けました。取扱説明書のとおりに配線を進めたので、配線作業自体は約1時間ほどでスムーズに完了しました。
@@ -68,5 +127,30 @@
       作業全体では時間も手間もかかりましたが、自分で工夫して仕上げた満足感は格別。音楽を流すたびに「やってよかった」と感じられるDIYになりました。
     </p>
   </div>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideImages = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentIndex = 0;
+    const totalSlides = slideImages.length;
+
+    function showSlide(index) {
+      slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+      showSlide(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+      showSlide(currentIndex);
+    });
+  </script>
+
 </body>
 </html>
