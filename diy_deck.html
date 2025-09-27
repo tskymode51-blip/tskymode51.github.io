@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>デッキ取り付け - DIY記事（スライダー版）</title>
+  <title>デッキ取り付け - DIY記事（スライダー調整版）</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -44,11 +44,13 @@
     /* --- スライダー部分 --- */
     .slider {
       position: relative;
-      max-width: 100%;
+      width: 100%;
+      max-width: 800px;  /* スライダー最大幅 */
       margin: 20px auto;
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      background: #000; /* 背景が黒だと写真が映える */
     }
 
     .slides {
@@ -58,6 +60,10 @@
 
     .slides img {
       width: 100%;
+      height: auto;
+      max-height: 600px;         /* 画像の縦幅上限を設定 */
+      object-fit: contain;       /* 引き伸ばし防止、余白ありで全体表示 */
+      background: #000;          /* 写真が小さいとき背景が見える */
       flex-shrink: 0;
       display: block;
     }
@@ -69,25 +75,31 @@
       background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
-      font-size: 30px;
-      padding: 10px 15px;
+      font-size: 28px;
+      padding: 8px 12px;
       cursor: pointer;
       border-radius: 50%;
       user-select: none;
+      transition: background 0.3s ease;
     }
 
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
+    .prev { left: 15px; }
+    .next { right: 15px; }
 
     .slider-btn:hover {
       background: rgba(0, 0, 0, 0.8);
     }
 
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      .slides img {
+        max-height: 300px;
+      }
+      .slider-btn {
+        font-size: 22px;
+        padding: 6px 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -151,6 +163,5 @@
       showSlide(currentIndex);
     });
   </script>
-
 </body>
 </html>
