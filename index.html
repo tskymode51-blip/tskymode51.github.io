@@ -8,210 +8,161 @@
 <style>
 /* --- ベース --- */
 body {
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  background: #000;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* 💡背景画像を設定 */
+  background-image: url('pexels-kaboompics-6663.jpg'); /* 👈 ファイル名を指定 */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-color: #000; /* 画像が読み込めない場合のフォールバック */
 }
 
-/* --- 背景：擬似ライブ実写風 --- */
-.bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: radial-gradient(ellipse at bottom, #111 0%, #000 80%);
-  z-index: -5;
-  overflow: hidden;
-}
-
-/* ステージスポットライト */
-.spotlight {
-  position: absolute;
-  bottom: 0;
-  width: 200px; height: 600px;
-  background: radial-gradient(ellipse at top, rgba(255,255,255,0.3), transparent 60%);
-  filter: blur(80px);
-  transform: rotate(-10deg);
-  animation: flicker 2s infinite alternate;
-  z-index: -4;
-}
-.spotlight:nth-child(2) {
-  left: 50%;
-  transform: rotate(0deg);
-}
-.spotlight:nth-child(3) {
-  right: 0;
-  transform: rotate(10deg);
-  animation-delay: 0.5s;
-}
-
-/* カラフルライト */
-.color-light {
-  position: absolute;
-  top: 10%;
-  width: 100px; height: 600px;
-  background: radial-gradient(circle, rgba(255,0,150,0.2), transparent 70%);
-  filter: blur(100px);
-  animation: sway 6s infinite alternate;
-  z-index: -3;
-}
-.color-light:nth-child(4) { left: 20%; background: radial-gradient(circle, rgba(0,150,255,0.2), transparent 70%); }
-.color-light:nth-child(5) { left: 60%; background: radial-gradient(circle, rgba(0,255,120,0.15), transparent 70%); }
-.color-light:nth-child(6) { left: 80%; background: radial-gradient(circle, rgba(255,255,0,0.15), transparent 70%); }
-
-/* アニメーション */
-@keyframes flicker {
-  0% { opacity: 0.3; }
-  50% { opacity: 0.5; }
-  100% { opacity: 0.4; }
-}
-@keyframes sway {
-  0% { transform: translateX(0) rotate(0deg); }
-  50% { transform: translateX(15px) rotate(2deg); }
-  100% { transform: translateX(-15px) rotate(-2deg); }
+/* 💡背景画像の上に暗くぼかすオーバーレイを重ねて文字の可読性を高める */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 半透明の黒で暗くする */
+  backdrop-filter: blur(5px); /* 背景画像をぼかす */
+  z-index: -1;
 }
 
 /* --- ヘッダー --- */
 header {
-  background: linear-gradient(90deg, rgba(233,84,32,0.9), rgba(255,111,60,0.9));
-  text-align: center;
-  padding: 40px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(4px);
+  /* 背景画像の上でも目立つように、グラデーション背景を維持 */
+  background: linear-gradient(90deg, rgba(233,84,32,0.9), rgba(255,111,60,0.9));
+  text-align: center;
+  padding: 40px 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1;
+  /* 💡背景のぼかしを少し強める */
+  backdrop-filter: blur(8px);
 }
 header h1 {
-  margin: 0;
-  font-size: 36px;
-  letter-spacing: 2px;
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
-  animation: glow 2s infinite alternate;
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+  animation: glow 2s infinite alternate;
 }
 header p {
-  margin: 8px 0 0 0;
-  font-size: 18px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  margin: 8px 0 0 0;
+  font-size: 18px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 @keyframes glow {
-  0% { text-shadow: 3px 3px 10px rgba(0,0,0,0.8); }
-  100% { text-shadow: 3px 3px 20px rgba(255,120,0,0.9); }
+  0% { text-shadow: 3px 3px 10px rgba(0,0,0,0.8); }
+  100% { text-shadow: 3px 3px 20px rgba(255,120,0,0.9); }
 }
 
 /* --- コンテンツ --- */
 .container {
-  display: flex;
-  max-width: 1000px;
-  margin: 30px auto;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 0 15px;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
 }
 .category-column {
-  flex: 1 1 480px;
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 480px;
+  display: flex;
+  flex-direction: column;
 }
 .category-column h2 {
-  text-align: center;
-  font-size: 24px;
-  color: #ff8343;
-  border-bottom: 2px solid #ff8343;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #ff8343;
+  border-bottom: 2px solid #ff8343;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 /* --- 記事カード --- */
 .card {
-  background: rgba(34,34,34,0.8);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-  text-decoration: none;
-  color: #fff;
-  margin-bottom: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
-  backdrop-filter: blur(6px);
+  /* 💡カード背景の透明度を少し下げ、ぼかしを強くして、背景画像が透けて見えつつ文字が読みやすいように調整 */
+  background: rgba(34,34,34,0.7);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(255,140,30,0.9);
-  border-top: 3px solid #FF7B00;
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255,140,30,0.9);
+  border-top: 3px solid #FF7B00;
 }
 .card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 .card h3 {
-  margin: 12px;
-  color: #E95420;
-  font-size: 20px;
+  margin: 12px;
+  color: #E95420;
+  font-size: 20px;
 }
 .card p {
-  margin: 0 12px 15px;
-  font-size: 14px;
-  color: #ccc;
+  margin: 0 12px 15px;
+  font-size: 14px;
+  color: #ccc;
 }
 
 /* --- レスポンシブ --- */
 @media(max-width:1000px){
-  .container { flex-direction: column; gap: 40px; }
+  .container { flex-direction: column; gap: 40px; }
 }
 @media(max-width:600px){
-  header h1 { font-size: 28px; }
-  header p { font-size: 16px; }
-  .card img { height: 140px; }
+  header h1 { font-size: 28px; }
+  header p { font-size: 16px; }
+  .card img { height: 140px; }
 }
 </style>
 </head>
 <body>
 
-<!-- 背景 -->
-<div class="bg"></div>
-<div class="spotlight"></div>
-<div class="spotlight"></div>
-<div class="spotlight"></div>
-<div class="color-light"></div>
-<div class="color-light"></div>
-<div class="color-light"></div>
-
-<!-- ヘッダー -->
 <header>
-  <h1>AI × Ubuntu × DIYダイハツ・ネイキッド</h1>
-  <p>カーオーディオDIYとUbuntu活用の記録</p>
+  <h1>AI × Ubuntu × DIYダイハツ・ネイキッド</h1>
+  <p>カーオーディオDIYとUbuntu活用の記録</p>
 </header>
 
-<!-- カテゴリ -->
 <div class="container">
-  <!-- DIY -->
-  <div class="category-column" id="DIY">
-    <h2>DIY</h2>
-    <a href="diy_deck.html" class="card">
-      <img src="images/dekc1_HDR.jpg" alt="デッキ取り付け">
-      <h3>デッキ取り付け</h3>
-      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
-    </a>
-  </div>
+    <div class="category-column" id="DIY">
+    <h2>DIY</h2>
+    <a href="diy_deck.html" class="card">
+      <img src="images/dekc1_HDR.jpg" alt="デッキ取り付け">
+      <h3>デッキ取り付け</h3>
+      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
+    </a>
+  </div>
 
-  <!-- Ubuntu -->
-  <div class="category-column" id="Ubuntu">
-    <h2>Ubuntu</h2>
-    <a href="ubuntusetup.html" class="card">
-      <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ">
-      <h3>Ubuntuセットアップ</h3>
-      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
-    </a>
-    <a href="#" class="card">
-      <img src="images/ubuntu_music.jpg" alt="Ubuntuで音楽再生">
-      <h3>Ubuntuで音楽再生環境</h3>
-      <p>Ubuntuでカーオーディオと連携する音楽環境構築の手順</p>
-    </a>
-  </div>
+    <div class="category-column" id="Ubuntu">
+    <h2>Ubuntu</h2>
+    <a href="ubuntusetup.html" class="card">
+      <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ">
+      <h3>Ubuntuセットアップ</h3>
+      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
+    </a>
+    <a href="#" class="card">
+      <img src="images/ubuntu_music.jpg" alt="Ubuntuで音楽再生">
+      <h3>Ubuntuで音楽再生環境</h3>
+      <p>Ubuntuでカーオーディオと連携する音楽環境構築の手順</p>
+    </a>
+  </div>
 </div>
 
 </body>
