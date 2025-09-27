@@ -16,32 +16,50 @@ body {
   background: #000;
 }
 
-/* --- 背景 --- */
+/* --- 背景：海外ライブハウス風 --- */
 .bg {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url('3192864f-4ee4-4c80-a924-ea667ec9f72b.png') center center / cover no-repeat;
+  background: linear-gradient(to top, #0a0a0a, #111 60%, #222 100%);
   z-index: -5;
-  filter: brightness(0.6) saturate(1.3);
+  overflow: hidden;
 }
+
+/* ステージスポットライト */
+.bg::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), transparent 60%);
+  transform: rotate(-15deg);
+  filter: blur(120px);
+  z-index: -4;
+}
+
+/* カラフルライトライン */
 .bg::after {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
-  z-index: -4;
-}
-.bg::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 70%),
-    radial-gradient(circle at 80% 70%, rgba(255,200,150,0.08), transparent 70%);
+    radial-gradient(circle at 20% 20%, rgba(255,0,150,0.1), transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(0,150,255,0.1), transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(0,255,120,0.08), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255,255,0,0.08), transparent 50%);
   z-index: -3;
+  animation: lights 6s infinite alternate;
+}
+
+/* ライトのゆらぎアニメーション */
+@keyframes lights {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(20px, -10px) rotate(1deg); }
+  100% { transform: translate(-20px,10px) rotate(-1deg); }
 }
 
 /* --- ヘッダー --- */
@@ -66,8 +84,6 @@ header p {
   font-size: 18px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
-
-/* ヘッダー光アニメーション */
 @keyframes glow {
   0% { text-shadow: 3px 3px 10px rgba(0,0,0,0.8); }
   100% { text-shadow: 3px 3px 20px rgba(255,120,0,0.9); }
