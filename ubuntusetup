@@ -3,103 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ubuntu 24.04 LTSをUSBから簡単インストール</title>
-<!-- FontAwesome アイコン読み込み -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pn+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Ubuntuセットアップ - AI × Ubuntu × DIYダイハツ・ネイキッド</title>
 <style>
-    body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.6; padding: 20px; background-color: #f8f9fa; }
-    h1, h2, h3 { color: #333; }
-    h1 { text-align: center; margin-bottom: 40px; }
-    .step { background-color: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .step i { color: #ff6600; margin-right: 10px; }
-    pre { background-color: #272822; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; }
-    img { max-width: 100%; border-radius: 8px; margin-top: 10px; }
-    .note { background-color: #fff3cd; color: #856404; padding: 12px; border-left: 6px solid #ffeeba; border-radius: 8px; margin-top: 10px; }
+/* --- ベース --- */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* --- 背景グリッド・光効果 --- */
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.04), transparent 70%);
+  z-index: -1;
+}
+
+/* --- オレンジ帯タイトル --- */
+header {
+  background: linear-gradient(90deg, #E95420, #FF6F3C);
+  text-align: center;
+  padding: 40px 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+header p {
+  margin: 8px 0 0 0;
+  font-size: 18px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+/* --- 記事コンテンツ --- */
+.article-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+.article-image {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+.article-title {
+  font-size: 26px;
+  color: #E95420;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.article-content {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+/* --- 戻るボタン --- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FF6F3C;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.back-link i { margin-right: 8px; }
+.back-link:hover {
+  background-color: #E95420;
+  transform: translateY(-2px);
+}
+
+/* --- レスポンシブ --- */
+@media(max-width:600px){
+  header h1 { font-size: 26px; }
+  header p { font-size: 16px; }
+  .article-title { font-size: 22px; }
+  .article-content { font-size: 15px; }
+}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pn+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-<h1><i class="fas fa-rocket"></i>Ubuntu 24.04 LTSをUSBから簡単インストール</h1>
+<header>
+  <h1>Ubuntuセットアップ</h1>
+  <p>AI × Ubuntu × DIYダイハツ・ネイキッド</p>
+</header>
 
-<div class="step">
-<h2><i class="fas fa-download"></i>ステップ1: Ubuntu ISOをダウンロード</h2>
-<p>まずはUbuntuの公式サイトからISOファイルをダウンロードします。</p>
-<ul>
-<li><a href="https://ubuntu.com/download/desktop" target="_blank">Ubuntu公式ダウンロードページ</a>にアクセス</li>
-<li>「Download Ubuntu 24.04 LTS」を選択し、ISOファイルを保存</li>
-</ul>
-<img src="https://via.placeholder.com/600x300?text=Ubuntu+Download+Screen" alt="Ubuntuダウンロード画面">
-</div>
+<div class="article-container">
+  <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ" class="article-image">
 
-<div class="step">
-<h2><i class="fas fa-usb"></i>ステップ2: ブータブルUSBを作成</h2>
-<p>USBをUbuntuインストール用に準備します。</p>
-<ul>
-<li><strong>Windows</strong>の場合: <a href="https://rufus.ie/" target="_blank">Rufus</a></li>
-<li><strong>Windows/Mac/Linux</strong>の場合: <a href="https://www.balena.io/etcher/" target="_blank">Etcher</a></li>
-</ul>
-<p>手順:</p>
-<ol>
-<li>USBを接続</li>
-<li>Rufus/Etcherを起動</li>
-<li>ISOを選択</li>
-<li>USBを選択し「書き込み」または「Flash」をクリック</li>
-<li>完了まで待つ</li>
-</ol>
-<img src="https://via.placeholder.com/600x300?text=USB+Writing+Screen" alt="ブータブルUSB作成画面">
-</div>
+  <h2 class="article-title">Ubuntu 24.04 LTS USBインストール手順</h2>
+  <div class="article-content">
+    <p>このページではUbuntu 24.04 LTSをUSBから簡単にインストールする手順を詳しく解説します。</p>
+    <ol>
+      <li><strong>ISOをダウンロード:</strong> Ubuntu公式サイトからISOファイルを入手します。</li>
+      <li><strong>ブータブルUSB作成:</strong> RufusまたはEtcherでUSBをブート可能にします。</li>
+      <li><strong>PCをUSB起動:</strong> BIOS/UEFIでUSBを選択して起動します。</li>
+      <li><strong>Ubuntuインストール:</strong> 言語・キーボード・インストールタイプを選択し、ユーザー設定を行います。</li>
+      <li><strong>初期設定とアップデート:</strong>
+        <pre>sudo apt update
+sudo apt upgrade -y</pre>
+      </li>
+    </ol>
+    <p>これでUbuntu 24.04 LTSのセットアップは完了です。必要に応じてソフトウェアを追加し、自分好みにカスタマイズしてください。</p>
+  </div>
 
-<div class="step">
-<h2><i class="fas fa-power-off"></i>ステップ3: PCをUSBから起動</h2>
-<p>USBを挿したままPCを再起動し、ブートメニューでUSBを選択します。</p>
-<ul>
-<li>多くのPCでは <strong>F12, F2, Esc, Del</strong> などで起動メニューを表示</li>
-<li>USBを選択して起動</li>
-</ul>
-<div class="note">
-BIOS/UEFIで起動優先順位を変更する必要がある場合もあります。
-</div>
-<img src="https://via.placeholder.com/600x300?text=Boot+Menu+Screen" alt="USBから起動">
-</div>
-
-<div class="step">
-<h2><i class="fas fa-cogs"></i>ステップ4: Ubuntuをインストール</h2>
-<p>インストーラーに従ってUbuntuをインストールします。</p>
-<ol>
-<li>言語選択</li>
-<li>「Ubuntuをインストール」をクリック</li>
-<li>キーボードレイアウト選択</li>
-<li>インストールタイプを選択
-    <ul>
-        <li>標準インストール（推奨）</li>
-        <li>最小インストール（軽量）</li>
-    </ul>
-</li>
-<li>ディスクの割り当てを設定
-    <ul>
-        <li>「ディスクを削除してUbuntuをインストール」</li>
-        <li>「その他」から手動パーティション設定も可能</li>
-    </ul>
-</li>
-<li>ユーザー名・パスワード設定</li>
-<li>「インストール」をクリック</li>
-</ol>
-<img src="https://via.placeholder.com/600x300?text=Ubuntu+Install+Screen" alt="Ubuntuインストール画面">
-</div>
-
-<div class="step">
-<h2><i class="fas fa-terminal"></i>ステップ5: 初期設定とアップデート</h2>
-<p>Ubuntu起動後、まずは最新状態にします。</p>
-<pre>
-sudo apt update
-sudo apt upgrade -y
-</pre>
-<img src="https://via.placeholder.com/600x300?text=Terminal+Update+Screen" alt="ターミナルでアップデート">
-<div class="note">
-インストール中にディスクを削除するとデータが消えるため、事前にバックアップをおすすめします。
-</div>
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> TOPページに戻る</a>
 </div>
 
 </body>
 </html>
-
