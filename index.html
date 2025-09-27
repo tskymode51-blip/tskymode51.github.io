@@ -16,79 +16,71 @@ body {
   background: #000;
 }
 
-/* --- 背景 --- */
+/* --- 背景（ライブハウス風） --- */
 .bg {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  overflow: hidden;
   z-index: -5;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #000 0%, #111 100%);
 }
 
-/* --- サイバーグリッド --- */
-.grid {
+/* スモーク（ぼやけたグラデーション） */
+.smoke {
   position: absolute;
-  width: 300%;
-  height: 300%;
-  top: -100%;
-  left: -100%;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 80px 80px;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15), transparent 70%);
+  filter: blur(80px);
+  animation: smokeMove 30s linear infinite alternate;
+}
+@keyframes smokeMove {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(10%, -10%) scale(1.2); }
+}
+
+/* カラフルな照明（ステージライト風） */
+.light-beam {
+  position: absolute;
+  width: 40vw;
+  height: 120vh;
+  top: -20vh;
+  left: 30vw;
+  background: linear-gradient(180deg, rgba(255,0,150,0.5), transparent 80%);
+  filter: blur(50px);
+  transform: rotate(15deg);
+  mix-blend-mode: screen;
+  animation: beamMove 8s ease-in-out infinite alternate;
+}
+.light-beam.blue {
+  left: 5vw;
+  background: linear-gradient(180deg, rgba(0,150,255,0.5), transparent 80%);
+  transform: rotate(-15deg);
+  animation-delay: 2s;
+}
+.light-beam.green {
+  left: 60vw;
+  background: linear-gradient(180deg, rgba(0,255,120,0.5), transparent 80%);
   transform: rotate(10deg);
-  animation: gridMove 30s linear infinite;
+  animation-delay: 4s;
 }
-@keyframes gridMove {
-  from { transform: translate(0,0) rotate(10deg); }
-  to { transform: translate(80px,80px) rotate(10deg); }
+@keyframes beamMove {
+  0% { transform: rotate(10deg) scale(1); opacity: 0.6; }
+  100% { transform: rotate(25deg) scale(1.1); opacity: 0.9; }
 }
 
-/* --- レーザー光線（動くネオン）--- */
-.laser {
+/* 観客シルエット */
+.crowd {
   position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #ff0080, #00ffff, transparent);
-  opacity: 0.7;
-  filter: blur(2px);
-  animation: laserMove 3s linear infinite;
-}
-@keyframes laserMove {
-  from { top: 110%; }
-  to { top: -10%; }
-}
-
-/* --- 回転するAI光輪 --- */
-.glow-ring {
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  top: -100%;
-  left: -100%;
-  background: conic-gradient(from 0deg, #ff0000, #ff9900, #00ffff, #ff00ff, #ff0000);
-  filter: blur(200px);
-  opacity: 0.25;
-  animation: spin 15s linear infinite;
-}
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* --- パーティクル（キラキラ）--- */
-.particle {
-  position: absolute;
-  background: radial-gradient(white, transparent);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-  from { transform: translateY(110vh) scale(1); opacity: 0.9; }
-  to { transform: translateY(-10vh) scale(0.3); opacity: 0; }
+  height: 220px;
+  background: url('https://i.imgur.com/MsV7v6y.png') center bottom no-repeat;
+  background-size: cover;
+  opacity: 0.85;
 }
 
 /* --- ヘッダー --- */
@@ -184,27 +176,12 @@ header p {
 
 <!-- 背景 -->
 <div class="bg">
-  <div class="glow-ring"></div>
-  <div class="grid"></div>
-  <!-- レーザーを複数 -->
-  <div class="laser" style="animation-delay: 0s;"></div>
-  <div class="laser" style="animation-delay: 1s;"></div>
-  <div class="laser" style="animation-delay: 2s;"></div>
+  <div class="smoke"></div>
+  <div class="light-beam"></div>
+  <div class="light-beam blue"></div>
+  <div class="light-beam green"></div>
+  <div class="crowd"></div>
 </div>
-
-<script>
-// パーティクル生成
-const bg = document.querySelector('.bg');
-for (let i = 0; i < 100; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  p.style.left = Math.random() * 100 + 'vw';
-  p.style.top = Math.random() * 100 + 'vh';
-  p.style.animationDuration = 8 + Math.random() * 15 + 's';
-  p.style.animationDelay = Math.random() * -20 + 's';
-  bg.appendChild(p);
-}
-</script>
 
 <!-- ヘッダー -->
 <header>
