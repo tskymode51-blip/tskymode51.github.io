@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>AI × Ubuntu × DIYダイハツ・ネイキッド</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ubuntuセットアップ - AI × Ubuntu × DIYダイハツ・ネイキッド</title>
 <style>
 /* --- ベース --- */
 body {
@@ -50,107 +51,85 @@ header p {
   text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
-/* --- 左右分割レイアウト --- */
-.container {
-  display: flex;
-  max-width: 1000px;
+/* --- 記事コンテンツ --- */
+.article-container {
+  max-width: 900px;
   margin: 30px auto;
-  gap: 30px;
-  flex-wrap: wrap;
   padding: 0 15px;
 }
-.category-column {
-  flex: 1 1 480px;
-  display: flex;
-  flex-direction: column;
-}
-.category-column h2 {
-  text-align: center;
-  font-size: 24px;
-  color: #E95420;
-  border-bottom: 2px solid #E95420;
-  padding-bottom: 8px;
+.article-image {
+  width: 100%;
+  border-radius: 14px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+.article-title {
+  font-size: 26px;
+  color: #E95420;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.article-content {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.8;
 }
 
-/* --- 記事カード --- */
-.card {
-  background: #222;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  text-decoration: none;
+/* --- 戻るボタン --- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FF6F3C;
   color: #fff;
-  margin-bottom: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  transition: background-color 0.3s, transform 0.2s;
 }
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.8);
-}
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.card h3 {
-  margin: 12px;
-  color: #E95420;
-  font-size: 20px;
-}
-.card p {
-  margin: 0 12px 15px;
-  font-size: 14px;
-  color: #ccc;
+.back-link i { margin-right: 8px; }
+.back-link:hover {
+  background-color: #E95420;
+  transform: translateY(-2px);
 }
 
 /* --- レスポンシブ --- */
-@media(max-width:1000px){
-  .container { flex-direction: column; gap: 40px; }
-}
 @media(max-width:600px){
   header h1 { font-size: 26px; }
   header p { font-size: 16px; }
-  .card img { height: 160px; }
+  .article-title { font-size: 22px; }
+  .article-content { font-size: 15px; }
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-pn+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-<!-- オレンジ帯タイトル -->
 <header>
-  <h1>AI × Ubuntu × DIYダイハツ・ネイキッド</h1>
-  <p>カーオーディオDIYとUbuntu活用の記録</p>
+  <h1>Ubuntuセットアップ</h1>
+  <p>AI × Ubuntu × DIYダイハツ・ネイキッド</p>
 </header>
 
-<!-- 左右カテゴリ分割 -->
-<div class="container">
-  <!-- DIY -->
-  <div class="category-column" id="DIY">
-    <h2>DIY</h2>
-    <a href="diy_deck.html" class="card">
-      <img src="images/dekc1_HDR.jpg" alt="デッキ取り付け">
-      <h3>デッキ取り付け</h3>
-      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
-    </a>
-    <!-- 今後記事追加する場合も縦に連なる -->
+<div class="article-container">
+  <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ" class="article-image">
+
+  <h2 class="article-title">Ubuntu 24.04 LTS USBインストール手順</h2>
+  <div class="article-content">
+    <p>このページではUbuntu 24.04 LTSをUSBから簡単にインストールする手順を詳しく解説します。</p>
+    <ol>
+      <li><strong>ISOをダウンロード:</strong> Ubuntu公式サイトからISOファイルを入手します。</li>
+      <li><strong>ブータブルUSB作成:</strong> RufusまたはEtcherでUSBをブート可能にします。</li>
+      <li><strong>PCをUSB起動:</strong> BIOS/UEFIでUSBを選択して起動します。</li>
+      <li><strong>Ubuntuインストール:</strong> 言語・キーボード・インストールタイプを選択し、ユーザー設定を行います。</li>
+      <li><strong>初期設定とアップデート:</strong>
+        <pre>sudo apt update
+sudo apt upgrade -y</pre>
+      </li>
+    </ol>
+    <p>これでUbuntu 24.04 LTSのセットアップは完了です。必要に応じてソフトウェアを追加し、自分好みにカスタマイズしてください。</p>
   </div>
 
-  <!-- Ubuntu -->
-  <div class="category-column" id="Ubuntu">
-    <h2>Ubuntu</h2>
-    <a href="#" class="card">
-      <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ">
-      <h3>Ubuntuセットアップ</h3>
-      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
-    </a>
-    <a href="#" class="card">
-      <img src="images/ubuntu_music.jpg" alt="Ubuntuで音楽再生">
-      <h3>Ubuntuで音楽再生環境</h3>
-      <p>Ubuntuでカーオーディオと連携する音楽環境構築の手順</p>
-    </a>
-    <!-- 今後記事追加する場合も縦に連なる -->
-  </div>
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> TOPページに戻る</a>
 </div>
 
 </body>
