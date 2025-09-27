@@ -104,50 +104,6 @@ header p {
   color: #ccc;
 }
 
-/* --- 注目記事スライダー --- */
-.slider {
-  position: relative;
-  max-width: 950px;
-  margin: 50px auto 60px auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-  background: #000;
-}
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.slides img {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: contain;
-  flex-shrink: 0;
-  display: block;
-  background: #111;
-}
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  font-size: 32px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.slider-btn:hover { 
-  background: rgba(0,0,0,0.8); 
-  transform: scale(1.2);
-}
-.prev { left: 15px; }
-.next { right: 15px; }
-
 /* --- レスポンシブ --- */
 @media(max-width:1000px){
   .container { flex-direction: column; gap: 40px; }
@@ -177,6 +133,7 @@ header p {
       <h3>デッキ取り付け</h3>
       <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
     </a>
+    <!-- 今後記事追加する場合も縦に連なる -->
   </div>
 
   <!-- Ubuntu -->
@@ -192,42 +149,9 @@ header p {
       <h3>Ubuntuで音楽再生環境</h3>
       <p>Ubuntuでカーオーディオと連携する音楽環境構築の手順</p>
     </a>
+    <!-- 今後記事追加する場合も縦に連なる -->
   </div>
 </div>
-
-<!-- 注目記事スライダー -->
-<div class="slider">
-  <div class="slides">
-    <img src="images/dekc1_HDR.jpg" alt="デッキ完成">
-    <img src="images/subwoofer1.jpg" alt="サブウーハー1">
-    <img src="images/subwoofer2.jpg" alt="サブウーハー2">
-    <img src="images/tuwiter1.jpg" alt="トゥイーター">
-    <img src="images/wooferhaisen.jpg" alt="ウーハー配線">
-  </div>
-  <button class="slider-btn prev">&#10094;</button>
-  <button class="slider-btn next">&#10095;</button>
-</div>
-
-<script>
-const slides = document.querySelector('.slides');
-const slideImages = document.querySelectorAll('.slides img');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let currentIndex = 0;
-const totalSlides = slideImages.length;
-
-function showSlide(index){
-  slides.style.transform = `translateX(${-index*100}%)`;
-}
-prevBtn.addEventListener('click', ()=>{
-  currentIndex = (currentIndex===0)? totalSlides-1 : currentIndex-1;
-  showSlide(currentIndex);
-});
-nextBtn.addEventListener('click', ()=>{
-  currentIndex = (currentIndex===totalSlides-1)? 0 : currentIndex+1;
-  showSlide(currentIndex);
-});
-</script>
 
 </body>
 </html>
