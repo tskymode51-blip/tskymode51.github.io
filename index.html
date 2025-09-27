@@ -16,90 +16,103 @@ body {
   background: #000;
 }
 
-/* --- 背景エフェクト（AI × LIVE感）--- */
-.bg-container {
+/* --- 背景 --- */
+.bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   overflow: hidden;
-  z-index: -3;
+  z-index: -5;
 }
 
-/* 光るグリッド */
-.bg-grid {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
-  background-size: 60px 60px;
-  transform: rotate(5deg);
-  animation: gridMove 45s linear infinite;
-}
-@keyframes gridMove {
-  from { transform: translate(0,0) rotate(5deg); }
-  to { transform: translate(60px,60px) rotate(5deg); }
-}
-
-/* 回転する光（AI感） */
-.bg-glow {
+/* --- サイバーグリッド --- */
+.grid {
   position: absolute;
   width: 300%;
   height: 300%;
   top: -100%;
   left: -100%;
-  background: conic-gradient(from 0deg, #ff6600, #ffcc00, #00ffff, #ff6600);
-  filter: blur(180px);
-  opacity: 0.18;
-  animation: spinGlow 25s linear infinite;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: rotate(10deg);
+  animation: gridMove 30s linear infinite;
 }
-@keyframes spinGlow {
+@keyframes gridMove {
+  from { transform: translate(0,0) rotate(10deg); }
+  to { transform: translate(80px,80px) rotate(10deg); }
+}
+
+/* --- レーザー光線（動くネオン）--- */
+.laser {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #ff0080, #00ffff, transparent);
+  opacity: 0.7;
+  filter: blur(2px);
+  animation: laserMove 3s linear infinite;
+}
+@keyframes laserMove {
+  from { top: 110%; }
+  to { top: -10%; }
+}
+
+/* --- 回転するAI光輪 --- */
+.glow-ring {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  background: conic-gradient(from 0deg, #ff0000, #ff9900, #00ffff, #ff00ff, #ff0000);
+  filter: blur(200px);
+  opacity: 0.25;
+  animation: spin 15s linear infinite;
+}
+@keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* 粒子エフェクト */
+/* --- パーティクル（キラキラ）--- */
 .particle {
   position: absolute;
   background: radial-gradient(white, transparent);
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   opacity: 0.8;
-  animation: floatParticle linear infinite;
+  animation: particleFloat linear infinite;
 }
-@keyframes floatParticle {
-  from { transform: translateY(110vh) scale(1); opacity: 0.8; }
-  to { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+@keyframes particleFloat {
+  from { transform: translateY(110vh) scale(1); opacity: 0.9; }
+  to { transform: translateY(-10vh) scale(0.3); opacity: 0; }
 }
 
-/* --- ヘッダー（オレンジ帯）--- */
+/* --- ヘッダー --- */
 header {
   background: linear-gradient(90deg, #E95420, #FF6F3C);
   text-align: center;
   padding: 40px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   position: relative;
   z-index: 1;
 }
 header h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 36px;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
 }
 header p {
   margin: 8px 0 0 0;
   font-size: 18px;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
-/* --- コンテンツ（DIY & Ubuntu）--- */
+/* --- コンテンツ --- */
 .container {
   display: flex;
   max-width: 1000px;
@@ -126,19 +139,19 @@ header p {
 
 /* --- 記事カード --- */
 .card {
-  background: rgba(34,34,34,0.85);
+  background: rgba(34,34,34,0.8);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
   text-decoration: none;
   color: #fff;
   margin-bottom: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(5px);
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(255,120,0,0.6);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255,120,0,0.8);
 }
 .card img {
   width: 100%;
@@ -161,7 +174,7 @@ header p {
   .container { flex-direction: column; gap: 40px; }
 }
 @media(max-width:600px){
-  header h1 { font-size: 26px; }
+  header h1 { font-size: 28px; }
   header p { font-size: 16px; }
   .card img { height: 160px; }
 }
@@ -170,21 +183,25 @@ header p {
 <body>
 
 <!-- 背景 -->
-<div class="bg-container">
-  <div class="bg-grid"></div>
-  <div class="bg-glow"></div>
+<div class="bg">
+  <div class="glow-ring"></div>
+  <div class="grid"></div>
+  <!-- レーザーを複数 -->
+  <div class="laser" style="animation-delay: 0s;"></div>
+  <div class="laser" style="animation-delay: 1s;"></div>
+  <div class="laser" style="animation-delay: 2s;"></div>
 </div>
 
 <script>
-// 粒子をランダムに生成
-const bg = document.querySelector('.bg-container');
-for (let i = 0; i < 80; i++) {
+// パーティクル生成
+const bg = document.querySelector('.bg');
+for (let i = 0; i < 100; i++) {
   const p = document.createElement('div');
   p.className = 'particle';
   p.style.left = Math.random() * 100 + 'vw';
   p.style.top = Math.random() * 100 + 'vh';
-  p.style.animationDuration = 10 + Math.random() * 20 + 's';
-  p.style.animationDelay = Math.random() * -25 + 's';
+  p.style.animationDuration = 8 + Math.random() * 15 + 's';
+  p.style.animationDelay = Math.random() * -20 + 's';
   bg.appendChild(p);
 }
 </script>
@@ -195,7 +212,7 @@ for (let i = 0; i < 80; i++) {
   <p>カーオーディオDIYとUbuntu活用の記録</p>
 </header>
 
-<!-- カテゴリ分割 -->
+<!-- カテゴリ -->
 <div class="container">
   <!-- DIY -->
   <div class="category-column" id="DIY">
