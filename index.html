@@ -1,193 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>AI × Ubuntu × DIYダイハツ・ネイキッド</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-/* --- ベース --- */
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  background: url('images/haikei1.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
-
-/* --- ヘッダー --- */
-header {
-  background: linear-gradient(90deg, #E95420, #FF6F3C);
-  text-align: center;
-  padding: 40px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-header h1 {
-  margin: 0;
-  font-size: 32px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-header p {
-  margin: 8px 0 0 0;
-  font-size: 18px;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-}
-
-/* --- コンテンツ --- */
-.container {
-  display: flex;
-  max-width: 1000px;
-  margin: 30px auto;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 0 15px;
-  position: relative;
-  z-index: 1;
-}
-.category-column {
-  flex: 1 1 480px;
-  display: flex;
-  flex-direction: column;
-}
-.category-column h2 {
-  text-align: center;
-  font-size: 24px;
-  color: #E95420;
-  border-bottom: 2px solid #E95420;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-}
-
-/* --- 記事カード --- */
-.card {
-  background: rgba(34,34,34,0.85);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  text-decoration: none;
-  color: #fff;
-  margin-bottom: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(6px);
-  padding: 15px;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(255,120,0,0.6);
-}
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.card h3 {
-  margin: 12px 0 8px 0;
-  color: #E95420;
-  font-size: 20px;
-}
-.card p {
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* --- フォーム --- */
-.card input, .card textarea, .card button {
-  width: 100%;
-  margin-bottom: 12px;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-}
-.card button {
-  background: #E95420;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.card button:hover {
-  background: #FF6F3C;
-}
-
-/* --- レスポンシブ --- */
-@media(max-width:1000px){
-  .container { flex-direction: column; gap: 40px; }
-}
-@media(max-width:600px){
-  header h1 { font-size: 26px; }
-  header p { font-size: 16px; }
-  .card img { height: 160px; }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TSKYMODE51 Blog</title>
+  <meta name="description" content="Ubuntu設定やクルマDIYなど、初心者でもわかるシンプル解説ブログ。">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#0ea5a4;
+      --container:900px;
+    }
+    body{
+      font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    main{
+      width:100%;
+      max-width:var(--container);
+    }
+    header h1{
+      font-size:1.8rem;
+      margin:0 0 8px;
+      text-align:center;
+    }
+    header p.lead{
+      color:var(--muted);
+      margin:0 0 24px;
+      text-align:center;
+    }
+    .post-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .post-list a{
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:bold;
+    }
+    footer{
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+    @media (max-width:640px){
+      header h1{ font-size:1.4rem; }
+    }
+  </style>
 </head>
 <body>
+  <main>
+    <header>
+      <h1>TSKYMODE51 Blog</h1>
+      <p class="lead">Ubuntu・Linux設定やクルマDIYなど初心者でもわかる解説ブログ 🛠🐧</p>
+    </header>
 
-<header>
-  <h1>AI × Ubuntu × DIYダイハツ・ネイキッド</h1>
-  <p>カーオーディオDIYとUbuntu活用の記録</p>
-</header>
+    <section class="post-list">
+      <p>■ 記事一覧</p>
+      <ul>
+        <li><a href="ubuntu-setup-apt.html">Ubuntuインストール直後にやっておきたい基本設定＆おすすめソフト</a></li>
+        <li><a href="ubuntusetup.html">Ubuntu便利コマンド集</a></li>
+        <li><a href="diy.html">クルマDIYトップ</a></li>
+        <li><a href="diy_deck.html">ネイキッド デッキ交換DIY</a></li>
+        <li><a href="obd2.html">OBD2接続・診断方法</a></li>
+      </ul>
+    </section>
 
-<!-- コンテンツ -->
-<div class="container">
-
-  <!-- DIY -->
-  <div class="category-column" id="DIY">
-    <h2>DIY</h2>
-    <a href="diy_deck.html" class="card">
-      <img src="images/dekc1_HDR.jpg" alt="デッキ取り付け">
-      <h3>デッキ取り付け</h3>
-      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
-    </a>
-  </div>
-
-  <!-- Ubuntu -->
-  <div class="category-column" id="Ubuntu">
-    <h2>Ubuntu</h2>
-    <a href="ubuntusetup.html" class="card">
-      <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ">
-      <h3>Ubuntuセットアップ</h3>
-      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
-    </a>
-    <a href="#" class="card">
-      <img src="images/ubuntu_music.jpg" alt="Ubuntuで音楽再生">
-      <h3>Ubuntuで音楽再生環境</h3>
-      <p>Ubuntuでカーオーディオと連携する音楽環境構築の手順</p>
-    </a>
-  </div>
-
-</div>
-
-<!-- お問い合わせフォーム -->
-<div class="container">
-  <div class="category-column" id="Contact">
-    <h2>お問い合わせ</h2>
-    <form action="https://formspree.io/f/mayvlkzz" method="POST" class="card">
-      <label for="name">お名前</label>
-      <input type="text" id="name" name="name" placeholder="お名前" required>
-
-      <label for="email">メールアドレス</label>
-      <input type="email" id="email" name="_replyto" placeholder="メールアドレス" required>
-
-      <label for="message">メッセージ</label>
-      <textarea id="message" name="message" placeholder="内容" rows="5" required></textarea>
-
-      <button type="submit">送信</button>
-    </form>
-  </div>
-</div>
-
+    <footer>
+      <p>© 2025 TSKYMODE51 Blog</p>
+    </footer>
+  </main>
 </body>
 </html>
