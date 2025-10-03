@@ -81,24 +81,19 @@ header p {
   margin-bottom: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   backdrop-filter: blur(6px);
-  padding: 15px;
+  padding: 20px;
 }
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 25px rgba(255,120,0,0.6);
 }
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
 .card h3 {
-  margin: 12px 0 8px 0;
+  margin: 0 0 8px 0;
   color: #E95420;
   font-size: 20px;
 }
 .card p {
-  margin: 0 0 12px 0;
+  margin: 0;
   font-size: 14px;
   color: #ccc;
 }
@@ -129,7 +124,6 @@ header p {
 @media(max-width:600px){
   header h1 { font-size: 26px; }
   header p { font-size: 16px; }
-  .card img { height: 160px; }
 }
 </style>
 </head>
@@ -147,30 +141,19 @@ header p {
   <div class="category-column" id="DIY">
     <h2>DIY</h2>
     <a href="diy_deck.html" class="card">
-      <img src="images/dekc1_HDR.jpg" alt="デッキ取り付け">
       <h3>デッキ取り付け</h3>
       <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
     </a>
-    <!-- 将来的に複数記事追加可能 -->
-    <!--
-    <a href="diy_amp.html" class="card">
-      <img src="images/amp_install.jpg" alt="アンプ取り付け">
-      <h3>アンプ取り付け</h3>
-      <p>アンプの取り付け作業と配線方法の解説</p>
-    </a>
-    -->
   </div>
 
   <!-- Ubuntu -->
   <div class="category-column" id="Ubuntu">
     <h2>Ubuntu</h2>
     <a href="ubuntusetup.html" class="card">
-      <img src="images/ubuntu_setup.jpg" alt="Ubuntuセットアップ">
       <h3>Ubuntuセットアップ</h3>
       <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
     </a>
     <a href="ubuntu-setup-apt.html" class="card">
-      <img src="images/ubuntu_setup.jpg" alt="Ubuntuインストール直後設定">
       <h3>Ubuntuインストール直後設定</h3>
       <p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p>
     </a>
