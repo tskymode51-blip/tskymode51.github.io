@@ -3,75 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TSKYMODE51 Blog - Linux & DIY</title>
-  <meta name="description" content="Ubuntu設定やクルマDIYなど、初心者でもわかるシンプル解説ブログ。">
+  <title>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</title>
+  <meta name="description" content="Ubuntuをインストールしたら最初にやっておきたい設定や、無料で使えるおすすめソフトを初心者向けにわかりやすく紹介！">
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#111827;
-      --muted:#6b7280;
-      --accent:#0ea5a4;
+      --bg:#ffffff; --text:#111827; --muted:#6b7280; --accent:#0ea5a4;
       --container:900px;
     }
     body{
       font-family: "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-      padding:24px;
-      display:flex;
-      justify-content:center;
+      background:var(--bg); color:var(--text); line-height:1.7; padding:24px;
+      display:flex; justify-content:center;
     }
-    main{
-      width:100%;
-      max-width:var(--container);
-    }
-    header h1{
-      font-size:1.8rem;
-      margin:0 0 8px;
+    main{ width:100%; max-width:var(--container); }
+    header h1{ font-size:1.8rem; margin:0 0 8px; }
+    header p.lead{ color:var(--muted); margin:0 0 18px; }
+    article{ background:#fbfbfb; border:1px solid #eee; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(15,23,42,0.03); }
+    h2{ margin-top:24px; color:var(--text); }
+    ul, ol{ margin-left:1.1rem; }
+    pre{ background:#0f172a; color:#e6eef8; padding:12px; border-radius:6px; overflow:auto; font-size:0.95rem; }
+    .note{ background:#ecfdf5; border-left:4px solid var(--accent); padding:10px; margin:14px 0; border-radius:6px; }
+    footer{ margin-top:18px; color:var(--muted); font-size:0.9rem; text-align:center; }
+    a{ color:var(--accent); text-decoration:none; }
+
+    /* トップに戻るボタン */
+    .top-button{
+      display:inline-block;
+      margin:20px auto 0;
+      padding:10px 18px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:bold;
+      border-radius:6px;
       text-align:center;
+      transition:background 0.2s;
     }
-    header p.lead{
-      color:var(--muted);
-      margin:0 0 24px;
-      text-align:center;
+    .top-button:hover{
+      background:#08918f;
     }
-    .card-list{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-    .card{
-      display:block;
-      background:#fbfbfb;
-      border:1px solid #eee;
-      border-radius:8px;
-      padding:16px;
-      text-decoration:none;
-      color:var(--text);
-      box-shadow:0 2px 8px rgba(15,23,42,0.03);
-      transition:transform 0.1s ease, box-shadow 0.2s ease;
-    }
-    .card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 4px 12px rgba(15,23,42,0.08);
-    }
-    .card h2{
-      font-size:1.2rem;
-      margin:0 0 6px;
-      color:var(--accent);
-    }
-    .card p{
-      font-size:0.95rem;
-      color:var(--muted);
-      margin:0;
-    }
-    footer{
-      margin-top:24px;
-      text-align:center;
-      color:var(--muted);
-      font-size:0.85rem;
-    }
+
     @media (max-width:640px){
       header h1{ font-size:1.4rem; }
     }
@@ -80,29 +50,77 @@
 <body>
   <main>
     <header>
-      <h1>TSKYMODE51 Blog</h1>
-      <p class="lead">Ubuntu・Linux設定や、DIY情報をわかりやすく解説 🛠🐧</p>
+      <h1>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</h1>
+      <p class="lead">Ubuntuを入れた後は、この設定を済ませるだけで快適さが一気にアップします！初心者にもわかりやすくまとめました🐧✨</p>
     </header>
 
-    <section class="card-list">
-      <!-- Ubuntu 記事カード -->
-      <a href="ubuntu-setup-apt.html" class="card">
-        <h2>Ubuntuインストール直後にやっておきたい基本設定＆おすすめソフト</h2>
-        <p>日本語設定・アップデート・便利ツールなどを初心者向けに解説</p>
-      </a>
+    <article>
+      <div class="note">
+        💡 <strong>対象バージョン：</strong> Ubuntu 22.04 / 24.04 LTS（デスクトップ版）
+      </div>
 
-      <!-- 他のUbuntu関連記事を追加する場合はここにカードを追加 -->
-      <!--
-      <a href="ubuntusetup.html" class="card">
-        <h2>Ubuntu便利コマンド集</h2>
-        <p>覚えておくと便利なターミナルコマンドを紹介</p>
-      </a>
-      -->
-    </section>
+      <h2>1️⃣ まずはシステムの最新化（アップデート）</h2>
+      <p>Ubuntuをインストールした直後は、セキュリティや不具合修正の更新がたまっています。まずは以下のコマンドで一括更新しましょう👇</p>
+      <pre><code>sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y</code></pre>
 
-    <footer>
-      <p>© 2025 TSKYMODE51 Blog</p>
-    </footer>
+      <h2>2️⃣ 日本語入力・フォントの設定</h2>
+      <p>日本語環境を快適に使うために、日本語入力（IME）とフォントを整えます。</p>
+      <pre><code>sudo apt install -y language-pack-ja fonts-noto-cjk ibus-mozc
+sudo update-locale LANG=ja_JP.UTF-8</code></pre>
+      <p>インストール後、一度ログアウト → 再ログインすると日本語入力が有効になります⌨️</p>
+
+      <h2>3️⃣ よく使う便利ツールをインストール</h2>
+      <p>Ubuntuは必要最低限のソフトしか入っていないので、自分で必要なツールを追加します👇</p>
+      <pre><code>sudo apt install -y gnome-tweaks gparted vlc</code></pre>
+      <ul>
+        <li><strong>GNOME Tweaks：</strong> 見た目や挙動の細かい設定ツール</li>
+        <li><strong>GParted：</strong> パーティション管理ツール（USBなどの初期化にも便利）</li>
+        <li><strong>VLC：</strong> 動画・音楽プレイヤー（定番）</li>
+      </ul>
+
+      <h2>4️⃣ おすすめ無料ソフト5選</h2>
+      <p>Ubuntuでは多くの高機能な無料ソフトが使えます。特におすすめを5つ紹介👇</p>
+      <ol>
+        <li><strong>LibreOffice：</strong> Word・Excel互換のオフィスソフト</li>
+        <li><strong>GIMP：</strong> Photoshop代替の画像編集ツール</li>
+        <li><strong>VLC：</strong> メディア再生の万能プレイヤー</li>
+        <li><strong>Thunderbird：</strong> メール管理ツール</li>
+        <li><strong>OBS Studio：</strong> 画面録画・配信ソフト（YouTubeにも対応）</li>
+      </ol>
+
+      <h2>5️⃣ 外観・UIのカスタマイズで使いやすく</h2>
+      <p>Ubuntuは見た目や操作感を自由に変えられます。例えば「Tweaks」でDock（ランチャー）の位置を変えたり、拡張機能を入れると便利です👇</p>
+      <ul>
+        <li>Dockを下から左に移動</li>
+        <li>アニメーションやテーマを調整</li>
+        <li>不要なアプリを削除してスッキリ</li>
+      </ul>
+
+      <div class="note">
+        📝 カスタマイズは最初にやっておくと、後で作業がとても楽になります！
+      </div>
+
+      <h2>まとめ 🐧</h2>
+      <p>インストール直後にこの5ステップを済ませるだけで、Ubuntuの使いやすさがグッと向上します✨</p>
+      <ul>
+        <li>✅ システム更新で安全・安定</li>
+        <li>⌨️ 日本語設定で快適な環境</li>
+        <li>🧰 必須ツールと無料ソフトで便利さアップ</li>
+        <li>🎨 UIカスタマイズで自分好みに</li>
+      </ul>
+
+      <!-- TOPへ戻るボタン -->
+      <div style="text-align:center;">
+        <a href="/" class="top-button">⬆ TOPページに戻る</a>
+      </div>
+
+      <footer>
+        <p>この記事が役に立ったら、コメント・シェアしてもらえると嬉しいです！<br>
+        👉 次回は「便利なLinuxコマンド集」を予定してます✨</p>
+      </footer>
+    </article>
   </main>
 </body>
 </html>
