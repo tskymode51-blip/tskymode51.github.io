@@ -52,24 +52,35 @@ header p {
   margin: 30px auto;
   gap: 30px;
   flex-wrap: wrap;
+  justify-content: center; /* 中央寄せ */
+  align-items: flex-start;
   padding: 0 15px;
   position: relative;
   z-index: 1;
 }
 
 .category-column {
-  flex: 1 1 350px;
   display: flex;
   flex-direction: column;
 }
 
-.category-column h2 {
-  text-align: center;
+/* DIYとUbuntuを中央寄せで幅広 */
+#DIY, #Ubuntu {
+  flex: 0 1 400px; /* 幅400px */
+}
+
+/* 問い合わせフォームは小さく右寄せ */
+#Contact {
+  flex: 0 1 250px; /* 幅250px */
+  margin-left: auto; /* 右寄せ */
+}
+
+/* カテゴリ見出しサイズアップ */
+#DIY h2, #Ubuntu h2 {
+  font-size: 28px;
+}
+#Contact h2 {
   font-size: 24px;
-  color: #E95420;
-  border-bottom: 2px solid #E95420;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
 }
 
 /* --- 記事カード --- */
@@ -92,14 +103,14 @@ header p {
 }
 .card h3 {
   margin: 0 0 8px 0;
-  font-size: 20px;
+  font-size: 22px; /* サイズアップ */
   background: linear-gradient(90deg, #FF6F3C, #FFA500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .card p {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   color: #ccc;
 }
 
@@ -125,18 +136,20 @@ header p {
 
 /* --- レスポンシブ --- */
 @media(max-width:1200px){
-  .category-column { flex: 1 1 300px; }
+  #DIY, #Ubuntu { flex: 0 1 350px; }
+  #Contact { flex: 0 1 220px; }
 }
 @media(max-width:1000px){
   .container { flex-direction: column; gap: 40px; }
-  .category-column { flex: 1 1 100%; }
+  #DIY, #Ubuntu, #Contact { flex: 1 1 100%; margin-left: 0; }
 }
 @media(max-width:600px){
   header h1 { font-size: 26px; }
   header p { font-size: 16px; }
-  .category-column h2 { font-size: 20px; }
-  .card h3 { font-size: 18px; }
-  .card p { font-size: 13px; }
+  #DIY h2, #Ubuntu h2 { font-size: 24px; }
+  #Contact h2 { font-size: 20px; }
+  .card h3 { font-size: 20px; }
+  .card p { font-size: 14px; }
   .card button { font-size: 16px; padding: 10px 0; }
 }
 </style>
