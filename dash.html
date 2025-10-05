@@ -64,12 +64,18 @@ header p {
   font-size: 15px;
   color: #ddd;
 }
+/* 画像を半分サイズに表示、クリックで拡大 */
 .article-container img {
-  max-width: 100%;
+  max-width: 50%; /* ページ幅の半分 */
   display: block;
   margin: 18px auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  cursor: pointer; /* クリック可能な印 */
+  transition: transform 0.2s ease;
+}
+.article-container img:hover {
+  transform: scale(1.03); /* ホバーで少し拡大 */
 }
 
 /* --- 戻るボタン --- */
@@ -101,20 +107,30 @@ header p {
 
   <h2>作業風景</h2>
   <p>実際の作業中の写真です。分解や加工の様子を撮影しました。</p>
-  <img src="images/dash1.jpg" alt="ダイハツネイキッド ダッシュボード 作業風景1">
-  <img src="images/dash3.jpg" alt="ダイハツネイキッド ダッシュボード 作業風景2">
+  <a href="images/dash1.jpg" target="_blank">
+    <img src="images/dash1.jpg" alt="ダイハツネイキッド ダッシュボード 作業風景1">
+  </a>
+  <a href="images/dash3.jpg" target="_blank">
+    <img src="images/dash3.jpg" alt="ダイハツネイキッド ダッシュボード 作業風景2">
+  </a>
 
   <h2>加工と整形</h2>
   <p>完全に扉部分を撤去して、上下に棒状の木材で設置面を作成し、板を貼り付けました。<br>
   Rの部分を合わせるのが一番の難所で、ここが最大の加工ポイントです！</p>
-  <img src="images/dash4.jpg" alt="ダイハツネイキッド ダッシュボード フラット加工中">
+  <a href="images/dash4.jpg" target="_blank">
+    <img src="images/dash4.jpg" alt="ダイハツネイキッド ダッシュボード フラット加工中">
+  </a>
 
   <h2>塗装・仕上げ・ステッカー</h2>
   <p>整形後は塗装と仕上げを行いました。さらにアクセントとして「テッドのシール」を貼って、ちょっと賑やかな仕上がりにしてみました（笑）。<br>
   フラット化により、助手席のスペースが広くなり？ｗ 機器のレイアウト自由度も上がり、見た目もスッキリしました。</p>
-  <img src="images/dash5.jpg" alt="ダイハツネイキッド ダッシュボード 塗装とテッドシール">
-  <img src="images/dash6.jpg" alt="ダイハツネイキッド ダッシュボード ステッカーベタ貼り後">
-  
+  <a href="images/dash5.jpg" target="_blank">
+    <img src="images/dash5.jpg" alt="ダイハツネイキッド ダッシュボード 塗装とテッドシール">
+  </a>
+  <a href="images/dash6.jpg" target="_blank">
+    <img src="images/dash6.jpg" alt="ダイハツネイキッド ダッシュボード ステッカーベタ貼り後">
+  </a>
+
   <a href="index.html" class="back-button">← トップに戻る</a>
 
 </div>
