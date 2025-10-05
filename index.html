@@ -51,30 +51,25 @@ header p {
   max-width: 1200px;
   margin: 30px auto;
   gap: 30px;
-  flex-wrap: nowrap; /* 横並び維持 */
-  justify-content: center; /* 中央寄せ */
+  flex-wrap: wrap;
+  justify-content: space-between; /* 左メイン＋右問い合わせ */
   align-items: flex-start;
   position: relative;
   z-index: 1;
 }
 
-/* 中央寄せ用にDIYとUbuntuをまとめる */
-.main-columns {
-  display: flex;
-  gap: 30px;
-  flex-direction: column;
-  flex: 0 1 850px; /* 幅指定で中央寄せ */
-}
-
-/* 個別列幅 */
+/* DIYとUbuntu列 */
 #DIY, #Ubuntu {
-  flex: 1 1 400px;
+  flex: 0 1 400px; /* 幅固定 */
 }
 
-/* 問い合わせフォーム右端固定 */
+/* 中央寄せ風に見せるため左右マージン自動 */
+#DIY { margin-right: 20px; }
+#Ubuntu { margin-left: 20px; }
+
+/* 問い合わせフォーム右端 */
 #Contact {
   flex: 0 1 250px; /* 幅小さめ */
-  margin-left: auto; /* 右寄せ */
 }
 
 /* カテゴリ見出しサイズアップ */
@@ -101,7 +96,7 @@ header p {
 }
 .card h3 {
   margin: 0 0 8px 0;
-  font-size: 22px; /* サイズアップ */
+  font-size: 22px;
   background: linear-gradient(90deg, #FF6F3C, #FFA500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -134,13 +129,12 @@ header p {
 
 /* --- レスポンシブ --- */
 @media(max-width:1200px){
-  .main-columns { flex: 0 1 700px; }
-  #DIY, #Ubuntu { flex: 1 1 350px; }
+  #DIY, #Ubuntu { flex: 0 1 350px; }
   #Contact { flex: 0 1 220px; }
 }
 @media(max-width:1000px){
   .container { flex-direction: column; gap: 40px; }
-  .main-columns, #Contact { flex: 1 1 100%; margin-left: 0; }
+  #DIY, #Ubuntu, #Contact { flex: 1 1 100%; margin-left: 0; margin-right: 0; }
 }
 @media(max-width:600px){
   header h1 { font-size: 26px; }
@@ -162,35 +156,30 @@ header p {
 
 <div class="container">
 
-  <!-- 中央寄せメイン列 -->
-  <div class="main-columns">
+  <!-- DIY -->
+  <div class="category-column" id="DIY">
+    <h2>DIY</h2>
+    <a href="diy_deck.html" class="card">
+      <h3>デッキ取り付け</h3>
+      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
+    </a>
+    <a href="diy_dashboard.html" class="card">
+      <h3>ダッシュボードフラット化</h3>
+      <p>ネイキッドのダッシュボードをフラットにしてスッキリ化</p>
+    </a>
+  </div>
 
-    <!-- DIY -->
-    <div class="category-column" id="DIY">
-      <h2>DIY</h2>
-      <a href="diy_deck.html" class="card">
-        <h3>デッキ取り付け</h3>
-        <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
-      </a>
-      <a href="diy_dashboard.html" class="card">
-        <h3>ダッシュボードフラット化</h3>
-        <p>ネイキッドのダッシュボードをフラットにしてスッキリ化</p>
-      </a>
-    </div>
-
-    <!-- Ubuntu -->
-    <div class="category-column" id="Ubuntu">
-      <h2>Ubuntu</h2>
-      <a href="ubuntusetup.html" class="card">
-        <h3>Ubuntuセットアップ</h3>
-        <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
-      </a>
-      <a href="ubuntu-setup-apt.html" class="card">
-        <h3>Ubuntuインストール直後設定</h3>
-        <p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p>
-      </a>
-    </div>
-
+  <!-- Ubuntu -->
+  <div class="category-column" id="Ubuntu">
+    <h2>Ubuntu</h2>
+    <a href="ubuntusetup.html" class="card">
+      <h3>Ubuntuセットアップ</h3>
+      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
+    </a>
+    <a href="ubuntu-setup-apt.html" class="card">
+      <h3>Ubuntuインストール直後設定</h3>
+      <p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p>
+    </a>
   </div>
 
   <!-- お問い合わせフォーム右端 -->
