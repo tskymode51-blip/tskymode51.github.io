@@ -22,7 +22,7 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.45); /* 少し濃くして文字を鮮明に */
   z-index: -1;
 }
 
@@ -52,24 +52,25 @@ header p {
   margin: 30px auto;
   gap: 30px;
   flex-wrap: wrap;
-  justify-content: space-between; /* 左メイン＋右問い合わせ */
+  justify-content: center; /* 中央寄せ */
   align-items: flex-start;
   position: relative;
   z-index: 1;
 }
 
-/* DIYとUbuntu列 */
+/* DIY・Ubuntu列 */
 #DIY, #Ubuntu {
   flex: 0 1 400px; /* 幅固定 */
 }
 
-/* 中央寄せ風に見せるため左右マージン自動 */
+/* DIYとUbuntuを中央寄せ風 */
 #DIY { margin-right: 20px; }
 #Ubuntu { margin-left: 20px; }
 
 /* 問い合わせフォーム右端 */
 #Contact {
   flex: 0 1 250px; /* 幅小さめ */
+  margin-left: 30px;
 }
 
 /* カテゴリ見出しサイズアップ */
@@ -78,7 +79,7 @@ header p {
 
 /* --- 記事カード --- */
 .card {
-  background: rgba(34,34,34,0.85);
+  background: rgba(34,34,34,0.88); /* 少し濃くして背景と文字コントラスト改善 */
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.6);
@@ -130,7 +131,7 @@ header p {
 /* --- レスポンシブ --- */
 @media(max-width:1200px){
   #DIY, #Ubuntu { flex: 0 1 350px; }
-  #Contact { flex: 0 1 220px; }
+  #Contact { flex: 0 1 220px; margin-left: 20px; }
 }
 @media(max-width:1000px){
   .container { flex-direction: column; gap: 40px; }
