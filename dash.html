@@ -34,13 +34,13 @@ header {
 }
 header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 56px; /* 見出し大きく */
   letter-spacing: 1.5px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 header p {
-  margin: 8px 0 0 0;
-  font-size: 16px;
+  margin: 12px 0 0 0;
+  font-size: 32px; /* サブタイトル大きく */
   text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
@@ -59,23 +59,24 @@ header p {
   margin-top: 25px;
   border-bottom: 2px solid #E95420;
   padding-bottom: 5px;
+  font-size: 48px; /* 見出し大きく */
 }
 .article-container p {
-  font-size: 15px;
+  font-size: 30px; /* 本文大きく */
   color: #ddd;
 }
 /* 画像を半分サイズに表示、クリックで拡大 */
 .article-container img {
-  max-width: 50%; /* ページ幅の半分 */
+  max-width: 50%;
   display: block;
   margin: 18px auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-  cursor: pointer; /* クリック可能な印 */
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 .article-container img:hover {
-  transform: scale(1.03); /* ホバーで少し拡大 */
+  transform: scale(1.03);
 }
 
 /* --- 戻るボタン --- */
@@ -87,7 +88,8 @@ header p {
   background: #E95420;
   color: #fff;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 20px 30px; /* ボタンも大きく */
+  font-size: 24px;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
