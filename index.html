@@ -45,7 +45,7 @@ header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,
 
 .category-column { display:flex; flex-direction:column; }
 #DIY, #Ubuntu { flex:0 1 400px; }
-#Contact { flex:0 1 250px; margin-left:auto; }
+#Contact { flex:0 1 250px; display:flex; flex-direction:column; gap:15px; }
 
 #DIY h2, #Ubuntu h2 { font-size:28px; color:orange; }
 #Contact h2 { font-size:24px; color:orange; }
@@ -76,22 +76,25 @@ header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,
 }
 .card p { margin:0; font-size:15px; color:#ccc; }
 
-a.bbs-link {
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 15px;
+/* 掲示板ボタン */
+.bbs-link {
+  display:block;
+  width:100%;
+  padding:15px 0;
   background: linear-gradient(90deg,#FF6F3C,#FFA500);
   color:#fff;
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
+  font-size:16px;
+  text-align:center;
   transition: transform 0.2s;
 }
-a.bbs-link:hover { transform:scale(1.05); }
+.bbs-link:hover { transform:scale(1.05); }
 
 @media(max-width:1200px){
   #DIY, #Ubuntu { flex: 0 1 350px; }
-  #Contact { flex: 0 1 220px; }
+  #Contact { flex: 0 1 250px; }
 }
 @media(max-width:1000px){
   .container { flex-direction: column; gap: 40px; }
@@ -140,13 +143,11 @@ a.bbs-link:hover { transform:scale(1.05); }
       <textarea id="message" name="message" placeholder="内容" rows="5" required></textarea>
       <button type="submit">送信</button>
     </form>
+
+    <!-- 掲示板ボタン（問い合わせフォームの下に表示されるように） -->
+    <a href="bbs.html" class="bbs-link">掲示板へコメント 💬</a>
   </div>
 
-</div>
-
-<!-- 掲示板へのリンク -->
-<div style="text-align:center; margin:50px 0;">
-  <a href="bbs.html" class="bbs-link">掲示板へコメント 💬</a>
 </div>
 
 </body>
