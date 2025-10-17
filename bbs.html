@@ -37,9 +37,6 @@
       font-size: 15px;
       color: #444;
     }
-    .comment-box {
-      margin-top: 2rem;
-    }
     a.back {
       display: inline-block;
       margin-top: 2rem;
@@ -51,12 +48,9 @@
     a.back:hover {
       color: #E95420;
     }
-    /* Utterancesを日本語風に見せる */
-    .utterances {
-      border: 1px solid #ccc !important;
-      border-radius: 8px;
-      padding: 8px;
-      background: #fafafa;
+    /* Disqus コメント枠 */
+    #disqus_thread {
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -69,21 +63,28 @@
   <main>
     <p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
 
-    <div class="comment-box">
-      <!-- 👇 修正済み Utterances コメント欄 -->
-      <script src="https://utteranc.es/client.js"
-              repo="tskymode51-blip/tskymode51.github.io"
-              issue-term="pathname"
-              theme="github-light"
-              crossorigin="anonymous"
-              async>
-      </script>
-    </div>
+    <!-- Disqus コメント欄 -->
+    <div id="disqus_thread"></div>
+    <script>
+      /**
+       * ここでサイト固有のDisqus短縮名 (shortname) を設定します
+       * Disqusアカウント作成後に取得可能
+       */
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = "bbs"; // ページ固有の識別子
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js'; // ←ここを自分のshortnameに置換
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
 
-    <p style="margin-top: 1.5rem; font-size: 13px; color: #666; text-align:center;">
-      ※ コメントにはGitHubアカウントが必要です。<br>
-      ログイン後に「Comment」ボタンを押してください。
-    </p>
+    <noscript>
+      コメントを見るには JavaScript を有効にしてください。
+    </noscript>
 
     <div style="text-align:center;">
       <a href="index.html" class="back">← トップページに戻る</a>
