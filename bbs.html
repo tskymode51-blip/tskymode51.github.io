@@ -51,22 +51,12 @@
     a.back:hover {
       color: #E95420;
     }
-
-    /* --- Utterances を日本語風に見せるCSS --- */
+    /* Utterancesを日本語風に見せる */
     .utterances {
       border: 1px solid #ccc !important;
       border-radius: 8px;
       padding: 8px;
       background: #fafafa;
-    }
-    /* iframe内のテキストは直接翻訳できないが、枠を日本語化して雰囲気を出す */
-    .comment-header::before {
-      content: "💬 コメント一覧（GitHubアカウントで投稿できます）";
-      display: block;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: #222;
     }
   </style>
 </head>
@@ -80,7 +70,7 @@
     <p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
 
     <div class="comment-box">
-      <!-- 👇 Utterances コメント欄 -->
+      <!-- 👇 修正済み Utterances コメント欄 -->
       <script src="https://utteranc.es/client.js"
               repo="tskymode51-blip/tskymode51.github.io"
               issue-term="pathname"
@@ -92,7 +82,7 @@
 
     <p style="margin-top: 1.5rem; font-size: 13px; color: #666; text-align:center;">
       ※ コメントにはGitHubアカウントが必要です。<br>
-      ログイン後に「コメントする」ボタンを押してください。
+      ログイン後に「Comment」ボタンを押してください。
     </p>
 
     <div style="text-align:center;">
