@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>AI × Ubuntu × DIYダイハツ・ネイキッド</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body {
   margin: 0;
@@ -21,6 +22,7 @@ body::before {
   background: rgba(0,0,0,0.4);
   z-index: -1;
 }
+
 header {
   background: linear-gradient(90deg, #E95420, #FF6F3C);
   text-align: center;
@@ -29,6 +31,7 @@ header {
 }
 header h1 { margin:0; font-size:32px; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
 header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); }
+
 .container {
   display:flex;
   max-width:1200px;
@@ -39,11 +42,14 @@ header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,
   align-items:flex-start;
   padding:0 15px;
 }
+
 .category-column { display:flex; flex-direction:column; }
 #DIY, #Ubuntu { flex:0 1 400px; }
 #Contact { flex:0 1 250px; margin-left:auto; }
+
 #DIY h2, #Ubuntu h2 { font-size:28px; color:orange; }
 #Contact h2 { font-size:24px; color:orange; }
+
 .card {
   background: rgba(34,34,34,0.85);
   border-radius:14px;
@@ -69,6 +75,7 @@ header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,
   -webkit-text-fill-color:transparent;
 }
 .card p { margin:0; font-size:15px; color:#ccc; }
+
 a.bbs-link {
   display:inline-block;
   margin-top:20px;
@@ -77,9 +84,28 @@ a.bbs-link {
   color:#fff;
   text-decoration:none;
   border-radius:8px;
+  font-weight:bold;
   transition: transform 0.2s;
 }
 a.bbs-link:hover { transform:scale(1.05); }
+
+@media(max-width:1200px){
+  #DIY, #Ubuntu { flex: 0 1 350px; }
+  #Contact { flex: 0 1 220px; }
+}
+@media(max-width:1000px){
+  .container { flex-direction: column; gap: 40px; }
+  #DIY, #Ubuntu, #Contact { flex: 1 1 100%; margin-left: 0; }
+}
+@media(max-width:600px){
+  header h1 { font-size: 26px; }
+  header p { font-size: 16px; }
+  #DIY h2, #Ubuntu h2 { font-size: 24px; }
+  #Contact h2 { font-size: 20px; }
+  .card h3 { font-size: 20px; }
+  .card p { font-size: 14px; }
+  .card button { font-size: 16px; padding: 10px 0; }
+}
 </style>
 </head>
 <body>
@@ -118,6 +144,7 @@ a.bbs-link:hover { transform:scale(1.05); }
 
 </div>
 
+<!-- 掲示板へのリンク -->
 <div style="text-align:center; margin:50px 0;">
   <a href="bbs.html" class="bbs-link">掲示板へコメント 💬</a>
 </div>
