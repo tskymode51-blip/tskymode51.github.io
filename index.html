@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <title>AI × Ubuntu × DIYダイハツ・ネイキッド</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-/* --- ベース --- */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #fff;
   line-height: 1.6;
-  overflow-x: hidden;
   background: url('images/haikei1.jpg') no-repeat center center fixed;
   background-size: cover;
-  position: relative;
 }
 body::before {
   content: '';
@@ -25,135 +21,65 @@ body::before {
   background: rgba(0,0,0,0.4);
   z-index: -1;
 }
-
-/* --- ヘッダー --- */
 header {
   background: linear-gradient(90deg, #E95420, #FF6F3C);
   text-align: center;
   padding: 40px 15px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
-header h1 {
-  margin: 0;
-  font-size: 32px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-header p {
-  margin: 8px 0 0 0;
-  font-size: 18px;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-}
-
-/* --- コンテンツ --- */
+header h1 { margin:0; font-size:32px; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
+header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); }
 .container {
-  display: flex;
-  max-width: 1200px;
-  margin: 30px auto;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center; /* 中央寄せ */
-  align-items: flex-start;
-  padding: 0 15px;
-  position: relative;
-  z-index: 1;
+  display:flex;
+  max-width:1200px;
+  margin:30px auto;
+  gap:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  padding:0 15px;
 }
-
-.category-column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* DIYとUbuntuを中央寄せで幅広 */
-#DIY, #Ubuntu {
-  flex: 0 1 400px; /* 幅400px */
-}
-
-/* 問い合わせフォームは小さく右寄せ */
-#Contact {
-  flex: 0 1 250px; /* 幅250px */
-  margin-left: auto; /* 右寄せ */
-}
-
-/* カテゴリ見出しサイズアップ */
-#DIY h2, #Ubuntu h2 {
-  font-size: 28px;
-  color: #FFA500; /* オレンジ文字 */
-}
-#Contact h2 {
-  font-size: 24px;
-  color: #FFA500; /* オレンジ文字 */
-}
-
-/* --- 記事カード --- */
+.category-column { display:flex; flex-direction:column; }
+#DIY, #Ubuntu { flex:0 1 400px; }
+#Contact { flex:0 1 250px; margin-left:auto; }
+#DIY h2, #Ubuntu h2 { font-size:28px; color:orange; }
+#Contact h2 { font-size:24px; color:orange; }
 .card {
   background: rgba(34,34,34,0.85);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  text-decoration: none;
-  color: #fff;
-  margin-bottom: 25px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.6);
+  text-decoration:none;
+  color:#fff;
+  margin-bottom:25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   backdrop-filter: blur(6px);
-  padding: 20px;
+  padding:20px;
 }
 .card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(255,140,0,0.8);
+  box-shadow:0 10px 25px rgba(255,140,0,0.8);
   background: rgba(50,50,50,0.95);
 }
 .card h3 {
-  margin: 0 0 8px 0;
-  font-size: 22px; /* サイズアップ */
+  margin:0 0 8px 0;
+  font-size:22px;
   background: linear-gradient(90deg, #FF6F3C, #FFA500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
-.card p {
-  margin: 0;
-  font-size: 15px;
-  color: #ccc;
+.card p { margin:0; font-size:15px; color:#ccc; }
+a.bbs-link {
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 15px;
+  background: linear-gradient(90deg,#FF6F3C,#FFA500);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  transition: transform 0.2s;
 }
-
-/* --- フォーム --- */
-.card input, .card textarea, .card button {
-  width: 100%;
-  margin-bottom: 12px;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-}
-.card button {
-  background: linear-gradient(90deg, #FF6F3C, #FFA500);
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.card button:hover {
-  background: linear-gradient(90deg, #FFA500, #FF6F3C);
-  transform: scale(1.05);
-}
-
-/* --- レスポンシブ --- */
-@media(max-width:1200px){
-  #DIY, #Ubuntu { flex: 0 1 350px; }
-  #Contact { flex: 0 1 220px; }
-}
-@media(max-width:1000px){
-  .container { flex-direction: column; gap: 40px; }
-  #DIY, #Ubuntu, #Contact { flex: 1 1 100%; margin-left: 0; }
-}
-@media(max-width:600px){
-  header h1 { font-size: 26px; }
-  header p { font-size: 16px; }
-  #DIY h2, #Ubuntu h2 { font-size: 24px; }
-  #Contact h2 { font-size: 20px; }
-  .card h3 { font-size: 20px; }
-  .card p { font-size: 14px; }
-  .card button { font-size: 16px; padding: 10px 0; }
-}
+a.bbs-link:hover { transform:scale(1.05); }
 </style>
 </head>
 <body>
@@ -165,58 +91,35 @@ header p {
 
 <div class="container">
 
-  <!-- DIY -->
   <div class="category-column" id="DIY">
     <h2>DIY</h2>
-    <a href="diy_deck.html" class="card">
-      <h3>デッキ取り付け</h3>
-      <p>カロッツェリア製デッキの取り付け完成写真と作業記録</p>
-    </a>
-    <a href="dash.html" class="card">
-      <h3>ダッシュボードフラット化</h3>
-      <p>ネイキッドのダッシュボードをフラットにしてスッキリ化</p>
-    </a>
+    <a href="diy_deck.html" class="card"><h3>デッキ取り付け</h3><p>カロッツェリア製デッキの取り付け完成写真と作業記録</p></a>
+    <a href="dash.html" class="card"><h3>ダッシュボードフラット化</h3><p>ネイキッドのダッシュボードをフラットにしてスッキリ化</p></a>
   </div>
 
-  <!-- Ubuntu -->
   <div class="category-column" id="Ubuntu">
     <h2>Ubuntu</h2>
-    <a href="ubuntusetup.html" class="card">
-      <h3>Ubuntuセットアップ</h3>
-      <p>Ubuntuの初期設定や便利ツール導入方法の解説</p>
-    </a>
-    <a href="ubuntu-setup-apt.html" class="card">
-      <h3>Ubuntuインストール直後設定</h3>
-      <p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p>
-    </a>
+    <a href="ubuntusetup.html" class="card"><h3>Ubuntuセットアップ</h3><p>Ubuntuの初期設定や便利ツール導入方法の解説</p></a>
+    <a href="ubuntu-setup-apt.html" class="card"><h3>Ubuntuインストール直後設定</h3><p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p></a>
   </div>
 
-  <!-- お問い合わせフォーム -->
   <div class="category-column" id="Contact">
     <h2>お問い合わせ</h2>
     <form action="https://formspree.io/f/mayvlkzz" method="POST" class="card">
       <label for="name">お名前</label>
       <input type="text" id="name" name="name" placeholder="お名前" required>
-
       <label for="email">メールアドレス</label>
       <input type="email" id="email" name="_replyto" placeholder="メールアドレス" required>
-
       <label for="message">メッセージ</label>
       <textarea id="message" name="message" placeholder="内容" rows="5" required></textarea>
-
       <button type="submit">送信</button>
     </form>
   </div>
 
-  <!-- 掲示板リンク -->
-  <div class="category-column" id="BBS">
-    <h2>掲示板</h2>
-    <a href="bbs.html" class="card">
-      <h3>コメントはこちら💬</h3>
-      <p>GitHub不要、誰でもコメントできます（Disqus版）</p>
-    </a>
-  </div>
+</div>
 
+<div style="text-align:center; margin:50px 0;">
+  <a href="bbs.html" class="bbs-link">掲示板へコメント 💬</a>
 </div>
 
 </body>
