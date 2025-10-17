@@ -7,37 +7,66 @@
   <style>
     body {
       font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background-color: #f8f9fa;
+      background-color: #f0f0f5;
       color: #333;
       margin: 0;
       padding: 0;
     }
     header {
-      background: #222;
+      background: linear-gradient(90deg, #E95420, #FF6F3C);
       color: #fff;
       text-align: center;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
     }
     main {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 2rem;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
     h1 {
       text-align: center;
+      font-size: 26px;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      font-size: 15px;
+      color: #444;
     }
     .comment-box {
       margin-top: 2rem;
     }
     a.back {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 2rem;
       text-decoration: none;
       color: #FF6F3C;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+    a.back:hover {
+      color: #E95420;
+    }
+
+    /* --- Utterances を日本語風に見せるCSS --- */
+    .utterances {
+      border: 1px solid #ccc !important;
+      border-radius: 8px;
+      padding: 8px;
+      background: #fafafa;
+    }
+    /* iframe内のテキストは直接翻訳できないが、枠を日本語化して雰囲気を出す */
+    .comment-header::before {
+      content: "💬 コメント一覧（GitHubアカウントで投稿できます）";
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #222;
     }
   </style>
 </head>
@@ -48,7 +77,7 @@
   </header>
 
   <main>
-    <p>車DIYやオーディオカスタムの話題はこちらへ💬</p>
+    <p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
 
     <div class="comment-box">
       <!-- 👇 Utterances コメント欄 -->
@@ -61,7 +90,14 @@
       </script>
     </div>
 
-    <a href="index.html" class="back">← トップに戻る</a>
+    <p style="margin-top: 1.5rem; font-size: 13px; color: #666; text-align:center;">
+      ※ コメントにはGitHubアカウントが必要です。<br>
+      ログイン後に「コメントする」ボタンを押してください。
+    </p>
+
+    <div style="text-align:center;">
+      <a href="index.html" class="back">← トップページに戻る</a>
+    </div>
   </main>
 
 </body>
