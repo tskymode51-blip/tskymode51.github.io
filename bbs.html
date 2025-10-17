@@ -1,95 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TSKYMODE51 掲示板</title>
-  <style>
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background-color: #f0f0f5;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: linear-gradient(90deg, #E95420, #FF6F3C);
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 0;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    h1 {
-      text-align: center;
-      font-size: 26px;
-      margin-bottom: 1rem;
-    }
-    p {
-      text-align: center;
-      font-size: 15px;
-      color: #444;
-    }
-    a.back {
-      display: inline-block;
-      margin-top: 2rem;
-      text-decoration: none;
-      color: #FF6F3C;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    a.back:hover {
-      color: #E95420;
-    }
-    /* Disqus コメント枠 */
-    #disqus_thread {
-      margin-top: 2rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSKYMODE51 掲示板</title>
+<style>
+body { font-family:"Hiragino Kaku Gothic ProN",sans-serif; background:#f0f0f5; margin:0; padding:0; }
+header { background: linear-gradient(90deg,#E95420,#FF6F3C); color:#fff; text-align:center; padding:1.5rem 0; }
+main { max-width:800px; margin:2rem auto; padding:2rem; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+h1 { text-align:center; color:#FFA500; }
+form { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; }
+input, textarea, button { padding:8px; border-radius:6px; border:1px solid #ccc; font-size:14px; width:100%; }
+button { background:linear-gradient(90deg,#FF6F3C,#FFA500); color:#fff; cursor:pointer; }
+button:hover { opacity:0.9; }
+.comments { margin-top:2rem; }
+.comment { padding:0.8rem; border-bottom:1px solid #ddd; }
+a.back { display:inline-block; margin-top:2rem; text-decoration:none; color:#FF6F3C; font-weight:bold; }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>TSKYMODE51 掲示板</h1>
-  </header>
+<header>
+  <h1>TSKYMODE51 掲示板</h1>
+</header>
 
-  <main>
-    <p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
+<main>
+<p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
 
-    <!-- Disqus コメント欄 -->
-    <div id="disqus_thread"></div>
-    <script>
-      /**
-       * ここでサイト固有のDisqus短縮名 (shortname) を設定します
-       * Disqusアカウント作成後に取得可能
-       */
-      var disqus_config = function () {
-        this.page.url = window.location.href;
-        this.page.identifier = "bbs"; // ページ固有の識別子
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js'; // ←ここを自分のshortnameに置換
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
+<!-- コメントフォーム -->
+<form id="comment-form" action="https://staticman3.herokuapp.com/v3/entry/github/USERNAME/REPO/main" method="POST">
+  <input type="text" name="fields[name]" placeholder="名前" required>
+  <input type="email" name="fields[email]" placeholder="メールアドレス" required>
+  <textarea name="fields[message]" placeholder="コメント内容" rows="5" required></textarea>
+  <button type="submit">送信</button>
+</form>
 
-    <noscript>
-      コメントを見るには JavaScript を有効にしてください。
-    </noscript>
+<!-- コメント一覧 -->
+<div class="comments">
+  <!-- マージされたコメントをここに表示 -->
+</div>
 
-    <div style="text-align:center;">
-      <a href="index.html" class="back">← トップページに戻る</a>
-    </div>
-  </main>
+<div style="text-align:center;">
+  <a href="index.html" class="back">← トップページに戻る</a>
+</div>
+
+</main>
 
 </body>
 </html>
