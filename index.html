@@ -52,7 +52,7 @@ header p {
   margin: 30px auto;
   gap: 30px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* 中央寄せ */
   align-items: flex-start;
   padding: 0 15px;
   position: relative;
@@ -66,21 +66,20 @@ header p {
 
 /* DIYとUbuntuを中央寄せで幅広 */
 #DIY, #Ubuntu {
-  flex: 0 1 400px;
+  flex: 0 1 400px; /* 幅400px */
 }
 
 /* 問い合わせフォームは小さく右寄せ */
 #Contact {
-  flex: 0 1 250px;
-  margin-left: auto;
+  flex: 0 1 250px; /* 幅250px */
+  margin-left: auto; /* 右寄せ */
 }
 
-/* カテゴリ見出しサイズアップ */
-#DIY h2, #Ubuntu h2 {
+/* --- カテゴリ見出し --- */
+#DIY h2, #Ubuntu h2, #Contact h2 {
   font-size: 28px;
-}
-#Contact h2 {
-  font-size: 24px;
+  color: #FFA500; /* オレンジ色に変更 */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 /* --- 記事カード --- */
@@ -103,7 +102,7 @@ header p {
 }
 .card h3 {
   margin: 0 0 8px 0;
-  font-size: 22px;
+  font-size: 22px; /* サイズアップ */
   background: linear-gradient(90deg, #FF6F3C, #FFA500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -146,22 +145,10 @@ header p {
 @media(max-width:600px){
   header h1 { font-size: 26px; }
   header p { font-size: 16px; }
-  #DIY h2, #Ubuntu h2 { font-size: 24px; }
-  #Contact h2 { font-size: 20px; }
+  #DIY h2, #Ubuntu h2, #Contact h2 { font-size: 24px; }
   .card h3 { font-size: 20px; }
   .card p { font-size: 14px; }
   .card button { font-size: 16px; padding: 10px 0; }
-}
-
-/* --- コメントエリア --- */
-.comment-box {
-  max-width: 900px;
-  margin: 40px auto;
-  background: rgba(255,255,255,0.9);
-  color: #000;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 </style>
 </head>
@@ -217,18 +204,6 @@ header p {
     </form>
   </div>
 
-</div>
-
-<!-- 👇 ここがUtterancesの掲示板部分 -->
-<div class="comment-box">
-  <h2>コメント掲示板 💬</h2>
-  <script src="https://utteranc.es/client.js"
-          repo="tskymode51-blip/tskymode51.github.io"
-          issue-term="pathname"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
 </div>
 
 </body>
