@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSKYMODE51 掲示板</title>
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .comment-box {
+      margin-top: 2rem;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #FF6F3C;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TSKYMODE51 掲示板</h1>
+  </header>
+
+  <main>
+    <p>車DIYやオーディオカスタムの話題はこちらへ💬</p>
+
+    <div class="comment-box">
+      <!-- 👇 Utterances コメント欄 -->
+      <script src="https://utteranc.es/client.js"
+              repo="tskymode51-blip/tskymode51.github.io"
+              issue-term="pathname"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+
+    <a href="index.html" class="back">← トップに戻る</a>
+  </main>
+
+</body>
+</html>
