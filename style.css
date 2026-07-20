@@ -115,3 +115,425 @@ a {
     opacity:0.8;
 
 }
+/* =========================
+   ナビゲーション
+========================= */
+
+nav {
+
+    background:#222;
+
+    color:white;
+
+}
+
+
+.nav-inner {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.logo {
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+
+nav ul {
+
+    list-style:none;
+
+    display:flex;
+
+    gap:25px;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+
+nav li a {
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+nav li a:hover {
+
+    color:#ff6600;
+
+}
+
+
+
+/* =========================
+   メインエリア
+========================= */
+
+
+main {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 20px;
+
+}
+
+
+
+.intro {
+
+    background:white;
+
+    padding:35px;
+
+    margin-bottom:40px;
+
+    border-radius:12px;
+
+}
+
+
+
+.section-title {
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* =========================
+   記事カード
+========================= */
+
+
+.cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.card {
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+.card img {
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+
+
+.card-body {
+
+    padding:25px;
+
+}
+
+
+
+.category {
+
+    display:inline-block;
+
+    background:#ff6600;
+
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+
+
+.card h3 {
+
+    margin:15px 0;
+
+}
+
+
+
+.card a {
+
+    color:#ff6600;
+
+    font-weight:bold;
+
+}
+
+
+
+/* =========================
+   サイドバー
+========================= */
+
+
+aside {
+
+    margin-top:50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+.profile,
+.ranking {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+}
+
+
+
+.profile img {
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+.ranking ol {
+
+    padding-left:20px;
+
+}
+/* =========================
+   掲示板ボタン
+========================= */
+
+
+.bbs {
+
+    display:block;
+
+    background:#0066cc;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    margin-top:25px;
+
+    border-radius:30px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+.bbs:hover {
+
+    opacity:0.8;
+
+}
+
+
+
+/* =========================
+   お問い合わせ
+========================= */
+
+
+.contact {
+
+    background:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    margin-top:40px;
+
+}
+
+
+
+.contact-button {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#333;
+
+    color:white;
+
+    padding:14px 35px;
+
+    border-radius:30px;
+
+}
+
+
+
+/* =========================
+   フッター
+========================= */
+
+
+footer {
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:40px;
+
+    font-size:14px;
+
+}
+
+
+
+/* =========================
+   スマホ対応
+========================= */
+
+
+@media screen and (max-width:768px) {
+
+
+.hero {
+
+    height:420px;
+
+}
+
+
+.hero h1 {
+
+    font-size:32px;
+
+}
+
+
+.hero h2 {
+
+    font-size:22px;
+
+}
+
+
+
+.nav-inner {
+
+    flex-direction:column;
+
+}
+
+
+
+nav ul {
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-top:15px;
+
+}
+
+
+
+.cards {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+aside {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.section-title {
+
+    font-size:26px;
+
+}
+
+
+
+}
