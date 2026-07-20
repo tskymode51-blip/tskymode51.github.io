@@ -1,154 +1,170 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
-<title>AI × Ubuntu × DIYダイハツ・ネイキッド</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  background: url('images/haikei1.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}
+<title>ダイハツ ネイキッド DIY整備＆チョイカスタム</title>
 
-header {
-  background: linear-gradient(90deg, #E95420, #FF6F3C);
-  text-align: center;
-  padding: 40px 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-header h1 { margin:0; font-size:32px; letter-spacing:2px; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
-header p { margin:8px 0 0 0; font-size:18px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); }
+<link rel="stylesheet" href="style.css">
 
-.container {
-  display:flex;
-  max-width:1200px;
-  margin:30px auto;
-  gap:30px;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:flex-start;
-  padding:0 15px;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.category-column { display:flex; flex-direction:column; }
-#DIY, #Ubuntu { flex:0 1 400px; }
-#Contact { flex:0 1 250px; display:flex; flex-direction:column; gap:15px; }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 
-#DIY h2, #Ubuntu h2 { font-size:28px; color:orange; }
-#Contact h2 { font-size:24px; color:orange; }
-
-.card {
-  background: rgba(34,34,34,0.85);
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,0.6);
-  text-decoration:none;
-  color:#fff;
-  margin-bottom:25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  backdrop-filter: blur(6px);
-  padding:20px;
-}
-.card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow:0 10px 25px rgba(255,140,0,0.8);
-  background: rgba(50,50,50,0.95);
-}
-.card h3 {
-  margin:0 0 8px 0;
-  font-size:22px;
-  background: linear-gradient(90deg, #FF6F3C, #FFA500);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.card p { margin:0; font-size:15px; color:#ccc; }
-
-/* 掲示板ボタン */
-.bbs-link {
-  display:block;
-  width:100%;
-  padding:15px 0;
-  background: linear-gradient(90deg,#FF6F3C,#FFA500);
-  color:#fff;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:bold;
-  font-size:16px;
-  text-align:center;
-  transition: transform 0.2s;
-}
-.bbs-link:hover { transform:scale(1.05); }
-
-@media(max-width:1200px){
-  #DIY, #Ubuntu { flex: 0 1 350px; }
-  #Contact { flex: 0 1 250px; }
-}
-@media(max-width:1000px){
-  .container { flex-direction: column; gap: 40px; }
-  #DIY, #Ubuntu, #Contact { flex: 1 1 100%; margin-left: 0; }
-}
-@media(max-width:600px){
-  header h1 { font-size: 26px; }
-  header p { font-size: 16px; }
-  #DIY h2, #Ubuntu h2 { font-size: 24px; }
-  #Contact h2 { font-size: 20px; }
-  .card h3 { font-size: 20px; }
-  .card p { font-size: 14px; }
-  .card button { font-size: 16px; padding: 10px 0; }
-}
-</style>
 </head>
+
 <body>
 
-<header>
-  <h1>AI × Ubuntu × DIYダイハツ・ネイキッド</h1>
-  <p>カーオーディオDIYとUbuntu活用の記録</p>
-</header>
+<header class="hero">
 
-<div class="container">
+<div class="hero-overlay">
 
-  <div class="category-column" id="DIY">
-    <h2>DIY</h2>
-    <a href="diy_deck.html" class="card"><h3>デッキ取り付け</h3><p>カロッツェリア製デッキの取り付け完成写真と作業記録</p></a>
-    <a href="dash.html" class="card"><h3>ダッシュボードフラット化</h3><p>ネイキッドのダッシュボードをフラットにしてスッキリ化</p></a>
-  </div>
+<h1>ダイハツ ネイキッド</h1>
 
-  <div class="category-column" id="Ubuntu">
-    <h2>Ubuntu</h2>
-    <a href="ubuntusetup.html" class="card"><h3>Ubuntuセットアップ</h3><p>Ubuntuの初期設定や便利ツール導入方法の解説</p></a>
-    <a href="ubuntu-setup-apt.html" class="card"><h3>Ubuntuインストール直後設定</h3><p>Ubuntuインストール直後にやっておきたい基本設定＆おすすめ無料ソフト5選</p></a>
-  </div>
+<h2>DIY整備＆チョイカスタム</h2>
 
-  <div class="category-column" id="Contact">
-    <h2>お問い合わせ</h2>
-    <form action="https://formspree.io/f/mayvlkzz" method="POST" class="card">
-      <label for="name">お名前</label>
-      <input type="text" id="name" name="name" placeholder="お名前" required>
-      <label for="email">メールアドレス</label>
-      <input type="email" id="email" name="_replyto" placeholder="メールアドレス" required>
-      <label for="message">メッセージ</label>
-      <textarea id="message" name="message" placeholder="内容" rows="5" required></textarea>
-      <button type="submit">送信</button>
-    </form>
-
-    <!-- 掲示板ボタン（問い合わせフォームの下に表示されるように） -->
-    <a href="bbs.html" class="bbs-link">掲示板へコメント 💬</a>
-  </div>
+<p>
+DIY整備・カーオーディオ・チョイカスタムを楽しむブログ
+</p>
 
 </div>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#">ホーム</a></li>
+
+<li><a href="#">DIY整備</a></li>
+
+<li><a href="#">カーオーディオ</a></li>
+
+<li><a href="#">チョイカスタム</a></li>
+
+<li><a href="bbs.html">掲示板</a></li>
+
+<li><a href="#">お問い合わせ</a></li>
+
+</ul>
+
+</nav>
+
+<main>
+
+<section class="cards">
+
+<article class="card">
+
+<img src="images/deck.jpg">
+
+<h3>デッキ取り付け</h3>
+
+<p>
+カロッツェリアデッキ取付け
+</p>
+
+<a href="diy_deck.html">
+続きを読む →
+</a>
+
+</article>
+
+<article class="card">
+
+<img src="images/dash.jpg">
+
+<h3>ダッシュボードフラット化</h3>
+
+<p>
+
+ダッシュボード加工
+
+</p>
+
+<a href="dash.html">
+続きを読む →
+</a>
+
+</article>
+
+<article class="card">
+
+<img src="images/lift.jpg">
+
+<h3>リフトアップ</h3>
+
+<p>
+
+ネイキッドをリフトアップ
+
+</p>
+
+<a href="#">
+続きを読む →
+</a>
+
+</article>
+
+</section>
+
+<aside>
+
+<div class="profile">
+
+<img src="images/profile.jpg">
+
+<h3>TSKY MODE</h3>
+
+<p>
+
+ダイハツネイキッドをDIYで整備・カスタムしながら長く楽しんでいます。
+
+</p>
+
+</div>
+
+<div class="ranking">
+
+<h3>人気記事</h3>
+
+<ol>
+
+<li>デッキ取付け</li>
+
+<li>リフトアップ</li>
+
+<li>ダッシュボード加工</li>
+
+</ol>
+
+</div>
+
+<a href="bbs.html" class="bbs">
+
+💬 掲示板へコメント
+
+</a>
+
+</aside>
+
+</main>
+
+<footer>
+
+<p>
+
+© 2026 TSKY MODE
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
