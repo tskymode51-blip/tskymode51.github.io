@@ -179,7 +179,15 @@ nav li a {
 
 
 nav li a:hover {
+nav li a.active{
 
+color:#ff6600;
+
+border-bottom:3px solid #ff6600;
+
+padding-bottom:12px;
+
+}
     color:#ff6600;
 
 }
