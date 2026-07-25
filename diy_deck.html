@@ -1,167 +1,172 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <title>デッキ取り付け - DIY記事（スライダー調整版）</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #fafafa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.7;
-    }
 
-    header {
-      background-color: #E95420; /* Ubuntuオレンジ */
-      color: white;
-      padding: 20px;
-      text-align: center;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    }
+<title>カロッツェリアデッキ取り付け｜ダイハツ ネイキッド DIY整備</title>
 
-    h2 {
-      color: #E95420;
-      border-bottom: 2px solid #E95420;
-      padding-bottom: 5px;
-      margin-top: 20px;
-    }
+<link rel="stylesheet" href="style.css">
 
-    p {
-      margin: 15px 0;
-    }
-
-    /* --- スライダー部分 --- */
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 800px;  /* スライダー最大幅 */
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      background: #000; /* 背景が黒だと写真が映える */
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slides img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;         /* 画像の縦幅上限を設定 */
-      object-fit: contain;       /* 引き伸ばし防止、余白ありで全体表示 */
-      background: #000;          /* 写真が小さいとき背景が見える */
-      flex-shrink: 0;
-      display: block;
-    }
-
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      font-size: 28px;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 50%;
-      user-select: none;
-      transition: background 0.3s ease;
-    }
-
-    .prev { left: 15px; }
-    .next { right: 15px; }
-
-    .slider-btn:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* スマホ対応 */
-    @media (max-width: 600px) {
-      .slides img {
-        max-height: 300px;
-      }
-      .slider-btn {
-        font-size: 22px;
-        padding: 6px 10px;
-      }
-    }
-  </style>
 </head>
+
 <body>
-  <header>
-    <h1>デッキ取り付け</h1>
-    <p>カーオーディオDIYの作業記録</p>
-  </header>
 
-  <div class="container">
-    <h2>完成写真スライダー</h2>
+<nav>
 
-    <!-- スライダーここから -->
-    <div class="slider">
-      <div class="slides">
-        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/dekc1_HDR.jpg" alt="デッキ">
-        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/subwoofer1.jpg" alt="サブウーハー1">
-        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/subwoofer2.jpg" alt="サブウーハー2">
-        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/tuwiter1.jpg" alt="トゥイーター">
-        <img src="https://github.com/tskymode51-blip/tskymode51.github.io/raw/main/images/wooferhaisen.jpg" alt="ウーハー配線">
-      </div>
-      <button class="slider-btn prev">&#10094;</button>
-      <button class="slider-btn next">&#10095;</button>
-    </div>
-    <!-- スライダーここまで -->
+<div class="nav-inner">
 
-    <h2>作業記録</h2>
-    <p>
-      今回はカロッツェリア製のデッキを取り付けました。取扱説明書のとおりに配線を進めたので、配線作業自体は約1時間ほどでスムーズに完了しました。
-    </p>
-    <p>
-      苦労したのは取り付け場所の加工と、取り付け後にデッキをきれいに見せるための「目隠し枠」の製作です。特に枠の部分は純正感を出すために工夫が必要でした。
-    </p>
-    <p>
-      材料にはMDF板を使用し、カットしたパーツ同士を瞬間接着剤で固定。強度を確保するため接着面にしっかり流し込み、完全に乾燥させてから表面にレザーを貼り付けました。そのおかげで仕上がりは純正風にまとまり、見た目もぐっと引き締まりました。
-    </p>
-    <p>
-      作業全体では時間も手間もかかりましたが、自分で工夫して仕上げた満足感は格別。音楽を流すたびに「やってよかった」と感じられるDIYになりました。
-    </p>
-  </div>
+<div class="logo">
 
-  <script>
-    const slides = document.querySelector('.slides');
-    const slideImages = document.querySelectorAll('.slides img');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+TSKY MODE
 
-    let currentIndex = 0;
-    const totalSlides = slideImages.length;
+</div>
 
-    function showSlide(index) {
-      slides.style.transform = `translateX(${-index * 100}%)`;
-    }
+<ul>
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-      showSlide(currentIndex);
-    });
+<li><a href="index.html">ホーム</a></li>
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-      showSlide(currentIndex);
-    });
-  </script>
+<li><a href="bbs.html">掲示板</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<main>
+
+<article class="article">
+
+<h1>
+
+カロッツェリアデッキ取り付け
+
+</h1>
+
+<p class="article-date">
+
+更新日：2026年7月
+
+</p>
+
+<img src="images/deck.jpg" alt="カロッツェリアデッキ取り付け">
+
+<h2>
+
+取り付けのきっかけ
+
+</h2>
+
+<p>
+
+純正オーディオでは物足りなくなったため、
+カロッツェリア製デッキへ交換しました。
+
+今回はDIYで取り付けた手順を紹介します。
+
+</p>
+<h2>
+
+使用した部品
+
+</h2>
+
+<ul>
+
+<li>カロッツェリア デッキ</li>
+
+<li>オーディオハーネス</li>
+
+<li>変換コネクター</li>
+
+<li>内張りはがし</li>
+
+<li>プラスドライバー</li>
+
+</ul>
+
+
+<h2>
+
+作業手順
+
+</h2>
+
+<h3>① 純正オーディオを取り外す</h3>
+
+<p>
+
+まずはパネルを慎重に外し、純正オーディオを取り外します。
+傷が付かないように内張りはがしを使用しました。
+
+</p>
+
+
+<h3>② 配線を接続する</h3>
+
+<p>
+
+車両側ハーネスとデッキ側ハーネスを接続します。
+接続ミスがないか確認してから取り付けます。
+
+</p>
+
+
+<h3>③ 動作確認</h3>
+
+<p>
+
+電源・ラジオ・Bluetooth・USBなどを確認し、
+問題なく動作することを確認しました。
+
+</p>
+
+
+<img src="images/deck.jpg" alt="取り付け後の写真">
+<h2>
+
+まとめ
+
+</h2>
+
+<p>
+
+純正オーディオからカロッツェリアデッキへ交換することで、
+音質や使い勝手が大きく向上しました。
+
+DIYでも比較的挑戦しやすい作業なので、
+これから交換を考えている方の参考になれば嬉しいです。
+
+</p>
+
+<hr>
+
+<p>
+
+<a href="index.html">← トップページへ戻る</a>
+
+</p>
+
+</article>
+
+</main>
+
+
+<footer>
+
+<p>
+
+© 2026 TSKY MODE
+ダイハツ ネイキッド DIY整備＆チョイカスタム
+
+</p>
+
+</footer>
+
 </body>
+
 </html>
