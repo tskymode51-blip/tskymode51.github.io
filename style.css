@@ -732,3 +732,100 @@ font-weight:bold;
 text-align:center;
 
 }
+/* =========================
+   人気記事
+========================= */
+
+.ranking{
+
+margin-top:40px;
+
+}
+
+.ranking h3{
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+.ranking-card{
+
+background:#fff;
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+margin-bottom:20px;
+
+transition:.3s;
+
+}
+
+.ranking-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.ranking-card a{
+
+display:block;
+
+color:#333;
+
+text-decoration:none;
+
+}
+
+.ranking-card img{
+
+width:100%;
+
+height:140px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.ranking-card h4{
+
+padding:15px;
+
+margin:0;
+
+font-size:16px;
+
+text-align:center;
+
+}
+
+.coming-soon-small{
+
+height:140px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-direction:column;
+
+background:#f3f3f3;
+
+font-size:24px;
+
+color:#888;
+
+font-weight:bold;
+
+}
