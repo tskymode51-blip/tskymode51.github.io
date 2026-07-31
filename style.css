@@ -113,28 +113,43 @@ a {
 ========================= */
 
 
-.hero-button {
+.hero-button{
 
-    display: inline-block;
+    display:inline-block;
 
-    margin-top: 25px;
+    margin-top:35px;
 
-    padding: 14px 35px;
+    padding:16px 42px;
 
-    background: #ff6600;
+    background:#ff7a00;
 
-    color:white;
+    color:#fff;
 
-    border-radius:30px;
+    text-decoration:none;
 
-    font-weight:bold;
+    border-radius:50px;
 
+    font-size:17px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(255,122,0,.35);
+
+}
 }
 
 
-.hero-button:hover {
+.hero-button:hover{
 
-    opacity:0.8;
+    background:#ff9100;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(255,122,0,.45);
 
 }
 /* =========================
