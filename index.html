@@ -3,416 +3,1237 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ダイハツ ネイキッド DIY整備＆チョイカスタム</title>
-  <meta name="description" content="ダイハツ ネイキッドをDIY整備・カーオーディオ・チョイカスタムで楽しむブログ">
 
-  <!-- Google Fonts & Font Awesome Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>ダイハツ ネイキッド DIY整備＆チョイカスタム</title>
+
+  <meta name="description"
+        content="ダイハツ ネイキッドをDIY整備・カーオーディオ・チョイカスタムで楽しむブログ">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* ==========================================
-       RESET & BASE STYLES
-       ========================================== */
+    /* ========================================
+       リセット
+    ======================================== */
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #0b0c0e;
-      color: #ffffff;
-      line-height: 1.6;
+      min-height: 100vh;
       overflow-x: hidden;
+      background: #050505;
+      color: #ffffff;
+      font-family: "Noto Sans JP", sans-serif;
     }
 
     a {
       color: inherit;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      opacity: 0.85;
     }
 
     ul {
       list-style: none;
     }
 
-    /* ==========================================
-       HERO CONTAINER & BACKGROUND
-       ========================================== */
-    .hero-container {
+    button {
+      font: inherit;
+    }
+
+
+    /* ========================================
+       トップページ全体
+    ======================================== */
+
+    .hero {
       position: relative;
-      width: 100%;
-      min-height: 100vh;
-      /* ガレージ風のダークインダストリアル背景（暗がり・ライティングの再現） */
-      background: 
-        radial-gradient(circle at 75% 30%, rgba(212, 122, 24, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(30, 40, 50, 0.6) 0%, transparent 60%),
-        linear-gradient(180deg, rgba(11, 12, 14, 0.85) 0%, rgba(11, 12, 14, 0.4) 40%, rgba(11, 12, 14, 0.95) 100%),
-        url('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-
-    /* --- Header Navigation --- */
-    nav {
       width: 100%;
-      padding: 25px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
+      min-height: 100vh;
+      overflow: hidden;
+
+      /*
+        ネイキッド画像
+        imagesフォルダ内のnaked-top.jpgを使用
+      */
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.97) 0%,
+          rgba(0, 0, 0, 0.88) 22%,
+          rgba(0, 0, 0, 0.56) 42%,
+          rgba(0, 0, 0, 0.16) 68%,
+          rgba(0, 0, 0, 0.3) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.72) 0%,
+          rgba(0, 0, 0, 0.08) 35%,
+          rgba(0, 0, 0, 0.1) 64%,
+          rgba(0, 0, 0, 0.92) 100%
+        ),
+        url("images/naked-top.jpg");
+
+      background-repeat: no-repeat;
+      background-position: 68% center;
+      background-size: cover;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 40px;
+
+    /* ガレージ風の暗い質感 */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 72% 42%,
+          rgba(255, 255, 255, 0.11),
+          transparent 31%
+        ),
+        linear-gradient(
+          120deg,
+          rgba(239, 91, 12, 0.06),
+          transparent 42%
+        );
     }
 
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: #d0d3d8;
+
+    /* 画面上下の暗い影 */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      box-shadow:
+        inset 0 100px 100px rgba(0, 0, 0, 0.3),
+        inset 0 -120px 140px rgba(0, 0, 0, 0.55);
+    }
+
+
+    /* ========================================
+       ヘッダー
+    ======================================== */
+
+    .site-header {
       position: relative;
+      z-index: 20;
+      width: 100%;
+      padding: 25px 4%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(5px);
     }
 
-    .nav-links a.active,
-    .nav-links a:hover {
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1500px, 100%);
+      margin: 0 auto;
+      gap: 35px;
+    }
+
+
+    /* ロゴ */
+
+    .logo {
+      flex-shrink: 0;
+      color: #ffffff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.13em;
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9);
+    }
+
+
+    /* ナビゲーション */
+
+    .site-nav {
+      margin-left: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: clamp(22px, 2.8vw, 48px);
+    }
+
+    .nav-menu a {
+      position: relative;
+      display: block;
+      padding: 11px 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: #f05a0c;
+      box-shadow: 0 0 12px rgba(240, 90, 12, 0.65);
+      transition: width 0.25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
       color: #ffffff;
     }
 
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
       width: 100%;
-      height: 2px;
-      background: #e65c00;
     }
+
+
+    /* SNS */
 
     .social-links {
       display: flex;
+      align-items: center;
       gap: 22px;
-      font-size: 1.15rem;
+      flex-shrink: 0;
+      margin-left: 10px;
     }
 
     .social-links a {
-      color: #e0e0e0;
+      color: #ffffff;
+      font-size: 1.35rem;
+      transition:
+        color 0.25s ease,
+        transform 0.25s ease;
     }
 
     .social-links a:hover {
-      color: #f38020;
+      color: #f05a0c;
+      transform: translateY(-3px);
     }
 
-    /* --- Hero Layout (2 Columns: Text & Car Image) --- */
-    .hero-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 60px 60px 8%;
-      max-width: 1600px;
-      margin: 0 auto;
-      width: 100%;
+
+    /* ========================================
+       スマホメニューボタン
+    ======================================== */
+
+    .menu-button {
+      display: none;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-left: auto;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.55);
+      color: #ffffff;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+
+    /* ========================================
+       メインビジュアル
+    ======================================== */
+
+    .hero-main {
+      position: relative;
       z-index: 5;
-      flex-grow: 1;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      width: min(1500px, 92%);
+      margin: 0 auto;
+      padding: 55px 0 70px;
     }
 
-    .hero-text-content {
-      max-width: 520px;
-      z-index: 2;
+    .hero-content {
+      width: min(650px, 100%);
+      padding-left: 10px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
     }
+
+
+    /* ダイハツ */
+
+    .brand-small {
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+    }
+
+
+    /* ネイキッド */
 
     .hero-title {
-      font-size: 3.8rem;
+      margin-bottom: 23px;
+      color: #ffffff;
+      font-size: clamp(4.8rem, 8.5vw, 8.8rem);
       font-weight: 900;
-      letter-spacing: 0.04em;
-      line-height: 1.15;
-      margin-bottom: 12px;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
       white-space: nowrap;
     }
 
+
+    /* オレンジ線 */
+
+    .orange-line {
+      width: 75px;
+      height: 3px;
+      margin: 0 0 26px;
+      border: 0;
+      background: #f05a0c;
+      box-shadow: 0 0 16px rgba(240, 90, 12, 0.7);
+    }
+
+
+    /* キャッチコピー */
+
     .hero-subtitle {
-      font-size: 1.35rem;
+      margin-bottom: 29px;
+      color: #ffffff;
+      font-size: clamp(1.25rem, 2vw, 2rem);
       font-weight: 700;
-      color: #e0e4e8;
-      margin-bottom: 24px;
+      line-height: 1.55;
       letter-spacing: 0.02em;
     }
 
-    .hero-description {
-      font-size: 0.95rem;
-      color: #a0a6b0;
-      margin-bottom: 35px;
-      line-height: 1.8;
+    .hero-subtitle .accent {
+      color: #f05a0c;
+      font-weight: 900;
     }
 
-    .hero-btn {
+
+    /* 説明文 */
+
+    .hero-description {
+      max-width: 550px;
+      margin-bottom: 37px;
+      color: rgba(255, 255, 255, 0.91);
+      font-size: clamp(0.95rem, 1.25vw, 1.12rem);
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 0.025em;
+    }
+
+
+    /* 記事を読むボタン */
+
+    .hero-button {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, #f38020 0%, #e65c00 100%);
-      color: #ffffff;
-      padding: 14px 34px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 6px 20px rgba(230, 92, 0, 0.45);
-      transition: all 0.3s ease;
-    }
-
-    .hero-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(230, 92, 0, 0.65);
-    }
-
-    /* --- Visual Stage (Car Image Display) --- */
-    .hero-visual {
-      position: relative;
-      flex-grow: 1;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      max-width: 55%;
-    }
-
-    /* 写真をガレージ風になじませるカードフレーム */
-    .car-image-container {
-      position: relative;
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
-                  0 0 40px rgba(230, 92, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background-color: #121417;
-    }
-
-    .car-image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: contrast(1.08) brightness(0.92);
-      transition: transform 0.5s ease;
-    }
-
-    .car-image-container:hover img {
-      transform: scale(1.02);
-    }
-
-    /* 写真上のダークオーバレイ・ライティング効果 */
-    .car-image-container::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      justify-content: center;
+      gap: 38px;
+      min-width: 265px;
+      padding: 19px 31px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
       background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        transparent 50%,
-        rgba(0, 0, 0, 0.4) 100%
+        105deg,
+        #f05a0c,
+        #d73e00
       );
-      pointer-events: none;
+      color: #ffffff;
+      font-size: 1.04rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.42),
+        0 6px 22px rgba(240, 90, 12, 0.28);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
     }
 
-    /* ==========================================
-       WHAT'S NEW BAR (BOTTOM TICKER)
-       ========================================== */
-    .whats-new-bar {
+    .hero-button i {
+      font-size: 1.15rem;
+      transition: transform 0.25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(
+        105deg,
+        #ff6918,
+        #e64500
+      );
+      box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.52),
+        0 8px 30px rgba(240, 90, 12, 0.4);
+    }
+
+    .hero-button:hover i {
+      transform: translateX(7px);
+    }
+
+
+    /* ========================================
+       スクロール表示
+    ======================================== */
+
+    .scroll-mark {
+      position: absolute;
+      right: 4%;
+      bottom: 125px;
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .scroll-mark::after {
+      content: "";
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.9),
+        transparent
+      );
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%,
+      100% {
+        opacity: 0.35;
+        transform: scaleY(0.55);
+        transform-origin: top;
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+    }
+
+
+    /* ========================================
+       WHAT'S NEW
+    ======================================== */
+
+    .whats-new {
+      position: relative;
+      z-index: 10;
       width: 100%;
-      background: rgba(12, 14, 18, 0.92);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 18px 60px;
+      min-height: 98px;
+      border-top: 1px solid rgba(255, 255, 255, 0.17);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(6, 6, 6, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .news-inner {
+      display: grid;
+      grid-template-columns: 210px 1fr 155px;
+      align-items: stretch;
+      width: min(1600px, 100%);
+      min-height: 98px;
+      margin: 0 auto;
+    }
+
+
+    /* WHAT'S NEW見出し */
+
+    .news-heading {
       display: flex;
       align-items: center;
-      gap: 35px;
-      font-size: 0.88rem;
-      z-index: 10;
-    }
-
-    .whats-new-label {
-      font-weight: 900;
-      letter-spacing: 0.1em;
+      gap: 22px;
+      padding: 0 30px;
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
       color: #ffffff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.34rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
       white-space: nowrap;
     }
+
+    .news-heading::after {
+      content: "";
+      width: 3px;
+      height: 43px;
+      background: #f05a0c;
+      box-shadow: 0 0 11px rgba(240, 90, 12, 0.48);
+    }
+
+
+    /* ニュース一覧 */
 
     .news-list {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      overflow-x: auto;
-      white-space: nowrap;
-      flex-grow: 1;
-      scrollbar-width: none;
-    }
-
-    .news-list::-webkit-scrollbar {
-      display: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      min-width: 0;
     }
 
     .news-item {
+      position: relative;
       display: flex;
-      align-items: center;
-      gap: 15px;
-      color: #d0d3d8;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      min-width: 0;
+      padding: 18px 27px;
     }
 
     .news-item:not(:last-child)::after {
-      content: "|";
-      color: rgba(255, 255, 255, 0.18);
-      margin-left: 30px;
+      content: "";
+      position: absolute;
+      top: 26%;
+      right: 0;
+      width: 1px;
+      height: 48%;
+      background: rgba(255, 255, 255, 0.16);
     }
 
     .news-date {
-      color: #8a909a;
-      font-weight: 500;
+      color: #f05a0c;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 0.93rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
     }
 
-    .view-all {
-      margin-left: auto;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #ffffff;
+    .news-title {
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.91rem;
+      font-weight: 500;
+      line-height: 1.5;
+      text-overflow: ellipsis;
       white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+
+    .news-title:hover {
+      color: #f05a0c;
+    }
+
+
+    /* VIEW ALL */
+
+    .view-all {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+      border-left: 1px solid rgba(255, 255, 255, 0.13);
+      color: #ffffff;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      white-space: nowrap;
+      transition:
+        color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .view-all i {
+      color: #f05a0c;
+      transition: transform 0.25s ease;
     }
 
     .view-all:hover {
-      color: #f38020;
+      color: #f05a0c;
+      background: rgba(255, 255, 255, 0.035);
     }
 
-    /* ==========================================
-       RESPONSIVE DESIGN
-       ========================================== */
-    @media (max-width: 1024px) {
-      .hero-wrapper {
-        flex-direction: column-reverse;
-        justify-content: center;
-        padding: 20px 30px 40px;
-        gap: 30px;
+    .view-all:hover i {
+      transform: translateX(6px);
+    }
+
+
+    /* ========================================
+       タブレット
+    ======================================== */
+
+    @media screen and (max-width: 1150px) {
+
+      .site-header {
+        padding: 22px 3%;
       }
-      .hero-visual {
-        max-width: 100%;
-        width: 100%;
+
+      .header-inner {
+        gap: 20px;
       }
-      .hero-text-content {
-        max-width: 100%;
+
+      .nav-menu {
+        gap: 22px;
       }
-      .hero-title {
-        font-size: 3rem;
+
+      .social-links {
+        gap: 15px;
+        margin-left: 0;
+      }
+
+      .hero {
+        background-position: 63% center;
+      }
+
+      .hero-main {
+        width: 94%;
+      }
+
+      .news-inner {
+        grid-template-columns: 180px 1fr 130px;
+      }
+
+      .news-heading {
+        padding: 0 20px;
+        font-size: 1.13rem;
+      }
+
+      .news-item {
+        padding: 17px 18px;
       }
     }
 
-    @media (max-width: 768px) {
-      nav {
-        padding: 20px;
+
+    /* ========================================
+       スマートフォン
+    ======================================== */
+
+    @media screen and (max-width: 850px) {
+
+      .hero {
+        min-height: 100svh;
+
+        background-image:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.22) 31%,
+            rgba(0, 0, 0, 0.72) 58%,
+            rgba(0, 0, 0, 0.98) 100%
+          ),
+          url("images/naked-top.jpg");
+
+        background-position: 59% center;
       }
-      .nav-links {
-        display: none;
+
+      .site-header {
+        padding: 17px 20px;
       }
-      .hero-title {
-        font-size: 2.3rem;
-      }
-      .hero-subtitle {
-        font-size: 1.1rem;
-      }
-      .whats-new-bar {
-        padding: 15px 20px;
-        flex-direction: column;
-        align-items: flex-start;
+
+      .header-inner {
         gap: 12px;
       }
+
+      .logo {
+        font-size: 1.55rem;
+      }
+
+      .menu-button {
+        display: grid;
+      }
+
+      .site-nav {
+        margin-left: 0;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 79px;
+        left: 18px;
+        right: 18px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        background: rgba(5, 5, 5, 0.97);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(15px);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .nav-menu li:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-menu a {
+        padding: 17px 5px;
+      }
+
+      .social-links {
+        display: none;
+      }
+
+      .hero-main {
+        align-items: flex-end;
+        width: calc(100% - 40px);
+        padding: 80px 0 43px;
+      }
+
+      .hero-content {
+        width: 100%;
+        padding-left: 0;
+      }
+
+      .brand-small {
+        font-size: 1.55rem;
+      }
+
+      .hero-title {
+        margin-bottom: 17px;
+        font-size: clamp(3.7rem, 17vw, 5.8rem);
+      }
+
+      .orange-line {
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        margin-bottom: 19px;
+        font-size: 1.17rem;
+      }
+
+      .hero-description {
+        margin-bottom: 27px;
+        font-size: 0.9rem;
+        line-height: 1.85;
+      }
+
+      .hero-button {
+        min-width: 220px;
+        padding: 16px 25px;
+      }
+
+      .scroll-mark {
+        display: none;
+      }
+
+      .whats-new {
+        min-height: auto;
+      }
+
+      .news-inner {
+        display: block;
+        min-height: auto;
+      }
+
+      .news-heading {
+        min-height: 64px;
+        padding: 0 20px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .news-heading::after {
+        width: 32px;
+        height: 2px;
+      }
+
+      .news-list {
+        display: block;
+      }
+
+      .news-item {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
       .news-item:not(:last-child)::after {
         display: none;
       }
+
+      .news-title {
+        white-space: normal;
+      }
+
       .view-all {
-        margin-left: 0;
+        min-height: 60px;
+        justify-content: flex-start;
+        padding: 15px 20px;
+        border-left: 0;
       }
     }
+
+
+    /* ========================================
+       小さいスマートフォン
+    ======================================== */
+
+    @media screen and (max-width: 470px) {
+
+      .hero {
+        background-position: 57% center;
+      }
+
+      .hero-main {
+        width: calc(100% - 30px);
+      }
+
+      .hero-title {
+        font-size: 3.55rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .hero-description br {
+        display: none;
+      }
+
+      .hero-button {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <div class="hero-container">
+  <main class="hero">
 
-    <!-- Header Navigation -->
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">HOME</a></li>
-        <li><a href="#latest">DIY記事</a></li>
-        <li><a href="#category">カテゴリー</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
-      </ul>
+    <!-- ======================================
+         ヘッダー
+    ======================================= -->
 
-      <div class="social-links">
-        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <header class="site-header">
+
+      <div class="header-inner">
+
+        <!-- ロゴ -->
+        <a href="index.html"
+           class="logo">
+          TSKY MODE
+        </a>
+
+
+        <!-- スマホ用メニューボタン -->
+        <button class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="メニューを開く"
+                aria-expanded="false">
+
+          <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <!-- ナビゲーション -->
+        <nav class="site-nav"
+             aria-label="メインメニュー">
+
+          <ul class="nav-menu"
+              id="navMenu">
+
+            <li>
+              <a href="index.html"
+                 class="active">
+                HOME
+              </a>
+            </li>
+
+            <li>
+              <a href="diy_deck.html">
+                DIY記事
+              </a>
+            </li>
+
+            <li>
+              <a href="dash.html">
+                ギャラリー
+              </a>
+            </li>
+
+            <li>
+              <a href="bbs.html">
+                掲示板
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:あなたのメールアドレス">
+                お問い合わせ
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <!-- SNSリンク -->
+        <div class="social-links">
+
+          <!--
+            #の部分を自分のSNSアドレスへ変更してください
+          -->
+
+          <a href="#"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="X">
+
+            <i class="fa-brands fa-x-twitter"></i>
+
+          </a>
+
+          <a href="#"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+          </a>
+
+          <a href="#"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="YouTube">
+
+            <i class="fa-brands fa-youtube"></i>
+
+          </a>
+
+        </div>
+
       </div>
-    </nav>
 
-    <!-- Main Hero Section -->
-    <main class="hero-wrapper">
+    </header>
 
-      <!-- Text Side -->
-      <section class="hero-text-content">
-        <h1 class="hero-title">ダイハツ ネイキッド</h1>
-        <h2 class="hero-subtitle">DIYで作る、自分だけのカーライフ</h2>
+
+    <!-- ======================================
+         メインビジュアル
+    ======================================= -->
+
+    <section class="hero-main">
+
+      <div class="hero-content">
+
+        <p class="brand-small">
+          ダイハツ
+        </p>
+
+        <h1 class="hero-title">
+          ネイキッド
+        </h1>
+
+        <hr class="orange-line">
+
+        <h2 class="hero-subtitle">
+          <span class="accent">DIY</span>で作る、自分だけのカーライフ
+        </h2>
+
         <p class="hero-description">
           ネイキッドをもっと楽しく、もっと自分らしく。<br>
           DIY整備・カスタム・メンテナンスの記録を<br>
           リアルにお届けします。
         </p>
-        <a href="#latest" class="hero-btn">
-          記事を読む <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </section>
 
-      <!-- Image Side (641.jpg) -->
-      <div class="hero-visual">
-        <div class="car-image-container">
-          <img src="641.jpg" alt="ダイハツ ネイキッド カスタム">
-        </div>
+        <a href="diy_deck.html"
+           class="hero-button">
+
+          <span>記事を読む</span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
       </div>
 
-    </main>
+    </section>
 
-    <!-- Bottom What's New Bar -->
-    <div class="whats-new-bar">
-      <div class="whats-new-label">WHAT'S NEW</div>
-      
-      <ul class="news-list">
-        <li class="news-item">
-          <span class="news-date">2026.07.25</span>
-          <a href="#">ブログをリニューアルしました！</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.07.25</span>
-          <a href="#">カロッツェリアデッキ取り付け記事を公開</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.07.24</span>
-          <a href="#">エアコンフィルター交換</a>
-        </li>
-      </ul>
 
-      <a href="#latest" class="view-all">VIEW ALL</a>
+    <!-- スクロール表示 -->
+    <div class="scroll-mark">
+      SCROLL
     </div>
 
-  </div>
+
+    <!-- ======================================
+         WHAT'S NEW
+    ======================================= -->
+
+    <section class="whats-new"
+             aria-labelledby="newsTitle">
+
+      <div class="news-inner">
+
+        <h2 class="news-heading"
+            id="newsTitle">
+          WHAT'S NEW
+        </h2>
+
+
+        <ul class="news-list">
+
+          <!-- 新着情報1 -->
+          <li class="news-item">
+
+            <time class="news-date"
+                  datetime="2026-08-01">
+              2026.08.01
+            </time>
+
+            <a href="index.html"
+               class="news-title">
+
+              ブログのトップページをリニューアルしました！
+
+            </a>
+
+          </li>
+
+
+          <!-- 新着情報2 -->
+          <li class="news-item">
+
+            <time class="news-date"
+                  datetime="2026-07-25">
+              2026.07.25
+            </time>
+
+            <a href="diy_deck.html"
+               class="news-title">
+
+              カロッツェリアデッキ取り付け記事
+
+            </a>
+
+          </li>
+
+
+          <!-- 新着情報3 -->
+          <li class="news-item">
+
+            <time class="news-date"
+                  datetime="2026-07-24">
+              2026.07.24
+            </time>
+
+            <a href="dash.html"
+               class="news-title">
+
+              ダッシュボードDIY加工の記事
+
+            </a>
+
+          </li>
+
+        </ul>
+
+
+        <a href="diy_deck.html"
+           class="view-all">
+
+          <span>VIEW ALL</span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       スマホメニュー
+  ======================================= -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navMenu =
+      document.getElementById("navMenu");
+
+    const menuIcon =
+      menuButton.querySelector("i");
+
+
+    menuButton.addEventListener(
+      "click",
+      function () {
+
+        const menuIsOpen =
+          navMenu.classList.toggle("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          menuIsOpen
+        );
+
+
+        if (menuIsOpen) {
+
+          menuIcon.classList.remove(
+            "fa-bars"
+          );
+
+          menuIcon.classList.add(
+            "fa-xmark"
+          );
+
+        } else {
+
+          menuIcon.classList.remove(
+            "fa-xmark"
+          );
+
+          menuIcon.classList.add(
+            "fa-bars"
+          );
+
+        }
+
+      }
+    );
+
+
+    /*
+      メニュー内のリンクを押したら
+      スマホメニューを閉じる
+    */
+
+    const navigationLinks =
+      navMenu.querySelectorAll("a");
+
+
+    navigationLinks.forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navMenu.classList.remove(
+              "open"
+            );
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuIcon.classList.remove(
+              "fa-xmark"
+            );
+
+            menuIcon.classList.add(
+              "fa-bars"
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    /*
+      メニュー外をクリックした場合も閉じる
+    */
+
+    document.addEventListener(
+      "click",
+      function (event) {
+
+        const clickedMenuButton =
+          menuButton.contains(event.target);
+
+        const clickedNavigation =
+          navMenu.contains(event.target);
+
+
+        if (
+          !clickedMenuButton &&
+          !clickedNavigation
+        ) {
+
+          navMenu.classList.remove(
+            "open"
+          );
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuIcon.classList.remove(
+            "fa-xmark"
+          );
+
+          menuIcon.classList.add(
+            "fa-bars"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 
