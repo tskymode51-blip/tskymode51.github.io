@@ -2,297 +2,305 @@
 <html lang="ja">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダイハツ ネイキッド DIY整備＆チョイカスタム</title>
+  <meta name="description" content="ダイハツ ネイキッドをDIY整備・カーオーディオ・チョイカスタムで楽しむブログ">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<title>ダイハツ ネイキッド DIY整備＆チョイカスタム</title>
+  <style>
+    /* ==========================================
+       RESET & BASE STYLES
+       ========================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<meta name="description"
-content="ダイハツ ネイキッドをDIY整備・カーオーディオ・チョイカスタムで楽しむブログ">
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-<link rel="stylesheet" href="style.css">
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    a:hover {
+      opacity: 0.8;
+    }
 
+    ul {
+      list-style: none;
+    }
+
+    /* ==========================================
+       HERO SECTION (MAIN VISUAL)
+       ========================================== */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      /* 背景画像の指定（適宜お持ちの画像パスに変更してください） */
+      background: linear-gradient(130deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%),
+                  url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      width: 100%;
+      padding: 25px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #e0e0e0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      font-size: 1.1rem;
+    }
+
+    .social-links a {
+      color: #ffffff;
+    }
+
+    /* --- Hero Content --- */
+    .hero-content {
+      padding: 0 0 80px 8%;
+      max-width: 650px;
+      z-index: 10;
+    }
+
+    .hero-title {
+      font-size: 3.8rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+      white-space: nowrap;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e0e0e0;
+      margin-bottom: 25px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      color: #b0b0b0;
+      margin-bottom: 35px;
+      line-height: 1.8;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #f38020 0%, #e65c00 100%);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(230, 92, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(230, 92, 0, 0.6);
+      opacity: 1;
+    }
+
+    /* --- What's New Bar (Bottom Ticker) --- */
+    .whats-new-bar {
+      width: 100%;
+      background-color: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 50px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 0.85rem;
+      z-index: 10;
+    }
+
+    .whats-new-label {
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .news-list {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      overflow-x: auto;
+      white-space: nowrap;
+      flex-grow: 1;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .news-list::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #cccccc;
+    }
+
+    .news-item:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, 0.2);
+      margin-left: 25px;
+    }
+
+    .news-date {
+      color: #999999;
+    }
+
+    .view-all {
+      margin-left: auto;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    /* ==========================================
+       RESPONSIVE DESIGN (スマホ・タブレット対応)
+       ========================================== */
+    @media (max-width: 900px) {
+      nav {
+        padding: 20px;
+      }
+      .nav-links {
+        display: none; /* スマホ時はハンバーガーメニュー等への拡張用 */
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .hero-content {
+        padding: 0 5% 40px;
+      }
+      .whats-new-bar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .news-item:not(:last-child)::after {
+        display: none;
+      }
+      .view-all {
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<header>
-
-
-<nav>
-
-<div class="nav-inner">
-
-<a href="index.html" class="logo">
-TSKY MODE
-</a>
-
-
-<ul>
-
-<li>
-<a href="index.html" class="active">
-HOME
-</a>
-</li>
-
-<li>
-<a href="#latest">
-DIY記事
-</a>
-</li>
-
-<li>
-<a href="#gallery">
-ギャラリー
-</a>
-</li>
-
-<li>
-<a href="bbs.html">
-掲示板
-</a>
-</li>
-
-<li>
-<a href="#contact">
-お問い合わせ
-</a>
-</li>
-
-</ul>
-
-
-</div>
-
-</nav>
-
-
-
-<section class="hero">
-
-
-<div class="hero-overlay">
-
-
-<p class="hero-sub">
-DAIHATSU NAKED DIY BLOG
-</p>
-
-
-<h1>
-ダイハツ ネイキッド
-</h1>
-
-
-<h2>
-DIY整備＆チョイカスタム
-</h2>
-
-
-<p class="hero-text">
-
-古いネイキッドだからこそ楽しめる。
-
-DIY整備・カーオーディオ・チョイカスタムを
-
-実際の作業写真とともに紹介しています。
-
-</p>
-
-
-<a href="#latest" class="hero-button">
-
-記事を見る
-
-</a>
-
-
-</div>
-
-
-</section>
-
-
-</header>
-
-
-
-
-
-<main>
-
-
-
-
-<section id="latest" class="latest">
-
-
-<h2 class="section-title">
-Latest Articles
-</h2>
-
-
-<p class="section-subtitle">
-
-ネイキッドDIY・整備・カーオーディオの記事一覧
-
-</p>
-
-
-
-<div class="news-box">
-
-
-<h3>
-🆕 What's New
-</h3>
-
-
-<ul>
-
-
-<li>
-<strong>2026.07.25</strong>
-ブログをリニューアルしました！
-</li>
-
-
-<li>
-<strong>2026.07.25</strong>
-カロッツェリアデッキ取り付け記事を公開
-</li>
-
-
-<li>
-<strong>近日公開</strong>
-ネイキッド リフトアップDIY
-</li>
-
-
-<li>
-<strong>近日公開</strong>
-スピーカー交換DIY
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<aside class="sidebar">
-
-
-<div class="profile">
-
-
-<h3>
-TSKY MODE
-</h3>
-
-
-<p>
-
-ダイハツ ネイキッドをDIYで整備しながら、
-
-長く楽しく乗り続けることを目標にしています。
-
-</p>
-
-
-</div>
-
-
-</aside>
-
-
-
-
-
-
-<section class="bottom-links">
-
-
-<a href="bbs.html" class="bbs-button">
-
-
-💬 掲示板を見る
-
-
-<span>
-
-ネイキッド好き同士の情報交換はこちら
-
-</span>
-
-
-</a>
-
-
-
-
-
-<a href="#contact" class="contact-link">
-
-
-✉ お問い合わせ
-
-
-</a>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</main>
-
-
-
-
-
-
-<footer>
-
-
-<p>
-
-© 2026 TSKY MODE<br>
-
-ダイハツ ネイキッド DIY整備＆チョイカスタム
-
-</p>
-
-
-</footer>
-
-
-
+  <!-- HERO SECTION -->
+  <div class="hero-container">
+
+    <!-- Header Navigation -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="#latest">DIY記事</a></li>
+        <li><a href="#category">カテゴリー</a></li>
+        <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+
+      <div class="social-links">
+        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </nav>
+
+    <!-- Main Banner Content -->
+    <section class="hero-content">
+      <h1 class="hero-title">ダイハツ ネイキッド</h1>
+      <h2 class="hero-subtitle">DIYで作る、自分だけのカーライフ</h2>
+      <p class="hero-description">
+        ネイキッドをもっと楽しく、もっと自分らしく。<br>
+        DIY整備・カスタム・メンテナンスの記録を<br>
+        リアルにお届けします。
+      </p>
+      <a href="#latest" class="hero-btn">
+        記事を読む <i class="fa-solid font-arrow-right fa-arrow-right"></i>
+      </a>
+    </section>
+
+    <!-- Bottom What's New Bar -->
+    <div class="whats-new-bar">
+      <div class="whats-new-label">WHAT'S NEW</div>
+      
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026.07.25</span>
+          <a href="#">ブログをリニューアルしました！</a>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.07.25</span>
+          <a href="#">カロッツェリアデッキ取り付け記事を公開</a>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026.07.24</span>
+          <a href="#">エアコンフィルター交換</a>
+        </li>
+      </ul>
+
+      <a href="#latest" class="view-all">VIEW ALL</a>
+    </div>
+
+  </div>
 
 </body>
 
