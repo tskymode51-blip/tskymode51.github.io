@@ -25,7 +25,7 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #0d0d0d;
+      background-color: #0b0c0e;
       color: #ffffff;
       line-height: 1.6;
       overflow-x: hidden;
@@ -34,11 +34,11 @@
     a {
       color: inherit;
       text-decoration: none;
-      transition: opacity 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     a:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     ul {
@@ -46,24 +46,27 @@
     }
 
     /* ==========================================
-       HERO SECTION (MAIN VISUAL)
+       HERO CONTAINER & BACKGROUND
        ========================================== */
     .hero-container {
       position: relative;
       width: 100%;
       min-height: 100vh;
-      /* 背景画像の指定（適宜お持ちの画像パスに変更してください） */
-      background: linear-gradient(130deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%),
-                  url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      /* ガレージ風のダークインダストリアル背景（暗がり・ライティングの再現） */
+      background: 
+        radial-gradient(circle at 75% 30%, rgba(212, 122, 24, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(30, 40, 50, 0.6) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(11, 12, 14, 0.85) 0%, rgba(11, 12, 14, 0.4) 40%, rgba(11, 12, 14, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    /* --- Navigation --- */
+    /* --- Header Navigation --- */
     nav {
       width: 100%;
-      padding: 25px 50px;
+      padding: 25px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -72,57 +75,85 @@
 
     .nav-links {
       display: flex;
-      gap: 35px;
+      gap: 40px;
     }
 
     .nav-links a {
       font-size: 0.95rem;
       font-weight: 500;
-      letter-spacing: 0.05em;
-      color: #e0e0e0;
+      letter-spacing: 0.08em;
+      color: #d0d3d8;
+      position: relative;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a.active,
+    .nav-links a:hover {
       color: #ffffff;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #e65c00;
     }
 
     .social-links {
       display: flex;
-      gap: 20px;
-      font-size: 1.1rem;
+      gap: 22px;
+      font-size: 1.15rem;
     }
 
     .social-links a {
-      color: #ffffff;
+      color: #e0e0e0;
     }
 
-    /* --- Hero Content --- */
-    .hero-content {
-      padding: 0 0 80px 8%;
-      max-width: 650px;
-      z-index: 10;
+    .social-links a:hover {
+      color: #f38020;
+    }
+
+    /* --- Hero Layout (2 Columns: Text & Car Image) --- */
+    .hero-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px 60px 8%;
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 5;
+      flex-grow: 1;
+    }
+
+    .hero-text-content {
+      max-width: 520px;
+      z-index: 2;
     }
 
     .hero-title {
       font-size: 3.8rem;
       font-weight: 900;
-      letter-spacing: 0.05em;
-      margin-bottom: 5px;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
       white-space: nowrap;
     }
 
     .hero-subtitle {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      color: #e0e0e0;
-      margin-bottom: 25px;
-      letter-spacing: 0.03em;
+      color: #e0e4e8;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
     }
 
     .hero-description {
       font-size: 0.95rem;
-      color: #b0b0b0;
+      color: #a0a6b0;
       margin-bottom: 35px;
       line-height: 1.8;
     }
@@ -130,34 +161,83 @@
     .hero-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: linear-gradient(90deg, #f38020 0%, #e65c00 100%);
+      gap: 12px;
+      background: linear-gradient(135deg, #f38020 0%, #e65c00 100%);
       color: #ffffff;
-      padding: 14px 32px;
+      padding: 14px 34px;
       border-radius: 30px;
       font-weight: 700;
       font-size: 0.95rem;
-      box-shadow: 0 4px 15px rgba(230, 92, 0, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 20px rgba(230, 92, 0, 0.45);
+      transition: all 0.3s ease;
     }
 
     .hero-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(230, 92, 0, 0.6);
-      opacity: 1;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(230, 92, 0, 0.65);
     }
 
-    /* --- What's New Bar (Bottom Ticker) --- */
+    /* --- Visual Stage (Car Image Display) --- */
+    .hero-visual {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      max-width: 55%;
+    }
+
+    /* 写真をガレージ風になじませるカードフレーム */
+    .car-image-container {
+      position: relative;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                  0 0 40px rgba(230, 92, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: #121417;
+    }
+
+    .car-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: contrast(1.08) brightness(0.92);
+      transition: transform 0.5s ease;
+    }
+
+    .car-image-container:hover img {
+      transform: scale(1.02);
+    }
+
+    /* 写真上のダークオーバレイ・ライティング効果 */
+    .car-image-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* ==========================================
+       WHAT'S NEW BAR (BOTTOM TICKER)
+       ========================================== */
     .whats-new-bar {
       width: 100%;
-      background-color: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(12, 14, 18, 0.92);
+      backdrop-filter: blur(12px);
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 18px 50px;
+      padding: 18px 60px;
       display: flex;
       align-items: center;
-      gap: 30px;
-      font-size: 0.85rem;
+      gap: 35px;
+      font-size: 0.88rem;
       z-index: 10;
     }
 
@@ -171,66 +251,87 @@
     .news-list {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
       overflow-x: auto;
       white-space: nowrap;
       flex-grow: 1;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
 
     .news-list::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
     .news-item {
       display: flex;
       align-items: center;
       gap: 15px;
-      color: #cccccc;
+      color: #d0d3d8;
     }
 
     .news-item:not(:last-child)::after {
       content: "|";
-      color: rgba(255, 255, 255, 0.2);
-      margin-left: 25px;
+      color: rgba(255, 255, 255, 0.18);
+      margin-left: 30px;
     }
 
     .news-date {
-      color: #999999;
+      color: #8a909a;
+      font-weight: 500;
     }
 
     .view-all {
       margin-left: auto;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       color: #ffffff;
       white-space: nowrap;
     }
 
+    .view-all:hover {
+      color: #f38020;
+    }
+
     /* ==========================================
-       RESPONSIVE DESIGN (スマホ・タブレット対応)
+       RESPONSIVE DESIGN
        ========================================== */
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+      .hero-wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 20px 30px 40px;
+        gap: 30px;
+      }
+      .hero-visual {
+        max-width: 100%;
+        width: 100%;
+      }
+      .hero-text-content {
+        max-width: 100%;
+      }
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
       nav {
         padding: 20px;
       }
       .nav-links {
-        display: none; /* スマホ時はハンバーガーメニュー等への拡張用 */
+        display: none;
       }
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
       .hero-subtitle {
         font-size: 1.1rem;
-      }
-      .hero-content {
-        padding: 0 5% 40px;
       }
       .whats-new-bar {
         padding: 15px 20px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 12px;
       }
       .news-item:not(:last-child)::after {
         display: none;
@@ -244,7 +345,6 @@
 
 <body>
 
-  <!-- HERO SECTION -->
   <div class="hero-container">
 
     <!-- Header Navigation -->
@@ -264,19 +364,31 @@
       </div>
     </nav>
 
-    <!-- Main Banner Content -->
-    <section class="hero-content">
-      <h1 class="hero-title">ダイハツ ネイキッド</h1>
-      <h2 class="hero-subtitle">DIYで作る、自分だけのカーライフ</h2>
-      <p class="hero-description">
-        ネイキッドをもっと楽しく、もっと自分らしく。<br>
-        DIY整備・カスタム・メンテナンスの記録を<br>
-        リアルにお届けします。
-      </p>
-      <a href="#latest" class="hero-btn">
-        記事を読む <i class="fa-solid font-arrow-right fa-arrow-right"></i>
-      </a>
-    </section>
+    <!-- Main Hero Section -->
+    <main class="hero-wrapper">
+
+      <!-- Text Side -->
+      <section class="hero-text-content">
+        <h1 class="hero-title">ダイハツ ネイキッド</h1>
+        <h2 class="hero-subtitle">DIYで作る、自分だけのカーライフ</h2>
+        <p class="hero-description">
+          ネイキッドをもっと楽しく、もっと自分らしく。<br>
+          DIY整備・カスタム・メンテナンスの記録を<br>
+          リアルにお届けします。
+        </p>
+        <a href="#latest" class="hero-btn">
+          記事を読む <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </section>
+
+      <!-- Image Side (641.jpg) -->
+      <div class="hero-visual">
+        <div class="car-image-container">
+          <img src="641.jpg" alt="ダイハツ ネイキッド カスタム">
+        </div>
+      </div>
+
+    </main>
 
     <!-- Bottom What's New Bar -->
     <div class="whats-new-bar">
