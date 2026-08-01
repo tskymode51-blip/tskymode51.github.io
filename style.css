@@ -865,4 +865,64 @@ color:#888;
 
 font-weight:bold;
 
+}/* 下部リンク */
+
+.bottom-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:50px 20px;
+    flex-wrap:wrap;
+}
+
+
+.bbs-button{
+    width:320px;
+    padding:25px;
+    background:#222;
+    color:white;
+    text-align:center;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+.bbs-button span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    font-weight:normal;
+}
+
+
+.contact-link{
+    width:220px;
+    padding:25px;
+    background:#ff6600;
+    color:white;
+    text-align:center;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+}
+
+
+/* スマホ */
+
+@media(max-width:768px){
+
+.bottom-links{
+    flex-direction:column;
+    align-items:center;
+}
+
+
+.bbs-button,
+.contact-link{
+    width:90%;
+}
+
 }
