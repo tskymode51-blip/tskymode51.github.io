@@ -1,914 +1,995 @@
-/* =========================
+/* ========================================
    基本設定
-========================= */
+======================================== */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
 
 body {
-    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background: #050505;
+
+    color: #ffffff;
+
     font-family: "Noto Sans JP", sans-serif;
-    color: #333;
-    background: #f5f5f5;
-    line-height: 1.8;
-}
-
-
-img {
-    max-width: 100%;
-    display: block;
 }
 
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 
-/* =========================
-   ヒーローエリア
-========================= */
-
-.hero{
-
-    min-height:620px;
-
-    background:
-    linear-gradient(
-        rgba(15,15,15,.45),
-        rgba(15,15,15,.55)
-    ),
-    url("images/hero.jpg");
-
-    background-size:cover;
-
-    background-position:center center;
-
-    background-repeat:no-repeat;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+ul {
+    list-style: none;
 }
 
 
-.hero-overlay{
-
-    max-width:1200px;
-
-    width:100%;
-
-    padding:70px 60px;
-
-    text-align:left;
-
-}
-
-.hero h1{
-
-    font-size:64px;
-
-    font-weight:700;
-
-    margin:0;
-
-    line-height:1.05;
-
-    letter-spacing:2px;
-
-}
-
-
-.hero h2{
-
-    margin:18px 0;
-
-    font-size:30px;
-
-    font-weight:400;
-
-    color:#ff9b22;
-
-}
-
-.hero p{
-
-    max-width:560px;
-
-    font-size:19px;
-
-    line-height:1.9;
-
-    color:#eeeeee;
-
-}
-/* =========================
-   ボタン
-========================= */
-
-
-.hero-button{
-
-    display:inline-block;
-
-    margin-top:35px;
-
-    padding:16px 42px;
-
-    background:#ff7a00;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    border-radius:50px;
-
-    font-size:17px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    transition:.3s;
-
-    box-shadow:0 8px 20px rgba(255,122,0,.35);
-
-}
-
-.hero-button:hover{
-
-    background:#ff9100;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 28px rgba(255,122,0,.45);
-
-}
-/* =========================
-   ナビゲーション
-========================= */
-
-nav {
-
-    background:#222;
-
-    color:white;
-
-}
-
-
-.nav-inner {
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:15px 20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-
-.logo {
-
-    font-size:24px;
-
-    font-weight:bold;
-
-}
-
-
-nav ul {
-
-    list-style:none;
-
-    display:flex;
-
-    gap:25px;
-
-    margin:0;
-
-    padding:0;
-
-}
-
-
-nav li a {
-
-    color:white;
-
-    font-size:15px;
-
-}
-nav li a:hover,
-nav li a.active {
-    color: #ff6600;
-    border-bottom: 3px solid #ff6600;
-    padding-bottom: 12px;
-}
-
-/* =========================
-   メインエリア
-========================= */
-
-
-main {
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:40px 20px;
-
+button {
+    font: inherit;
 }
 
 
 
-.intro {
-
-    background:white;
-
-    padding:35px;
-
-    margin-bottom:40px;
-
-    border-radius:12px;
-
-}
-
-
-
-.section-title {
-
-    text-align:center;
-
-    font-size:32px;
-
-    margin-bottom:35px;
-
-}
-
-
-
-/* =========================
-   記事カード
-========================= */
-
-
-.cards {
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
-}
-
-
-
-.card {
-
-    background:white;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-
-}
-
-
-
-.card img {
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-}
-
-
-
-.card-body {
-
-    padding:25px;
-
-}
-
-
-
-.category {
-
-    display:inline-block;
-
-    background:#ff6600;
-
-    color:white;
-
-    padding:5px 12px;
-
-    border-radius:20px;
-
-    font-size:13px;
-
-}
-
-
-
-.card h3 {
-
-    margin:15px 0;
-
-}
-
-
-
-.card a {
-
-    color:#ff6600;
-
-    font-weight:bold;
-
-}
-
-
-
-/* =========================
-   サイドバー
-========================= */
-
-
-aside {
-
-    margin-top:50px;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:25px;
-
-}
-
-
-.profile,
-.ranking {
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:12px;
-
-}
-
-
-
-.profile img {
-
-    width:120px;
-
-    height:120px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-}
-
-
-
-.ranking ol {
-
-    padding-left:20px;
-
-}
-/* =========================
-   掲示板ボタン
-========================= */
-
-
-.bbs {
-
-    display:block;
-
-    background:#0066cc;
-
-    color:white;
-
-    text-align:center;
-
-    padding:18px;
-
-    margin-top:25px;
-
-    border-radius:30px;
-
-    font-size:20px;
-
-    font-weight:bold;
-
-}
-
-
-.bbs:hover {
-
-    opacity:0.8;
-
-}
-
-
-
-/* =========================
-   お問い合わせ
-========================= */
-
-
-.contact {
-
-    background:white;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    margin-top:40px;
-
-}
-
-
-
-.contact-button {
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    background:#333;
-
-    color:white;
-
-    padding:14px 35px;
-
-    border-radius:30px;
-
-}
-
-
-
-/* =========================
-   フッター
-========================= */
-
-
-footer {
-
-    background:#222;
-
-    color:white;
-
-    text-align:center;
-
-    padding:25px;
-
-    margin-top:40px;
-
-    font-size:14px;
-
-}
-
-
-
-/* =========================
-   スマホ対応
-========================= */
-
-
-@media screen and (max-width:768px) {
-
+/* ========================================
+   TOPページ
+======================================== */
 
 .hero {
 
-    height:420px;
+    position: relative;
 
-}
+    display: flex;
 
+    flex-direction: column;
 
-.hero h1 {
+    width: 100%;
 
-    font-size:32px;
+    min-height: 100vh;
 
-}
-
-
-.hero h2 {
-
-    font-size:22px;
-
-}
+    overflow: hidden;
 
 
+    /* ネイキッド背景画像 */
 
-.nav-inner {
+    background-image:
 
-    flex-direction:column;
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.78) 22%,
+            rgba(0, 0, 0, 0.43) 43%,
+            rgba(0, 0, 0, 0.10) 68%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
 
-}
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.70) 0%,
+            rgba(0, 0, 0, 0.08) 35%,
+            rgba(0, 0, 0, 0.10) 65%,
+            rgba(0, 0, 0, 0.72) 100%
+        ),
 
-
-
-nav ul {
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    margin-top:15px;
-
-}
-
-
-
-.cards {
-
-    grid-template-columns:1fr;
-
-}
+        url("images/naked-top.jpg");
 
 
+    background-repeat: no-repeat;
 
-aside {
+    background-size: cover;
 
-    grid-template-columns:1fr;
-
+    background-position: 75% center;
 }
 
 
 
-.section-title {
+/* ========================================
+   背景の質感
+======================================== */
 
-    font-size:26px;
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+
+    background:
+
+        radial-gradient(
+            circle at 72% 42%,
+            rgba(255,255,255,0.10),
+            transparent 31%
+        ),
+
+        linear-gradient(
+            120deg,
+            rgba(240,90,12,0.06),
+            transparent 42%
+        );
+}
+
+
+
+/* ========================================
+   上下の影
+======================================== */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+
+    box-shadow:
+
+        inset 0 100px 100px
+        rgba(0,0,0,0.30),
+
+        inset 0 -100px 120px
+        rgba(0,0,0,0.42);
+}
+
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+.site-header {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    padding: 25px 4%;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.09);
+
+    background:
+    rgba(0,0,0,0.22);
+
+    backdrop-filter: blur(5px);
+}
+
+
+
+.header-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: min(1500px,100%);
+
+    margin: 0 auto;
+
+    gap: 35px;
+}
+
+
+
+/* ========================================
+   TSKY MODE ロゴ
+======================================== */
+
+.logo {
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    font-family:
+    "Barlow Condensed",
+    sans-serif;
+
+    font-size:
+    clamp(1.6rem,2.2vw,2.1rem);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.13em;
+
+    text-shadow:
+    0 3px 15px rgba(0,0,0,0.9);
+}
+
+
+
+/* ========================================
+   ナビゲーション
+======================================== */
+
+.site-nav {
+
+    margin-left: auto;
+}
+
+
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+    clamp(22px,2.8vw,48px);
+}
+
+
+
+.nav-menu a {
+
+    position: relative;
+
+    display: block;
+
+    padding: 11px 0;
+
+    color:
+    rgba(255,255,255,0.90);
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    transition:
+    color 0.25s ease;
+}
+
+
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    background: #f05a0c;
+
+    box-shadow:
+    0 0 12px rgba(240,90,12,0.65);
+
+    transition:
+    width 0.25s ease;
+}
+
+
+
+.nav-menu a:hover,
+.nav-menu a.active {
+
+    color: #ffffff;
+}
+
+
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+
+    width: 100%;
+}
+
+
+
+/* ========================================
+   SNS
+======================================== */
+
+.social-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    flex-shrink: 0;
+
+    margin-left: 10px;
+}
+
+
+
+.social-links a {
+
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+
+.social-links a:hover {
+
+    color: #f05a0c;
+
+    transform:
+    translateY(-3px);
+}
+
+
+
+/* ========================================
+   スマホメニューボタン
+======================================== */
+
+.menu-button {
+
+    display: none;
+
+    place-items: center;
+
+    width: 46px;
+
+    height: 46px;
+
+    margin-left: auto;
+
+    border:
+    1px solid rgba(255,255,255,0.25);
+
+    background:
+    rgba(0,0,0,0.55);
+
+    color: #ffffff;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+}
+
+
+
+/* ========================================
+   メインエリア
+======================================== */
+
+.hero-main {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex: 1;
+
+    align-items: center;
+
+    width:
+    min(1500px,92%);
+
+    margin: 0 auto;
+
+    padding:
+    55px 0 70px;
+}
+
+
+
+.hero-content {
+
+    width:
+    min(650px,100%);
+
+    padding-left: 10px;
+
+    text-shadow:
+    0 4px 18px rgba(0,0,0,0.95);
+}
+
+
+
+/* ========================================
+   ダイハツ
+======================================== */
+
+.brand-small {
+
+    margin-bottom: 0;
+
+    color: #ffffff;
+
+    font-size:
+    clamp(1.7rem,3vw,3rem);
+
+    font-weight: 900;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.04em;
+}
+
+
+
+/* ========================================
+   ネイキッド
+======================================== */
+
+.hero-title {
+
+    margin-bottom: 23px;
+
+    color: #ffffff;
+
+    font-size:
+    clamp(4.8rem,8.5vw,8.8rem);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    white-space: nowrap;
+}
+
+
+
+/* ========================================
+   オレンジライン
+======================================== */
+
+.orange-line {
+
+    width: 75px;
+
+    height: 3px;
+
+    margin:
+    0 0 26px;
+
+    border: 0;
+
+    background: #f05a0c;
+
+    box-shadow:
+    0 0 16px rgba(240,90,12,0.7);
+}
+
+
+
+/* ========================================
+   キャッチコピー
+======================================== */
+
+.hero-subtitle {
+
+    margin-bottom: 29px;
+
+    color: #ffffff;
+
+    font-size:
+    clamp(1.25rem,2vw,2rem);
+
+    font-weight: 700;
+
+    line-height: 1.55;
+
+    letter-spacing: 0.02em;
+}
+
+
+
+.hero-subtitle .accent {
+
+    color: #f05a0c;
+
+    font-weight: 900;
+}
+
+
+
+/* ========================================
+   説明文
+======================================== */
+
+.hero-description {
+
+    max-width: 550px;
+
+    margin-bottom: 37px;
+
+    color:
+    rgba(255,255,255,0.91);
+
+    font-size:
+    clamp(0.95rem,1.25vw,1.12rem);
+
+    font-weight: 500;
+
+    line-height: 2;
+
+    letter-spacing: 0.025em;
+}
+
+
+
+/* ========================================
+   記事を読むボタン
+======================================== */
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 38px;
+
+    min-width: 265px;
+
+    padding:
+    19px 31px;
+
+    border:
+    1px solid rgba(255,255,255,0.16);
+
+
+    background:
+
+    linear-gradient(
+        105deg,
+        #f05a0c,
+        #d73e00
+    );
+
+
+    color: #ffffff;
+
+    font-size: 1.04rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+
+    box-shadow:
+
+    0 16px 40px
+    rgba(0,0,0,0.42),
+
+    0 6px 22px
+    rgba(240,90,12,0.28);
+
+
+    transition:
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease,
+
+    background 0.25s ease;
+}
+
+
+
+.hero-button i {
+
+    font-size: 1.15rem;
+
+    transition:
+    transform 0.25s ease;
+}
+
+
+
+.hero-button:hover {
+
+    transform:
+    translateY(-3px);
+
+
+    background:
+
+    linear-gradient(
+        105deg,
+        #ff6918,
+        #e64500
+    );
+
+
+    box-shadow:
+
+    0 20px 48px
+    rgba(0,0,0,0.52),
+
+    0 8px 30px
+    rgba(240,90,12,0.40);
+}
+
+
+
+.hero-button:hover i {
+
+    transform:
+    translateX(7px);
+}
+
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media screen and (max-width:1150px) {
+
+
+    .site-header {
+
+        padding:
+        22px 3%;
+    }
+
+
+    .header-inner {
+
+        gap: 20px;
+    }
+
+
+    .nav-menu {
+
+        gap: 22px;
+    }
+
+
+    .social-links {
+
+        gap: 15px;
+
+        margin-left: 0;
+    }
+
+
+    .hero {
+
+        background-position:
+        63% center;
+    }
+
+
+    .hero-main {
+
+        width: 94%;
+    }
+
 
 }
 
 
 
-}
-/* =========================
-   What's New
-========================= */
+/* ========================================
+   スマートフォン
+======================================== */
 
-.news-box{
+@media screen and (max-width:850px) {
 
-background:#ffffff;
 
-border-left:6px solid #ff7a00;
+    .hero {
 
-padding:20px;
+        min-height: 100svh;
 
-margin:30px 0;
 
-border-radius:12px;
+        background-image:
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.48) 0%,
+            rgba(0,0,0,0.20) 30%,
+            rgba(0,0,0,0.70) 58%,
+            rgba(0,0,0,0.96) 100%
+        ),
 
-}
+        url("images/naked-top.jpg");
 
-.news-box h3{
 
-margin-bottom:15px;
+        background-position:
+        59% center;
+    }
 
-color:#333;
 
-}
 
-.news-box ul{
+    .site-header {
 
-list-style:none;
+        padding:
+        17px 20px;
+    }
 
-padding:0;
 
-}
 
-.news-box li{
+    .header-inner {
 
-padding:10px 0;
+        gap: 12px;
+    }
 
-border-bottom:1px solid #eee;
 
-}
 
-.news-box li:last-child{
+    .logo {
 
-border-bottom:none;
+        font-size: 1.55rem;
+    }
 
-}
-/* =========================
-   カテゴリー
-========================= */
 
-.categories{
 
-margin:60px 0;
+    /* ハンバーガーメニュー */
 
-}
+    .menu-button {
 
-.category-grid{
+        display: grid;
+    }
 
-display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-gap:20px;
+    .site-nav {
 
-}
+        margin-left: 0;
+    }
 
-.category-card{
 
-display:block;
 
-background:#fff;
+    .nav-menu {
 
-padding:25px;
+        position: absolute;
 
-text-align:center;
+        top: 79px;
 
-text-decoration:none;
+        left: 18px;
 
-color:#333;
+        right: 18px;
 
-border-radius:15px;
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+        display: none;
 
-transition:.3s;
+        flex-direction: column;
 
-}
+        align-items: stretch;
 
-.category-card:hover{
 
-transform:translateY(-5px);
+        gap: 0;
 
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+        padding:
+        8px 20px;
 
-}
 
-.category-card h3{
+        border:
+        1px solid rgba(255,255,255,0.13);
 
-margin:15px 0 10px;
 
-font-size:22px;
+        background:
+        rgba(5,5,5,0.97);
 
-}
 
-.category-card p{
+        box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.65);
 
-font-size:14px;
 
-line-height:1.6;
+        backdrop-filter:
+        blur(15px);
+    }
 
-color:#666;
 
-}
-/* =========================
-   DIYギャラリー
-========================= */
 
-.gallery{
+    .nav-menu.open {
 
-margin:60px 0;
+        display: flex;
+    }
 
-}
 
-.gallery-grid{
 
-display:grid;
+    .nav-menu li {
 
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+        border-bottom:
+        1px solid rgba(255,255,255,0.09);
+    }
 
-gap:25px;
 
-}
 
-.gallery-item{
+    .nav-menu li:last-child {
 
-display:block;
+        border-bottom: 0;
+    }
 
-background:#ffffff;
 
-border-radius:15px;
 
-overflow:hidden;
+    .nav-menu a {
 
-text-decoration:none;
+        padding:
+        17px 5px;
+    }
 
-color:#333;
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
 
-transition:0.3s;
+    .social-links {
 
-}
+        display: none;
+    }
 
-.gallery-item:hover{
 
-transform:translateY(-6px);
 
-box-shadow:0 10px 25px rgba(0,0,0,.18);
+    /* メイン */
 
-}
+    .hero-main {
 
-.gallery-item img{
+        align-items: flex-end;
 
-width:100%;
+        width:
+        calc(100% - 40px);
 
-height:180px;
+        padding:
+        80px 0 43px;
+    }
 
-object-fit:cover;
 
-display:block;
 
-}
+    .hero-content {
 
-.gallery-item p{
+        width: 100%;
 
-padding:15px;
+        padding-left: 0;
+    }
 
-font-size:18px;
 
-font-weight:bold;
 
-text-align:center;
+    .brand-small {
 
-}
-/* =========================
-   人気記事
-========================= */
+        font-size: 1.55rem;
+    }
 
-.ranking{
 
-margin-top:40px;
 
-}
+    .hero-title {
 
-.ranking h3{
+        margin-bottom: 17px;
 
-margin-bottom:20px;
+        font-size:
+        clamp(3.7rem,17vw,5.8rem);
+    }
 
-text-align:center;
 
-}
 
-.ranking-card{
+    .orange-line {
 
-background:#fff;
+        margin-bottom: 20px;
+    }
 
-border-radius:12px;
 
-overflow:hidden;
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+    .hero-subtitle {
 
-margin-bottom:20px;
+        margin-bottom: 19px;
 
-transition:.3s;
+        font-size: 1.17rem;
+    }
 
-}
 
-.ranking-card:hover{
 
-transform:translateY(-4px);
+    .hero-description {
 
-box-shadow:0 10px 20px rgba(0,0,0,.15);
+        margin-bottom: 27px;
+
+        font-size: 0.9rem;
+
+        line-height: 1.85;
+    }
+
+
+
+    .hero-button {
+
+        min-width: 220px;
+
+        padding:
+        16px 25px;
+    }
+
 
 }
 
-.ranking-card a{
-
-display:block;
-
-color:#333;
-
-text-decoration:none;
-
-}
-
-.ranking-card img{
-
-width:100%;
-
-height:140px;
-
-object-fit:cover;
-
-display:block;
-
-}
-
-.ranking-card h4{
-
-padding:15px;
-
-margin:0;
-
-font-size:16px;
-
-text-align:center;
-
-}
-
-.coming-soon-small{
-
-height:140px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-flex-direction:column;
-
-background:#f3f3f3;
-
-font-size:24px;
-
-color:#888;
-
-font-weight:bold;
-
-}/* 下部リンク */
-
-.bottom-links{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:50px 20px;
-    flex-wrap:wrap;
-}
 
 
-.bbs-button{
-    width:320px;
-    padding:25px;
-    background:#222;
-    color:white;
-    text-align:center;
-    border-radius:12px;
-    text-decoration:none;
-    font-size:22px;
-    font-weight:bold;
-}
+/* ========================================
+   小さいスマートフォン
+======================================== */
+
+@media screen and (max-width:470px) {
 
 
-.bbs-button span{
-    display:block;
-    margin-top:10px;
-    font-size:14px;
-    font-weight:normal;
-}
+    .hero {
+
+        background-position:
+        57% center;
+    }
 
 
-.contact-link{
-    width:220px;
-    padding:25px;
-    background:#ff6600;
-    color:white;
-    text-align:center;
-    border-radius:12px;
-    text-decoration:none;
-    font-size:20px;
-    font-weight:bold;
-}
+
+    .hero-main {
+
+        width:
+        calc(100% - 30px);
+    }
 
 
-/* スマホ */
 
-@media(max-width:768px){
+    .hero-title {
 
-.bottom-links{
-    flex-direction:column;
-    align-items:center;
-}
+        font-size: 3.55rem;
+    }
 
 
-.bbs-button,
-.contact-link{
-    width:90%;
-}
+
+    .hero-subtitle {
+
+        font-size: 1.05rem;
+    }
+
+
+
+    .hero-description br {
+
+        display: none;
+    }
+
+
+
+    .hero-button {
+
+        width: 100%;
+    }
+
 
 }
