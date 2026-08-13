@@ -2,6 +2,7 @@
 <html lang="ja">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta name="viewport"
@@ -27,7 +28,9 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
   <style>
+
     /* ========================================
        リセット
     ======================================== */
@@ -65,7 +68,7 @@
 
 
     /* ========================================
-       トップページ全体
+       TOPページ全体
     ======================================== */
 
     .hero {
@@ -76,26 +79,25 @@
       min-height: 100vh;
       overflow: hidden;
 
-      /*
-        ネイキッド画像
-        imagesフォルダ内のnaked-top.jpgを使用
-      */
       background-image:
+
         linear-gradient(
-  90deg,
-  rgba(0, 0, 0, 0.90) 0%,
-  rgba(0, 0, 0, 0.76) 22%,
-  rgba(0, 0, 0, 0.42) 42%,
-  rgba(0, 0, 0, 0.10) 68%,
-  rgba(0, 0, 0, 0.22) 100%
-),
+          90deg,
+          rgba(0, 0, 0, 0.90) 0%,
+          rgba(0, 0, 0, 0.76) 22%,
+          rgba(0, 0, 0, 0.42) 42%,
+          rgba(0, 0, 0, 0.10) 68%,
+          rgba(0, 0, 0, 0.22) 100%
+        ),
+
         linear-gradient(
           180deg,
           rgba(0, 0, 0, 0.72) 0%,
           rgba(0, 0, 0, 0.08) 35%,
-          rgba(0, 0, 0, 0.1) 64%,
-          rgba(0, 0, 0, 0.92) 100%
+          rgba(0, 0, 0, 0.10) 64%,
+          rgba(0, 0, 0, 0.75) 100%
         ),
+
         url("images/naked-top.jpg");
 
       background-repeat: no-repeat;
@@ -114,11 +116,13 @@
       pointer-events: none;
 
       background:
+
         radial-gradient(
           circle at 72% 42%,
           rgba(255, 255, 255, 0.11),
           transparent 31%
         ),
+
         linear-gradient(
           120deg,
           rgba(239, 91, 12, 0.06),
@@ -127,7 +131,7 @@
     }
 
 
-    /* 画面上下の暗い影 */
+    /* 上下の暗い影 */
 
     .hero::after {
       content: "";
@@ -137,8 +141,8 @@
       pointer-events: none;
 
       box-shadow:
-        inset 0 100px 100px rgba(0, 0, 0, 0.3),
-        inset 0 -120px 140px rgba(0, 0, 0, 0.55);
+        inset 0 100px 100px rgba(0, 0, 0, 0.30),
+        inset 0 -100px 120px rgba(0, 0, 0, 0.42);
     }
 
 
@@ -180,7 +184,9 @@
     }
 
 
-    /* ナビゲーション */
+    /* ========================================
+       ナビゲーション
+    ======================================== */
 
     .site-nav {
       margin-left: auto;
@@ -200,6 +206,7 @@
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: 0.05em;
+
       transition:
         color 0.25s ease,
         opacity 0.25s ease;
@@ -228,7 +235,9 @@
     }
 
 
-    /* SNS */
+    /* ========================================
+       SNS
+    ======================================== */
 
     .social-links {
       display: flex;
@@ -241,6 +250,7 @@
     .social-links a {
       color: #ffffff;
       font-size: 1.35rem;
+
       transition:
         color 0.25s ease,
         transform 0.25s ease;
@@ -359,7 +369,9 @@
     }
 
 
-    /* 記事を読むボタン */
+    /* ========================================
+       記事ボタン
+    ======================================== */
 
     .hero-button {
       display: inline-flex;
@@ -369,18 +381,22 @@
       min-width: 265px;
       padding: 19px 31px;
       border: 1px solid rgba(255, 255, 255, 0.16);
+
       background: linear-gradient(
         105deg,
         #f05a0c,
         #d73e00
       );
+
       color: #ffffff;
       font-size: 1.04rem;
       font-weight: 700;
       letter-spacing: 0.04em;
+
       box-shadow:
         0 16px 40px rgba(0, 0, 0, 0.42),
         0 6px 22px rgba(240, 90, 12, 0.28);
+
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
@@ -394,11 +410,13 @@
 
     .hero-button:hover {
       transform: translateY(-3px);
+
       background: linear-gradient(
         105deg,
         #ff6918,
         #e64500
       );
+
       box-shadow:
         0 20px 48px rgba(0, 0, 0, 0.52),
         0 8px 30px rgba(240, 90, 12, 0.4);
@@ -416,12 +434,13 @@
     .scroll-mark {
       position: absolute;
       right: 4%;
-      bottom: 125px;
+      bottom: 38px;
       z-index: 6;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 9px;
+
       color: rgba(255, 255, 255, 0.75);
       font-family: "Barlow Condensed", sans-serif;
       font-size: 0.72rem;
@@ -433,15 +452,18 @@
       content: "";
       width: 1px;
       height: 50px;
+
       background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0.9),
         transparent
       );
+
       animation: scrollLine 1.8s ease-in-out infinite;
     }
 
     @keyframes scrollLine {
+
       0%,
       100% {
         opacity: 0.35;
@@ -454,143 +476,6 @@
         transform: scaleY(1);
         transform-origin: top;
       }
-    }
-
-
-    /* ========================================
-       WHAT'S NEW
-    ======================================== */
-
-    .whats-new {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      min-height: 98px;
-      border-top: 1px solid rgba(255, 255, 255, 0.17);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(6, 6, 6, 0.88);
-      backdrop-filter: blur(14px);
-    }
-
-    .news-inner {
-      display: grid;
-      grid-template-columns: 210px 1fr 155px;
-      align-items: stretch;
-      width: min(1600px, 100%);
-      min-height: 98px;
-      margin: 0 auto;
-    }
-
-
-    /* WHAT'S NEW見出し */
-
-    .news-heading {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      padding: 0 30px;
-      border-right: 1px solid rgba(255, 255, 255, 0.13);
-      color: #ffffff;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1.34rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      white-space: nowrap;
-    }
-
-    .news-heading::after {
-      content: "";
-      width: 3px;
-      height: 43px;
-      background: #f05a0c;
-      box-shadow: 0 0 11px rgba(240, 90, 12, 0.48);
-    }
-
-
-    /* ニュース一覧 */
-
-    .news-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      min-width: 0;
-    }
-
-    .news-item {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 7px;
-      min-width: 0;
-      padding: 18px 27px;
-    }
-
-    .news-item:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 26%;
-      right: 0;
-      width: 1px;
-      height: 48%;
-      background: rgba(255, 255, 255, 0.16);
-    }
-
-    .news-date {
-      color: #f05a0c;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 0.93rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-    }
-
-    .news-title {
-      overflow: hidden;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 0.91rem;
-      font-weight: 500;
-      line-height: 1.5;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      transition: color 0.25s ease;
-    }
-
-    .news-title:hover {
-      color: #f05a0c;
-    }
-
-
-    /* VIEW ALL */
-
-    .view-all {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-      border-left: 1px solid rgba(255, 255, 255, 0.13);
-      color: #ffffff;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      white-space: nowrap;
-      transition:
-        color 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .view-all i {
-      color: #f05a0c;
-      transition: transform 0.25s ease;
-    }
-
-    .view-all:hover {
-      color: #f05a0c;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .view-all:hover i {
-      transform: translateX(6px);
     }
 
 
@@ -624,19 +509,6 @@
       .hero-main {
         width: 94%;
       }
-
-      .news-inner {
-        grid-template-columns: 180px 1fr 130px;
-      }
-
-      .news-heading {
-        padding: 0 20px;
-        font-size: 1.13rem;
-      }
-
-      .news-item {
-        padding: 17px 18px;
-      }
     }
 
 
@@ -650,6 +522,7 @@
         min-height: 100svh;
 
         background-image:
+
           linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.5) 0%,
@@ -657,6 +530,7 @@
             rgba(0, 0, 0, 0.72) 58%,
             rgba(0, 0, 0, 0.98) 100%
           ),
+
           url("images/naked-top.jpg");
 
         background-position: 59% center;
@@ -687,14 +561,21 @@
         top: 79px;
         left: 18px;
         right: 18px;
+
         display: none;
         flex-direction: column;
         align-items: stretch;
+
         gap: 0;
         padding: 8px 20px;
+
         border: 1px solid rgba(255, 255, 255, 0.13);
+
         background: rgba(5, 5, 5, 0.97);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.65);
+
         backdrop-filter: blur(15px);
       }
 
@@ -761,51 +642,6 @@
       .scroll-mark {
         display: none;
       }
-
-      .whats-new {
-        min-height: auto;
-      }
-
-      .news-inner {
-        display: block;
-        min-height: auto;
-      }
-
-      .news-heading {
-        min-height: 64px;
-        padding: 0 20px;
-        border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      }
-
-      .news-heading::after {
-        width: 32px;
-        height: 2px;
-      }
-
-      .news-list {
-        display: block;
-      }
-
-      .news-item {
-        padding: 15px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-      }
-
-      .news-item:not(:last-child)::after {
-        display: none;
-      }
-
-      .news-title {
-        white-space: normal;
-      }
-
-      .view-all {
-        min-height: 60px;
-        justify-content: flex-start;
-        padding: 15px 20px;
-        border-left: 0;
-      }
     }
 
 
@@ -841,12 +677,15 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
   <main class="hero">
+
 
     <!-- ======================================
          ヘッダー
@@ -856,14 +695,19 @@
 
       <div class="header-inner">
 
+
         <!-- ロゴ -->
+
         <a href="index.html"
            class="logo">
+
           TSKY MODE
+
         </a>
 
 
         <!-- スマホ用メニューボタン -->
+
         <button class="menu-button"
                 id="menuButton"
                 type="button"
@@ -876,42 +720,58 @@
 
 
         <!-- ナビゲーション -->
+
         <nav class="site-nav"
              aria-label="メインメニュー">
 
           <ul class="nav-menu"
               id="navMenu">
 
+
             <li>
+
               <a href="index.html"
                  class="active">
+
                 HOME
+
               </a>
+
             </li>
 
+
             <li>
+
               <a href="diy_deck.html">
+
                 DIY記事
+
               </a>
+
             </li>
 
-            <li>
-              <a href="dash.html">
-                ギャラリー
-              </a>
-            </li>
 
             <li>
+
               <a href="bbs.html">
+
                 掲示板
+
               </a>
+
             </li>
 
+
             <li>
+
               <a href="mailto:t.skymode51@gmail.com">
+
                 お問い合わせ
+
               </a>
+
             </li>
+
 
           </ul>
 
@@ -919,11 +779,9 @@
 
 
         <!-- SNSリンク -->
+
         <div class="social-links">
 
-          <!--
-            #の部分を自分のSNSアドレスへ変更してください
-          -->
 
           <a href="#"
              target="_blank"
@@ -934,6 +792,7 @@
 
           </a>
 
+
           <a href="#"
              target="_blank"
              rel="noopener noreferrer"
@@ -942,6 +801,7 @@
             <i class="fa-brands fa-instagram"></i>
 
           </a>
+
 
           <a href="#"
              target="_blank"
@@ -952,7 +812,9 @@
 
           </a>
 
+
         </div>
+
 
       </div>
 
@@ -967,25 +829,41 @@
 
       <div class="hero-content">
 
+
         <p class="brand-small">
+
           ダイハツ
+
         </p>
 
+
         <h1 class="hero-title">
+
           ネイキッド
+
         </h1>
+
 
         <hr class="orange-line">
 
+
         <h2 class="hero-subtitle">
+
           <span class="accent">DIY</span>で作る、自分だけのカーライフ
+
         </h2>
 
+
         <p class="hero-description">
+
           ネイキッドをもっと楽しく、もっと自分らしく。<br>
+
           DIY整備・カスタム・メンテナンスの記録を<br>
+
           リアルにお届けします。
+
         </p>
+
 
         <a href="diy_deck.html"
            class="hero-button">
@@ -996,102 +874,14 @@
 
         </a>
 
-      </div>
-
-    </section>
-
-
-    <!-- スクロール表示 -->
-    <div class="scroll-mark">
-      SCROLL
-    </div>
-
-
-    <!-- ======================================
-         WHAT'S NEW
-    ======================================= -->
-
-    <section class="whats-new"
-             aria-labelledby="newsTitle">
-
-      <div class="news-inner">
-
-        <h2 class="news-heading"
-            id="newsTitle">
-          WHAT'S NEW
-        </h2>
-
-
-        <ul class="news-list">
-
-          <!-- 新着情報1 -->
-          <li class="news-item">
-
-            <time class="news-date"
-                  datetime="2026-08-01">
-              2026.08.01
-            </time>
-
-            <a href="index.html"
-               class="news-title">
-
-              ブログのトップページをリニューアルしました！
-
-            </a>
-
-          </li>
-
-
-          <!-- 新着情報2 -->
-          <li class="news-item">
-
-            <time class="news-date"
-                  datetime="2026-07-25">
-              2026.07.25
-            </time>
-
-            <a href="diy_deck.html"
-               class="news-title">
-
-              カロッツェリアデッキ取り付け記事
-
-            </a>
-
-          </li>
-
-
-          <!-- 新着情報3 -->
-          <li class="news-item">
-
-            <time class="news-date"
-                  datetime="2026-07-24">
-              2026.07.24
-            </time>
-
-            <a href="dash.html"
-               class="news-title">
-
-              ダッシュボードDIY加工の記事
-
-            </a>
-
-          </li>
-
-        </ul>
-
-
-        <a href="diy_deck.html"
-           class="view-all">
-
-          <span>VIEW ALL</span>
-
-          <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
 
       </div>
 
     </section>
+
+
+    
+
 
   </main>
 
@@ -1118,6 +908,7 @@
 
         const menuIsOpen =
           navMenu.classList.toggle("open");
+
 
         menuButton.setAttribute(
           "aria-expanded",
@@ -1151,10 +942,7 @@
     );
 
 
-    /*
-      メニュー内のリンクを押したら
-      スマホメニューを閉じる
-    */
+    /* メニューリンクを押したら閉じる */
 
     const navigationLinks =
       navMenu.querySelectorAll("a");
@@ -1191,9 +979,7 @@
     );
 
 
-    /*
-      メニュー外をクリックした場合も閉じる
-    */
+    /* メニュー外をクリックしても閉じる */
 
     document.addEventListener(
       "click",
@@ -1234,6 +1020,7 @@
     );
 
   </script>
+
 
 </body>
 
