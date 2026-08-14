@@ -4,168 +4,1859 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>カロッツェリアデッキ取り付け｜ダイハツ ネイキッド DIY整備</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>DIY記事一覧 | TSKY MODE</title>
+
+<meta name="description"
+content="ダイハツ ネイキッドのDIY整備・カスタム・メンテナンス記事一覧。TSKY MODEのDIY記録を紹介します。">
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+rel="stylesheet">
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+
+
+/* ========================================
+   基本設定
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #0a0a0a 50%,
+            #050505 100%
+        );
+
+    color: #ffffff;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+.site-header {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    padding:
+        20px 4%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.09);
+
+    background:
+        rgba(5,5,5,0.90);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.header-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width:
+        min(1500px,100%);
+
+    margin:
+        0 auto;
+
+    gap:
+        35px;
+}
+
+
+
+/* ========================================
+   TSKY MODE ロゴ
+======================================== */
+
+.logo {
+
+    flex-shrink: 0;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        clamp(3.2rem,4.4vw,4.2rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        0.10em;
+
+    text-shadow:
+
+        0 3px 15px
+        rgba(0,0,0,0.95),
+
+        0 0 18px
+        rgba(240,90,12,0.35);
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+
+.logo:hover {
+
+    color:
+        #ff6a18;
+
+    text-shadow:
+
+        0 3px 15px
+        rgba(0,0,0,0.95),
+
+        0 0 25px
+        rgba(240,90,12,0.55);
+}
+
+
+
+/* ========================================
+   ナビゲーション
+======================================== */
+
+.site-nav {
+
+    margin-left:
+        auto;
+}
+
+
+.nav-menu {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        clamp(22px,2.8vw,48px);
+}
+
+
+.nav-menu a {
+
+    position:
+        relative;
+
+    display:
+        block;
+
+    padding:
+        11px 0;
+
+    color:
+        rgba(255,255,255,0.90);
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.05em;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.nav-menu a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        0;
+
+    height:
+        3px;
+
+    background:
+        #f05a0c;
+
+    box-shadow:
+        0 0 12px
+        rgba(240,90,12,0.65);
+
+    transition:
+        width 0.25s ease;
+}
+
+
+.nav-menu a:hover,
+.nav-menu a.active {
+
+    color:
+        #ffffff;
+}
+
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+
+    width:
+        100%;
+}
+
+
+
+/* ========================================
+   SNS
+======================================== */
+
+.social-links {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+    flex-shrink:
+        0;
+
+    margin-left:
+        10px;
+}
+
+
+.social-links a {
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.35rem;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.social-links a:hover {
+
+    color:
+        #f05a0c;
+
+    transform:
+        translateY(-3px);
+}
+
+
+
+/* ========================================
+   スマホメニューボタン
+======================================== */
+
+.menu-button {
+
+    display:
+        none;
+
+    place-items:
+        center;
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    margin-left:
+        auto;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    background:
+        rgba(0,0,0,0.55);
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.3rem;
+
+    cursor:
+        pointer;
+}
+
+
+
+/* ========================================
+   ページ上部
+======================================== */
+
+.page-hero {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        95px 5% 80px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(240,90,12,0.12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111111,
+            #050505 60%
+        );
+}
+
+
+.page-hero::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        100%;
+
+    height:
+        3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #f05a0c,
+            transparent
+        );
+
+    opacity:
+        0.75;
+}
+
+
+.page-hero-inner {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        min(1250px,100%);
+
+    margin:
+        0 auto;
+}
+
+
+.page-label {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.18em;
+}
+
+
+.page-title {
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        clamp(2.8rem,6vw,5.8rem);
+
+    font-weight:
+        900;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -0.04em;
+}
+
+
+.title-line {
+
+    width:
+        85px;
+
+    height:
+        5px;
+
+    margin-bottom:
+        25px;
+
+    background:
+        #f05a0c;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(240,90,12,0.9),
+
+        0 0 18px
+        rgba(240,90,12,0.45);
+}
+
+
+.page-description {
+
+    max-width:
+        720px;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.9;
+}
+
+
+
+/* ========================================
+   記事一覧
+======================================== */
+
+.article-section {
+
+    width:
+        min(1250px,90%);
+
+    margin:
+        0 auto;
+
+    padding:
+        80px 0 110px;
+}
+
+
+.section-heading {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        35px;
+
+    font-size:
+        1.45rem;
+
+    font-weight:
+        900;
+}
+
+
+.section-heading i {
+
+    color:
+        #f05a0c;
+}
+
+
+
+/* ========================================
+   記事カード
+======================================== */
+
+.article-list {
+
+    display:
+        grid;
+
+    gap:
+        28px;
+}
+
+
+.article-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        330px 1fr;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    background:
+        #0d0d0d;
+
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+.article-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(240,90,12,0.55);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,0.48);
+}
+
+
+
+/* ========================================
+   サムネイル
+======================================== */
+
+.article-image {
+
+    position:
+        relative;
+
+    min-height:
+        225px;
+
+    overflow:
+        hidden;
+
+    background:
+        #181818;
+}
+
+
+.article-image img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.article-card:hover
+.article-image img {
+
+    transform:
+        scale(1.045);
+}
+
+
+.article-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 55%,
+            rgba(13,13,13,0.45) 100%
+        );
+
+    pointer-events:
+        none;
+}
+
+
+
+/* ========================================
+   記事本文部分
+======================================== */
+
+.article-content {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    padding:
+        30px 38px;
+}
+
+
+.article-meta {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        14px;
+}
+
+
+.category {
+
+    display:
+        inline-block;
+
+    padding:
+        5px 10px;
+
+    background:
+        rgba(240,90,12,0.14);
+
+    border:
+        1px solid
+        rgba(240,90,12,0.45);
+
+    color:
+        #ff7b32;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.05em;
+}
+
+
+.article-date {
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size:
+        0.78rem;
+}
+
+
+.article-title {
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        clamp(1.25rem,2vw,1.75rem);
+
+    font-weight:
+        900;
+
+    line-height:
+        1.5;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.article-card:hover
+.article-title {
+
+    color:
+        #ff6a18;
+}
+
+
+.article-description {
+
+    margin-bottom:
+        22px;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size:
+        0.93rem;
+
+    line-height:
+        1.8;
+}
+
+
+.read-more {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    width:
+        fit-content;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        0.92rem;
+
+    font-weight:
+        700;
+}
+
+
+.read-more i {
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.article-card:hover
+.read-more i {
+
+    transform:
+        translateX(6px);
+}
+
+
+
+/* ========================================
+   今後の記事
+======================================== */
+
+.coming-soon {
+
+    margin-top:
+        55px;
+
+    padding:
+        32px;
+
+    border:
+        1px dashed
+        rgba(255,255,255,0.16);
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+.coming-soon i {
+
+    margin-bottom:
+        14px;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        1.8rem;
+}
+
+
+.coming-soon h2 {
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        1.2rem;
+}
+
+
+.coming-soon p {
+
+    color:
+        rgba(255,255,255,0.6);
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.7;
+}
+
+
+
+/* ========================================
+   フッター
+======================================== */
+
+.site-footer {
+
+    padding:
+        42px 5%;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        #030303;
+
+    text-align:
+        center;
+}
+
+
+.footer-logo {
+
+    margin-bottom:
+        12px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        2.2rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.1em;
+}
+
+
+.footer-copy {
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size:
+        0.78rem;
+}
+
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media screen and
+(max-width: 1000px) {
+
+
+    .site-header {
+
+        padding:
+            18px 3%;
+    }
+
+
+    .header-inner {
+
+        gap:
+            20px;
+    }
+
+
+    .logo {
+
+        font-size:
+            clamp(2.6rem,4vw,3.5rem);
+    }
+
+
+    .nav-menu {
+
+        gap:
+            22px;
+    }
+
+
+    .social-links {
+
+        gap:
+            15px;
+
+        margin-left:
+            0;
+    }
+
+
+    .article-card {
+
+        grid-template-columns:
+            290px 1fr;
+    }
+
+
+}
+
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media screen and
+(max-width: 850px) {
+
+
+    .site-header {
+
+        padding:
+            15px 20px;
+    }
+
+
+    .header-inner {
+
+        gap:
+            12px;
+    }
+
+
+    .logo {
+
+        font-size:
+            2.25rem;
+
+        letter-spacing:
+            0.08em;
+    }
+
+
+    .menu-button {
+
+        display:
+            grid;
+    }
+
+
+    .site-nav {
+
+        margin-left:
+            0;
+    }
+
+
+    .nav-menu {
+
+        position:
+            absolute;
+
+        top:
+            76px;
+
+        left:
+            18px;
+
+        right:
+            18px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            8px 20px;
+
+        border:
+            1px solid
+            rgba(255,255,255,0.13);
+
+        background:
+            rgba(5,5,5,0.98);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,0.65);
+    }
+
+
+    .nav-menu.open {
+
+        display:
+            flex;
+    }
+
+
+    .nav-menu li {
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.09);
+    }
+
+
+    .nav-menu li:last-child {
+
+        border-bottom:
+            0;
+    }
+
+
+    .nav-menu a {
+
+        padding:
+            17px 5px;
+    }
+
+
+    .social-links {
+
+        display:
+            none;
+    }
+
+
+    .page-hero {
+
+        padding:
+            65px 25px 55px;
+    }
+
+
+    .article-section {
+
+        width:
+            calc(100% - 40px);
+
+        padding:
+            55px 0 80px;
+    }
+
+
+    .article-card {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .article-image {
+
+        min-height:
+            230px;
+    }
+
+
+    .article-image::after {
+
+        background:
+            linear-gradient(
+                180deg,
+                transparent 65%,
+                rgba(13,13,13,0.45) 100%
+            );
+    }
+
+
+    .article-content {
+
+        padding:
+            25px;
+    }
+
+
+}
+
+
+
+/* ========================================
+   小さいスマートフォン
+======================================== */
+
+@media screen and
+(max-width: 470px) {
+
+
+    .site-header {
+
+        padding:
+            14px 15px;
+    }
+
+
+    .logo {
+
+        font-size:
+            2rem;
+    }
+
+
+    .page-hero {
+
+        padding:
+            55px 18px 45px;
+    }
+
+
+    .page-label {
+
+        font-size:
+            1.05rem;
+    }
+
+
+    .page-title {
+
+        font-size:
+            2.5rem;
+    }
+
+
+    .article-section {
+
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .article-image {
+
+        min-height:
+            205px;
+    }
+
+
+    .article-content {
+
+        padding:
+            22px 20px;
+    }
+
+
+    .article-title {
+
+        font-size:
+            1.18rem;
+    }
+
+
+    .article-description {
+
+        font-size:
+            0.88rem;
+    }
+
+
+}
+
+
+</style>
 
 </head>
 
+
+
 <body>
 
-<nav>
 
-<div class="nav-inner">
+<!-- ======================================
+     ヘッダー
+======================================= -->
 
-<div class="logo">
+<header class="site-header">
+
+<div class="header-inner">
+
+
+<!-- ロゴ -->
+
+<a href="index.html"
+class="logo">
+
+TSKY MODE
+
+</a>
+
+
+
+<!-- スマホ用メニューボタン -->
+
+<button
+class="menu-button"
+id="menuButton"
+type="button"
+aria-label="メニューを開く"
+aria-expanded="false">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+
+<!-- ナビゲーション -->
+
+<nav
+class="site-nav"
+aria-label="メインメニュー">
+
+
+<ul
+class="nav-menu"
+id="navMenu">
+
+
+<li>
+
+<a href="index.html">
+
+HOME
+
+</a>
+
+</li>
+
+
+<li>
+
+<a
+href="diy_deck.html"
+class="active">
+
+DIY記事
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="bbs.html">
+
+掲示板
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="mailto:t.skymode51@gmail.com">
+
+お問い合わせ
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</nav>
+
+
+
+<!-- SNS -->
+
+<div class="social-links">
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="X">
+
+<i class="fa-brands fa-x-twitter"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Instagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="YouTube">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</header>
+
+
+
+<!-- ======================================
+     ページタイトル
+======================================= -->
+
+<section class="page-hero">
+
+<div class="page-hero-inner">
+
+
+<p class="page-label">
+
+DIY ARTICLES
+
+</p>
+
+
+<h1 class="page-title">
+
+DIY記事
+
+</h1>
+
+
+<div class="title-line"></div>
+
+
+<p class="page-description">
+
+ダイハツ ネイキッドを中心に、
+DIY整備・メンテナンス・塗装・カー用品など、
+実際に作業した内容を記録しています。
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================
+     DIY記事一覧
+======================================= -->
+
+<main class="article-section">
+
+
+<h2 class="section-heading">
+
+<i class="fa-solid fa-wrench"></i>
+
+DIY記事一覧
+
+</h2>
+
+
+
+<div class="article-list">
+
+
+<!-- ======================================
+     記事 01
+======================================= -->
+
+<a
+href="compressor-box.html"
+class="article-card">
+
+
+<div class="article-image">
+
+
+<!--
+    ↓↓↓
+    この画像を記事一覧用の画像に変更してください。
+
+    画像ファイル名：
+    compressor-box.jpg
+
+    保存場所：
+    images/compressor-box.jpg
+-->
+
+
+<img
+src="images/compressor-box.jpg"
+alt="ミナトCP-8A コンプレッサー防音ボックス">
+
+
+</div>
+
+
+
+<div class="article-content">
+
+
+<div class="article-meta">
+
+
+<span class="category">
+
+コンプレッサー
+
+</span>
+
+
+<time
+class="article-date"
+datetime="2026-08-15">
+
+2026.08.15
+
+</time>
+
+
+</div>
+
+
+
+<h2 class="article-title">
+
+ミナトCP-8Aを購入！
+収納ボックスで防音＆冷却対策してみた
+
+</h2>
+
+
+
+<p class="article-description">
+
+新しく購入したミナトCP-8A。
+収納ボックスと吸音材、
+USB扇風機、そしてまさかの植木鉢を使って
+防音と冷却を両立させてみました。
+
+</p>
+
+
+
+<span class="read-more">
+
+この記事を読む
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</span>
+
+
+</div>
+
+
+</a>
+
+
+
+</div>
+
+
+
+<!-- ======================================
+     今後の記事
+======================================= -->
+
+<div class="coming-soon">
+
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+
+<h2>
+
+DIY記事は随時追加していきます
+
+</h2>
+
+
+<p>
+
+ネイキッドの整備・カスタム・塗装など、<br>
+実際に作業した内容を少しずつ追加していきます。
+
+</p>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- ======================================
+     フッター
+======================================= -->
+
+<footer class="site-footer">
+
+
+<div class="footer-logo">
 
 TSKY MODE
 
 </div>
 
-<ul>
 
-<li><a href="index.html">ホーム</a></li>
+<p class="footer-copy">
 
-<li><a href="bbs.html">掲示板</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-
-
-<main>
-
-<article class="article">
-
-<h1>
-
-カロッツェリアデッキ取り付け
-
-</h1>
-
-<p class="article-date">
-
-更新日：2026年7月
+Tune your Style, Keep Yourself.<br>
+© TSKY MODE
 
 </p>
 
-<img src="images/deck.jpg" alt="カロッツェリアデッキ取り付け">
-
-<h2>
-
-取り付けのきっかけ
-
-</h2>
-
-<p>
-
-純正オーディオでは物足りなくなったため、
-カロッツェリア製デッキへ交換しました。
-
-今回はDIYで取り付けた手順を紹介します。
-
-</p>
-<h2>
-
-使用した部品
-
-</h2>
-
-<ul>
-
-<li>カロッツェリア デッキ</li>
-
-<li>オーディオハーネス</li>
-
-<li>変換コネクター</li>
-
-<li>内張りはがし</li>
-
-<li>プラスドライバー</li>
-
-</ul>
-
-
-<h2>
-
-作業手順
-
-</h2>
-
-<h3>① 純正オーディオを取り外す</h3>
-
-<p>
-
-まずはパネルを慎重に外し、純正オーディオを取り外します。
-傷が付かないように内張りはがしを使用しました。
-
-</p>
-
-
-<h3>② 配線を接続する</h3>
-
-<p>
-
-車両側ハーネスとデッキ側ハーネスを接続します。
-接続ミスがないか確認してから取り付けます。
-
-</p>
-
-
-<h3>③ 動作確認</h3>
-
-<p>
-
-電源・ラジオ・Bluetooth・USBなどを確認し、
-問題なく動作することを確認しました。
-
-</p>
-
-
-<img src="images/deck.jpg" alt="取り付け後の写真">
-<h2>
-
-まとめ
-
-</h2>
-
-<p>
-
-純正オーディオからカロッツェリアデッキへ交換することで、
-音質や使い勝手が大きく向上しました。
-
-DIYでも比較的挑戦しやすい作業なので、
-これから交換を考えている方の参考になれば嬉しいです。
-
-</p>
-
-<hr>
-
-<p>
-
-<a href="index.html">← トップページへ戻る</a>
-
-</p>
-
-</article>
-
-</main>
-
-
-<footer>
-
-<p>
-
-© 2026 TSKY MODE
-ダイハツ ネイキッド DIY整備＆チョイカスタム
-
-</p>
 
 </footer>
+
+
+
+<!-- ======================================
+     スマホメニュー
+======================================= -->
+
+<script>
+
+
+const menuButton =
+document.getElementById("menuButton");
+
+
+const navMenu =
+document.getElementById("navMenu");
+
+
+const menuIcon =
+menuButton.querySelector("i");
+
+
+
+menuButton.addEventListener(
+"click",
+function () {
+
+
+const menuIsOpen =
+navMenu.classList.toggle("open");
+
+
+menuButton.setAttribute(
+"aria-expanded",
+menuIsOpen
+);
+
+
+if (menuIsOpen) {
+
+
+menuIcon.classList.remove(
+"fa-bars"
+);
+
+
+menuIcon.classList.add(
+"fa-xmark"
+);
+
+
+} else {
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+
+
+}
+);
+
+
+
+/* メニューリンクを押したら閉じる */
+
+const navigationLinks =
+navMenu.querySelectorAll("a");
+
+
+navigationLinks.forEach(
+function (link) {
+
+
+link.addEventListener(
+"click",
+function () {
+
+
+navMenu.classList.remove(
+"open"
+);
+
+
+menuButton.setAttribute(
+"aria-expanded",
+"false"
+);
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+);
+
+
+}
+);
+
+
+
+/* メニュー外をクリックしたら閉じる */
+
+document.addEventListener(
+"click",
+function (event) {
+
+
+const clickedMenuButton =
+menuButton.contains(event.target);
+
+
+const clickedNavigation =
+navMenu.contains(event.target);
+
+
+if (
+!clickedMenuButton &&
+!clickedNavigation
+) {
+
+
+navMenu.classList.remove(
+"open"
+);
+
+
+menuButton.setAttribute(
+"aria-expanded",
+"false"
+);
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+
+
+}
+);
+
+
+</script>
+
 
 </body>
 
