@@ -1,1 +1,2271 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>お問い合わせ | TSKY MODE</title>
+
+<meta name="description"
+content="TSKY MODEへのお問い合わせページです。ネイキッド、DIY整備、カスタム、ブログに関するお問い合わせはこちらから。">
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap"
+rel="stylesheet">
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+
+
+/* ========================================
+   基本設定
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        #050505;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font: inherit;
+}
+
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding:
+        16px 4%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(5,5,5,0.96);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.header-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width:
+        min(1500px,100%);
+
+    margin:
+        0 auto;
+
+    gap:
+        30px;
+}
+
+
+
+/* ========================================
+   TSKY MODE ロゴ
+======================================== */
+
+.logo {
+
+    flex-shrink: 0;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        clamp(2.8rem,4vw,3.8rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        0.10em;
+
+    text-shadow:
+
+        0 3px 15px rgba(0,0,0,0.95),
+
+        0 0 18px rgba(240,90,12,0.30);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.logo:hover {
+
+    color:
+        #ff6816;
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+/* ========================================
+   ナビゲーション
+======================================== */
+
+.site-nav {
+
+    margin-left:
+        auto;
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        clamp(22px,2.8vw,45px);
+}
+
+
+.nav-menu a {
+
+    position: relative;
+
+    display: block;
+
+    padding:
+        10px 0;
+
+    color:
+        rgba(255,255,255,0.90);
+
+    font-size:
+        0.92rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.05em;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.nav-menu a:hover {
+
+    color:
+        #ffffff;
+}
+
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background:
+        #f05a0c;
+
+    transition:
+        width 0.25s ease;
+}
+
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+
+    width:
+        100%;
+}
+
+
+
+/* ========================================
+   SNS
+======================================== */
+
+.social-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        20px;
+
+    flex-shrink:
+        0;
+}
+
+
+.social-links a {
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.25rem;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.social-links a:hover {
+
+    color:
+        #f05a0c;
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+/* ========================================
+   スマホメニュー
+======================================== */
+
+.menu-button {
+
+    display: none;
+
+    place-items: center;
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    margin-left:
+        auto;
+
+    border:
+        1px solid rgba(255,255,255,0.22);
+
+    background:
+        rgba(0,0,0,0.55);
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.2rem;
+
+    cursor:
+        pointer;
+}
+
+
+
+/* ========================================
+   ページ上部
+======================================== */
+
+.contact-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        55px 5% 48px;
+
+    border-bottom:
+        1px solid rgba(240,90,12,0.30);
+
+    background:
+
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(240,90,12,0.12),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111111,
+            #050505 63%,
+            #100703
+        );
+}
+
+
+.contact-hero-inner {
+
+    width:
+        min(1100px,100%);
+
+    margin:
+        0 auto;
+}
+
+
+.contact-label {
+
+    margin-bottom:
+        5px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1.1rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.18em;
+}
+
+
+.contact-title {
+
+    margin-bottom:
+        18px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(2.8rem,5vw,5rem);
+
+    font-weight:
+        900;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -0.04em;
+}
+
+
+.contact-description {
+
+    max-width:
+        700px;
+
+    color:
+        rgba(255,255,255,0.68);
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.9;
+}
+
+
+
+/* ========================================
+   メイン
+======================================== */
+
+.contact-main {
+
+    width:
+        min(1100px,94%);
+
+    margin:
+        0 auto;
+
+    padding:
+        40px 0 80px;
+}
+
+
+
+/* ========================================
+   上部メッセージ
+======================================== */
+
+.contact-intro {
+
+    margin-bottom:
+        28px;
+
+    padding:
+        18px 20px;
+
+    border-left:
+        4px solid #f05a0c;
+
+    background:
+        #0d0d0d;
+}
+
+
+.contact-intro h2 {
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        900;
+}
+
+
+.contact-intro p {
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.7;
+}
+
+
+
+/* ========================================
+   注意事項
+======================================== */
+
+.notice-box {
+
+    margin-bottom:
+        28px;
+
+    padding:
+        17px 20px;
+
+    border:
+        1px solid rgba(240,90,12,0.24);
+
+    background:
+        rgba(240,90,12,0.035);
+}
+
+
+.notice-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        9px;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        0.88rem;
+
+    font-weight:
+        900;
+}
+
+
+.notice-list {
+
+    display: grid;
+
+    gap:
+        5px;
+
+    color:
+        rgba(255,255,255,0.57);
+
+    font-size:
+        0.73rem;
+
+    line-height:
+        1.6;
+}
+
+
+
+/* ========================================
+   フォーム
+======================================== */
+
+.contact-form-box {
+
+    padding:
+        30px;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #101010,
+            #090909
+        );
+}
+
+
+.form-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        25px;
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        900;
+}
+
+
+.form-heading i {
+
+    color:
+        #f05a0c;
+}
+
+
+.form-row {
+
+    margin-bottom:
+        20px;
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        20px;
+}
+
+
+.form-label {
+
+    display: block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+}
+
+
+.required {
+
+    margin-left:
+        5px;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        0.68rem;
+}
+
+
+.optional {
+
+    margin-left:
+        5px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size:
+        0.68rem;
+}
+
+
+
+/* ========================================
+   入力欄
+======================================== */
+
+.form-input,
+.form-select,
+.form-textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid rgba(255,255,255,0.14);
+
+    outline:
+        none;
+
+    background:
+        #050505;
+
+    color:
+        #ffffff;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.form-input,
+.form-select {
+
+    height:
+        46px;
+
+    padding:
+        0 13px;
+}
+
+
+.form-textarea {
+
+    min-height:
+        200px;
+
+    padding:
+        13px;
+
+    line-height:
+        1.8;
+
+    resize:
+        vertical;
+}
+
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+
+    border-color:
+        #f05a0c;
+
+    box-shadow:
+        0 0 0 2px rgba(240,90,12,0.08);
+}
+
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+
+    color:
+        rgba(255,255,255,0.28);
+}
+
+
+.form-select option {
+
+    background:
+        #090909;
+
+    color:
+        #ffffff;
+}
+
+
+
+/* ========================================
+   文字数
+======================================== */
+
+.character-count {
+
+    margin-top:
+        5px;
+
+    color:
+        rgba(255,255,255,0.34);
+
+    font-size:
+        0.67rem;
+
+    text-align:
+        right;
+}
+
+
+
+/* ========================================
+   同意
+======================================== */
+
+.agree-row {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    margin:
+        22px 0;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size:
+        0.72rem;
+
+    line-height:
+        1.7;
+}
+
+
+.agree-row input {
+
+    margin-top:
+        4px;
+
+    accent-color:
+        #f05a0c;
+}
+
+
+
+/* ========================================
+   送信ボタン
+======================================== */
+
+.submit-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    min-width:
+        220px;
+
+    padding:
+        14px 26px;
+
+    border:
+        1px solid #f05a0c;
+
+    background:
+        #f05a0c;
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.submit-button:hover {
+
+    background:
+        #ff6818;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(240,90,12,0.20);
+}
+
+
+.submit-button:disabled {
+
+    opacity:
+        0.45;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+}
+
+
+
+/* ========================================
+   送信結果
+======================================== */
+
+.form-status {
+
+    display:
+        none;
+
+    margin-top:
+        20px;
+
+    padding:
+        15px 17px;
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.7;
+}
+
+
+.form-status.success {
+
+    display:
+        block;
+
+    border:
+        1px solid rgba(75,200,105,0.45);
+
+    background:
+        rgba(75,200,105,0.07);
+
+    color:
+        #70d98a;
+}
+
+
+.form-status.error {
+
+    display:
+        block;
+
+    border:
+        1px solid rgba(255,90,90,0.45);
+
+    background:
+        rgba(255,90,90,0.06);
+
+    color:
+        #ff8585;
+}
+
+
+
+/* ========================================
+   プライバシー
+======================================== */
+
+.privacy-note {
+
+    margin-top:
+        24px;
+
+    padding-top:
+        18px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size:
+        0.68rem;
+
+    line-height:
+        1.75;
+}
+
+
+
+/* ========================================
+   戻る
+======================================== */
+
+.back-area {
+
+    margin-top:
+        35px;
+
+    text-align:
+        center;
+}
+
+
+.back-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size:
+        0.75rem;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.back-link:hover {
+
+    color:
+        #f05a0c;
+}
+
+
+
+/* ========================================
+   フッター
+======================================== */
+
+.site-footer {
+
+    padding:
+        25px 5%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    background:
+        #030303;
+
+    text-align:
+        center;
+}
+
+
+.footer-logo {
+
+    margin-bottom:
+        5px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1.8rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.10em;
+}
+
+
+.footer-copy {
+
+    color:
+        rgba(255,255,255,0.34);
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.6;
+}
+
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media screen and
+(max-width:850px) {
+
+
+    .site-header {
+
+        padding:
+            14px 18px;
+    }
+
+
+    .logo {
+
+        font-size:
+            2.2rem;
+    }
+
+
+    .menu-button {
+
+        display:
+            grid;
+    }
+
+
+    .site-nav {
+
+        margin-left:
+            0;
+    }
+
+
+    .nav-menu {
+
+        position:
+            absolute;
+
+        top:
+            70px;
+
+        left:
+            15px;
+
+        right:
+            15px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            7px 18px;
+
+        border:
+            1px solid rgba(255,255,255,0.13);
+
+        background:
+            rgba(5,5,5,0.98);
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.65);
+    }
+
+
+    .nav-menu.open {
+
+        display:
+            flex;
+    }
+
+
+    .nav-menu li {
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.08);
+    }
+
+
+    .nav-menu li:last-child {
+
+        border-bottom:
+            0;
+    }
+
+
+    .nav-menu a {
+
+        padding:
+            15px 4px;
+    }
+
+
+    .social-links {
+
+        display:
+            none;
+    }
+
+
+    .contact-hero {
+
+        padding:
+            36px 20px 32px;
+    }
+
+
+    .contact-main {
+
+        width:
+            calc(100% - 28px);
+
+        padding:
+            22px 0 55px;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            0;
+    }
+
+
+    .contact-form-box {
+
+        padding:
+            21px 17px;
+    }
+
+
+}
+
+
+
+/* ========================================
+   小さいスマホ
+======================================== */
+
+@media screen and
+(max-width:470px) {
+
+
+    .site-header {
+
+        padding:
+            13px 14px;
+    }
+
+
+    .logo {
+
+        font-size:
+            1.9rem;
+    }
+
+
+    .contact-title {
+
+        font-size:
+            2.55rem;
+    }
+
+
+    .contact-main {
+
+        width:
+            calc(100% - 20px);
+    }
+
+
+    .contact-intro,
+    .notice-box {
+
+        padding:
+            15px;
+    }
+
+
+    .submit-button {
+
+        width:
+            100%;
+    }
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- ======================================
+     ヘッダー
+======================================= -->
+
+<header class="site-header">
+
+
+<div class="header-inner">
+
+
+<a
+href="index.html"
+class="logo">
+
+TSKY MODE
+
+</a>
+
+
+
+<button
+class="menu-button"
+id="menuButton"
+type="button"
+aria-label="メニューを開く"
+aria-expanded="false">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+
+<nav
+class="site-nav"
+aria-label="メインメニュー">
+
+
+<ul
+class="nav-menu"
+id="navMenu">
+
+
+<li>
+
+<a href="index.html">
+
+HOME
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="diy_deck.html">
+
+DIY記事
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="bbs.html">
+
+掲示板
+
+</a>
+
+</li>
+
+
+<li>
+
+<a
+href="contact.html"
+class="active">
+
+お問い合わせ
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</nav>
+
+
+
+<div class="social-links">
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="X">
+
+<i class="fa-brands fa-x-twitter"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Instagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="YouTube">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+<!-- ======================================
+     ページタイトル
+======================================= -->
+
+<section class="contact-hero">
+
+
+<div class="contact-hero-inner">
+
+
+<p class="contact-label">
+
+CONTACT
+
+</p>
+
+
+<h1 class="contact-title">
+
+お問い合わせ
+
+</h1>
+
+
+<p class="contact-description">
+
+TSKY MODEへのご質問・ご意見・ブログに関するお問い合わせはこちらから。<br>
+
+内容を確認後、返信が必要なお問い合わせには可能な範囲で対応します。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     お問い合わせ
+======================================= -->
+
+<main class="contact-main">
+
+
+
+<section class="contact-intro">
+
+
+<h2>
+
+お気軽にお問い合わせください
+
+</h2>
+
+
+<p>
+
+ネイキッド・DIY整備・カスタム・掲載内容についてのご質問などを受け付けています。
+
+</p>
+
+
+</section>
+
+
+
+<!-- ======================================
+     注意事項
+======================================= -->
+
+<section class="notice-box">
+
+
+<h2 class="notice-title">
+
+<i class="fa-solid fa-circle-info"></i>
+
+お問い合わせ前にご確認ください
+
+</h2>
+
+
+<div class="notice-list">
+
+<p>・返信が必要な場合は、連絡可能なメールアドレスを正しく入力してください。</p>
+
+<p>・内容によっては返信できない場合や、返信まで時間がかかる場合があります。</p>
+
+<p>・営業、広告、迷惑行為、誹謗中傷などのお問い合わせには対応しない場合があります。</p>
+
+<p>・パスワード、クレジットカード番号などの重要な個人情報は送信しないでください。</p>
+
+<p>・DIYや整備に関する内容は、安全を最優先し、最終的な作業判断はご自身の責任でお願いします。</p>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     FORM
+======================================= -->
+
+<section class="contact-form-box">
+
+
+<h2 class="form-heading">
+
+<i class="fa-regular fa-envelope"></i>
+
+メッセージを送る
+
+</h2>
+
+
+
+<form
+id="contactForm"
+action="https://formspree.io/f/xbgrarlo"
+method="POST">
+
+
+<!-- Formspree メール件名 -->
+
+<input
+type="hidden"
+name="_subject"
+value="TSKY MODE ブログからお問い合わせが届きました">
+
+
+
+<!-- スパム対策 -->
+
+<input
+type="text"
+name="_gotcha"
+style="display:none">
+
+
+
+<div class="form-grid">
+
+
+<!-- 名前 -->
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="name">
+
+お名前
+
+<span class="optional">
+
+任意
+
+</span>
+
+</label>
+
+
+<input
+type="text"
+id="name"
+name="name"
+class="form-input"
+maxlength="40"
+placeholder="お名前・ハンドルネーム">
+
+
+</div>
+
+
+
+<!-- メール -->
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="email">
+
+メールアドレス
+
+<span class="required">
+
+必須
+
+</span>
+
+</label>
+
+
+<input
+type="email"
+id="email"
+name="email"
+class="form-input"
+required
+autocomplete="email"
+placeholder="example@email.com">
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- 種類 -->
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="category">
+
+お問い合わせ種類
+
+<span class="required">
+
+必須
+
+</span>
+
+</label>
+
+
+<select
+id="category"
+name="category"
+class="form-select"
+required>
+
+
+<option
+value=""
+selected
+disabled>
+
+選択してください
+
+</option>
+
+
+<option value="DIY・整備について">
+
+DIY・整備について
+
+</option>
+
+
+<option value="ブログの記事について">
+
+ブログの記事について
+
+</option>
+
+
+<option value="商品・工具について">
+
+商品・工具について
+
+</option>
+
+
+<option value="掲示板について">
+
+掲示板について
+
+</option>
+
+
+<option value="その他">
+
+その他
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+<!-- 件名 -->
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="subject">
+
+件名
+
+<span class="required">
+
+必須
+
+</span>
+
+</label>
+
+
+<input
+type="text"
+id="subject"
+name="subject"
+class="form-input"
+maxlength="80"
+required
+placeholder="お問い合わせの件名">
+
+
+</div>
+
+
+
+<!-- 本文 -->
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="message">
+
+お問い合わせ内容
+
+<span class="required">
+
+必須
+
+</span>
+
+</label>
+
+
+<textarea
+id="message"
+name="message"
+class="form-textarea"
+maxlength="2000"
+required
+placeholder="お問い合わせ内容をご記入ください"></textarea>
+
+
+<div
+class="character-count"
+id="characterCount">
+
+0 / 2000
+
+</div>
+
+
+</div>
+
+
+
+<!-- 同意 -->
+
+<label class="agree-row">
+
+
+<input
+type="checkbox"
+id="agreeCheck"
+required>
+
+
+<span>
+
+入力した内容がお問い合わせへの対応目的で送信・利用されることを確認し、上記の注意事項に同意します。
+
+</span>
+
+
+</label>
+
+
+
+<!-- 送信 -->
+
+<button
+type="submit"
+class="submit-button"
+id="submitButton">
+
+
+<span>
+
+送信する
+
+</span>
+
+
+<i class="fa-solid fa-paper-plane"></i>
+
+
+</button>
+
+
+
+<!-- 結果 -->
+
+<div
+class="form-status"
+id="formStatus">
+
+</div>
+
+
+
+<p class="privacy-note">
+
+送信された内容は、お問い合わせへの回答・確認のために利用します。
+必要のない個人情報や機密情報は入力しないでください。
+
+</p>
+
+
+</form>
+
+
+</section>
+
+
+
+<div class="back-area">
+
+
+<a
+href="index.html"
+class="back-link">
+
+
+<i class="fa-solid fa-arrow-left"></i>
+
+TOPページへ戻る
+
+
+</a>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- ======================================
+     フッター
+======================================= -->
+
+<footer class="site-footer">
+
+
+<div class="footer-logo">
+
+TSKY MODE
+
+</div>
+
+
+<p class="footer-copy">
+
+Tune your Style, Keep Yourself.<br>
+
+© TSKY MODE
+
+</p>
+
+
+</footer>
+
+
+
+<!-- ======================================
+     JavaScript
+======================================= -->
+
+<script>
+
+
+/* ========================================
+   スマホメニュー
+======================================== */
+
+
+const menuButton =
+document.getElementById("menuButton");
+
+
+const navMenu =
+document.getElementById("navMenu");
+
+
+const menuIcon =
+menuButton.querySelector("i");
+
+
+
+menuButton.addEventListener(
+"click",
+function () {
+
+
+const menuIsOpen =
+navMenu.classList.toggle("open");
+
+
+menuButton.setAttribute(
+"aria-expanded",
+menuIsOpen
+);
+
+
+if (menuIsOpen) {
+
+
+menuIcon.classList.remove(
+"fa-bars"
+);
+
+
+menuIcon.classList.add(
+"fa-xmark"
+);
+
+
+} else {
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+
+
+}
+);
+
+
+
+navMenu
+.querySelectorAll("a")
+.forEach(
+function(link) {
+
+
+link.addEventListener(
+"click",
+function () {
+
+
+navMenu.classList.remove(
+"open"
+);
+
+
+menuButton.setAttribute(
+"aria-expanded",
+"false"
+);
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+);
+
+
+}
+);
+
+
+
+/* ========================================
+   文字数
+======================================== */
+
+
+const message =
+document.getElementById("message");
+
+
+const characterCount =
+document.getElementById("characterCount");
+
+
+message.addEventListener(
+"input",
+function () {
+
+
+characterCount.textContent =
+message.value.length +
+" / 2000";
+
+
+}
+);
+
+
+
+/* ========================================
+   Formspree AJAX送信
+======================================== */
+
+
+const contactForm =
+document.getElementById("contactForm");
+
+
+const submitButton =
+document.getElementById("submitButton");
+
+
+const formStatus =
+document.getElementById("formStatus");
+
+
+contactForm.addEventListener(
+"submit",
+async function(event) {
+
+
+event.preventDefault();
+
+
+submitButton.disabled =
+true;
+
+
+submitButton.querySelector(
+"span"
+).textContent =
+"送信中...";
+
+
+formStatus.className =
+"form-status";
+
+
+formStatus.textContent =
+"";
+
+
+try {
+
+
+const formData =
+new FormData(
+contactForm
+);
+
+
+const response =
+await fetch(
+contactForm.action,
+{
+
+method:
+"POST",
+
+body:
+formData,
+
+headers: {
+    "Accept":
+    "application/json"
+}
+
+}
+);
+
+
+
+if (response.ok) {
+
+
+contactForm.reset();
+
+
+characterCount.textContent =
+"0 / 2000";
+
+
+formStatus.className =
+"form-status success";
+
+
+formStatus.innerHTML =
+
+'<i class="fa-solid fa-circle-check"></i> ' +
+
+'お問い合わせを送信しました。ありがとうございます。';
+
+
+}
+
+
+else {
+
+
+const data =
+await response.json();
+
+
+console.error(
+data
+);
+
+
+throw new Error(
+"Formspree送信エラー"
+);
+
+
+}
+
+
+}
+
+
+catch(error) {
+
+
+console.error(
+error
+);
+
+
+formStatus.className =
+"form-status error";
+
+
+formStatus.innerHTML =
+
+'<i class="fa-solid fa-triangle-exclamation"></i> ' +
+
+'送信できませんでした。時間を置いてもう一度お試しください。';
+
+
+}
+
+
+finally {
+
+
+submitButton.disabled =
+false;
+
+
+submitButton.querySelector(
+"span"
+).textContent =
+"送信する";
+
+
+}
+
+
+}
+);
+
+
+</script>
+
+
+</body>
+
+</html>
