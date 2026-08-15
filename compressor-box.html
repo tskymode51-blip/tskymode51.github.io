@@ -1,3 +1,6 @@
+# compressor-box.html 修正版フルコード
+
+```html
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -11,7 +14,7 @@ content="width=device-width, initial-scale=1.0">
 <title>ミナトCP-8Aを購入！収納ボックスで防音＆冷却対策してみた | TSKY MODE</title>
 
 <meta name="description"
-content="ミナトCP-8Aコンプレッサーを収納ボックスに入れ、吸音材・USB扇風機・植木鉢ダクトを使って防音と冷却対策をDIYしてみました。">
+content="ミナトCP-8Aコンプレッサーを収納ボックスに入れ、吸音材・USB扇風機・植木鉢ダクトを使って防音と冷却対策をDIYしました。">
 
 
 <!-- Google Fonts -->
@@ -60,11 +63,9 @@ body {
 
     overflow-x: hidden;
 
-    background:
-        #050505;
+    background: #050505;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-family:
         "Noto Sans JP",
@@ -102,20 +103,14 @@ button {
 
 .site-header {
 
-    position:
-        sticky;
+    position: sticky;
+    top: 0;
 
-    top:
-        0;
+    z-index: 100;
 
-    z-index:
-        100;
+    width: 100%;
 
-    width:
-        100%;
-
-    padding:
-        20px 4%;
+    padding: 20px 4%;
 
     border-bottom:
         1px solid rgba(255,255,255,0.09);
@@ -130,14 +125,11 @@ button {
 
 .header-inner {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     width:
         min(1500px,100%);
@@ -145,8 +137,7 @@ button {
     margin:
         0 auto;
 
-    gap:
-        35px;
+    gap: 35px;
 }
 
 
@@ -157,11 +148,9 @@ button {
 
 .logo {
 
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 
-    color:
-        #f05a0c;
+    color: #f05a0c;
 
     font-family:
         "Barlow Condensed",
@@ -170,14 +159,11 @@ button {
     font-size:
         clamp(3.2rem,4.4vw,4.2rem);
 
-    font-weight:
-        800;
+    font-weight: 800;
 
-    line-height:
-        0.9;
+    line-height: 0.9;
 
-    letter-spacing:
-        0.10em;
+    letter-spacing: 0.10em;
 
     text-shadow:
 
@@ -186,14 +172,13 @@ button {
         0 0 18px rgba(240,90,12,0.35);
 
     transition:
-        0.25s ease;
+        color 0.25s ease;
 }
 
 
 .logo:hover {
 
-    color:
-        #ff6a18;
+    color: #ff6a18;
 }
 
 
@@ -204,18 +189,15 @@ button {
 
 .site-nav {
 
-    margin-left:
-        auto;
+    margin-left: auto;
 }
 
 
 .nav-menu {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
         clamp(22px,2.8vw,48px);
@@ -224,14 +206,11 @@ button {
 
 .nav-menu a {
 
-    position:
-        relative;
+    position: relative;
 
-    display:
-        block;
+    display: block;
 
-    padding:
-        11px 0;
+    padding: 11px 0;
 
     color:
         rgba(255,255,255,0.90);
@@ -239,8 +218,7 @@ button {
     font-size:
         0.95rem;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
     letter-spacing:
         0.05em;
@@ -249,23 +227,15 @@ button {
 
 .nav-menu a::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
+    bottom: 0;
 
-    bottom:
-        0;
-
-    width:
-        0;
-
-    height:
-        3px;
+    width: 0;
+    height: 3px;
 
     background:
         #f05a0c;
@@ -278,8 +248,7 @@ button {
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
 
-    width:
-        100%;
+    width: 100%;
 }
 
 
@@ -290,30 +259,25 @@ button {
 
 .social-links {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        22px;
+    gap: 22px;
 
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 }
 
 
 .social-links a {
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        1.35rem;
+    font-size: 1.35rem;
 
     transition:
-        0.25s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
@@ -334,20 +298,14 @@ button {
 
 .menu-button {
 
-    display:
-        none;
+    display: none;
 
-    place-items:
-        center;
+    place-items: center;
 
-    width:
-        46px;
+    width: 46px;
+    height: 46px;
 
-    height:
-        46px;
-
-    margin-left:
-        auto;
+    margin-left: auto;
 
     border:
         1px solid rgba(255,255,255,0.25);
@@ -373,14 +331,12 @@ button {
 
 .article-hero {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     padding:
-        90px 5% 70px;
+        90px 5% 75px;
 
     border-bottom:
         1px solid rgba(255,255,255,0.08);
@@ -388,9 +344,9 @@ button {
     background:
 
         radial-gradient(
-            circle at 75% 30%,
+            circle at 78% 32%,
             rgba(240,90,12,0.15),
-            transparent 32%
+            transparent 34%
         ),
 
         linear-gradient(
@@ -417,16 +373,16 @@ button {
         inline-block;
 
     margin-bottom:
-        18px;
+        25px;
 
     padding:
         6px 12px;
 
     border:
-        1px solid rgba(240,90,12,0.5);
+        1px solid rgba(240,90,12,0.55);
 
     background:
-        rgba(240,90,12,0.12);
+        rgba(240,90,12,0.10);
 
     color:
         #ff7629;
@@ -434,18 +390,17 @@ button {
     font-size:
         0.78rem;
 
-    font-weight:
-        700;
+    font-weight: 700;
 }
 
 
 .article-title {
 
     max-width:
-        950px;
+        980px;
 
     margin-bottom:
-        24px;
+        30px;
 
     font-size:
         clamp(2.1rem,5vw,4.2rem);
@@ -461,33 +416,31 @@ button {
 }
 
 
-
 .article-lead {
 
     max-width:
         760px;
 
     color:
-        rgba(255,255,255,0.75);
+        rgba(255,255,255,0.74);
 
     font-size:
         1rem;
 
     line-height:
-        1.9;
+        1.95;
 }
 
 
 .article-date {
 
-    display:
-        block;
+    display: block;
 
     margin-top:
-        20px;
+        22px;
 
     color:
-        rgba(255,255,255,0.45);
+        rgba(255,255,255,0.43);
 
     font-size:
         0.82rem;
@@ -508,14 +461,14 @@ button {
         0 auto;
 
     padding:
-        70px 0 110px;
+        75px 0 110px;
 }
 
 
 .article-block {
 
     margin-bottom:
-        85px;
+        90px;
 }
 
 
@@ -525,13 +478,13 @@ button {
         relative;
 
     margin-bottom:
-        28px;
+        30px;
 
     padding-left:
         20px;
 
     font-size:
-        clamp(1.5rem,3vw,2.2rem);
+        clamp(1.45rem,3vw,2.15rem);
 
     font-weight:
         900;
@@ -543,8 +496,7 @@ button {
 
 .article-block h2::before {
 
-    content:
-        "";
+    content: "";
 
     position:
         absolute;
@@ -553,13 +505,13 @@ button {
         0;
 
     top:
-        7px;
+        5px;
 
     width:
         5px;
 
     height:
-        calc(100% - 14px);
+        calc(100% - 10px);
 
     background:
         #f05a0c;
@@ -591,32 +543,31 @@ button {
 
 
 /* ========================================
-   メイン画像
+   画像
 ======================================== */
 
 .main-photo {
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     border:
         1px solid rgba(255,255,255,0.10);
 
     background:
-        #101010;
+        #0a0a0a;
 }
 
 
 .main-photo img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
+
+    height: auto;
 
     max-height:
-        760px;
+        800px;
 
     object-fit:
         contain;
@@ -636,8 +587,7 @@ button {
 
 .gallery {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(2,1fr);
@@ -649,11 +599,9 @@ button {
 
 .gallery-item {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     min-height:
         310px;
@@ -668,17 +616,13 @@ button {
 
 .gallery-item img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        100%;
+    height: 100%;
 
-    object-fit:
-        cover;
+    object-fit: cover;
 
     cursor:
         zoom-in;
@@ -697,7 +641,7 @@ button {
 
 
 /* ========================================
-   コメントボックス
+   コメント
 ======================================== */
 
 .comment-box {
@@ -739,7 +683,7 @@ button {
         30px;
 
     border:
-        1px solid rgba(240,90,12,0.28);
+        1px solid rgba(240,90,12,0.30);
 
     background:
         rgba(240,90,12,0.045);
@@ -793,19 +737,119 @@ button {
 
 
 /* ========================================
+   構想中セクション
+======================================== */
+
+.concept-section {
+
+    margin-bottom:
+        100px;
+
+    padding:
+        42px 0 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+
+.concept-label {
+
+    margin-bottom:
+        7px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.16em;
+}
+
+
+.concept-section h2 {
+
+    position:
+        relative;
+
+    margin-bottom:
+        30px;
+
+    padding-left:
+        20px;
+
+    font-size:
+        clamp(1.5rem,3vw,2.2rem);
+
+    font-weight:
+        900;
+}
+
+
+.concept-section h2::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        5px;
+
+    width:
+        5px;
+
+    height:
+        calc(100% - 10px);
+
+    background:
+        #f05a0c;
+}
+
+
+.concept-text {
+
+    margin:
+        25px 0 40px;
+
+    color:
+        rgba(255,255,255,0.74);
+
+    line-height:
+        2;
+}
+
+
+
+/* ========================================
    完成セクション
 ======================================== */
 
 .finished-section {
 
     margin-top:
-        100px;
+        110px;
 
-    padding-top:
-        70px;
+    padding:
+        75px 0 20px;
 
     border-top:
-        1px solid rgba(255,255,255,0.10);
+        1px solid rgba(240,90,12,0.35);
 
     text-align:
         center;
@@ -825,20 +869,20 @@ button {
         sans-serif;
 
     font-size:
-        1.15rem;
+        1.2rem;
 
     font-weight:
         700;
 
     letter-spacing:
-        0.16em;
+        0.18em;
 }
 
 
 .finished-title {
 
     margin-bottom:
-        35px;
+        40px;
 
     font-size:
         clamp(2rem,5vw,4rem);
@@ -853,30 +897,33 @@ button {
 
 .finished-image {
 
+    width:
+        min(1200px,100%);
+
+    margin:
+        0 auto;
+
     overflow:
         hidden;
 
     border:
-        1px solid rgba(240,90,12,0.35);
+        1px solid rgba(240,90,12,0.38);
 
     background:
         #090909;
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.55);
+        0 22px 70px rgba(0,0,0,0.60);
 }
 
 
 .finished-image img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        auto;
+    height: auto;
 
     cursor:
         zoom-in;
@@ -908,7 +955,7 @@ button {
         block;
 
     margin-top:
-        22px;
+        24px;
 
     color:
         #ffffff;
@@ -923,13 +970,13 @@ button {
 
 
 /* ========================================
-   記事一覧へ戻る
+   戻る
 ======================================== */
 
 .back-area {
 
     margin-top:
-        80px;
+        85px;
 
     text-align:
         center;
@@ -1117,7 +1164,8 @@ button {
    スマートフォン
 ======================================== */
 
-@media screen and (max-width:850px) {
+@media screen and
+(max-width:850px) {
 
 
     .site-header {
@@ -1208,8 +1256,7 @@ button {
 
     .nav-menu li:last-child {
 
-        border-bottom:
-            0;
+        border-bottom: 0;
     }
 
 
@@ -1279,15 +1326,30 @@ button {
     }
 
 
+    .concept-section {
+
+        margin-bottom:
+            75px;
+    }
+
+
+    .finished-section {
+
+        margin-top:
+            75px;
+    }
+
+
 }
 
 
 
 /* ========================================
-   小さいスマートフォン
+   小さいスマホ
 ======================================== */
 
-@media screen and (max-width:470px) {
+@media screen and
+(max-width:470px) {
 
 
     .site-header {
@@ -1319,7 +1381,8 @@ button {
 
 
     .article-block p,
-    .finished-text {
+    .finished-text,
+    .concept-text {
 
         font-size:
             0.92rem;
@@ -1393,9 +1456,7 @@ id="navMenu">
 <li>
 
 <a href="index.html">
-
 HOME
-
 </a>
 
 </li>
@@ -1417,9 +1478,7 @@ DIY記事
 <li>
 
 <a href="bbs.html">
-
 掲示板
-
 </a>
 
 </li>
@@ -1428,9 +1487,7 @@ DIY記事
 <li>
 
 <a href="mailto:t.skymode51@gmail.com">
-
 お問い合わせ
-
 </a>
 
 </li>
@@ -1535,7 +1592,7 @@ datetime="2026-08-15">
 
 
 <!-- ======================================
-     記事本文
+     本文
 ======================================= -->
 
 <main class="article-main">
@@ -1548,9 +1605,7 @@ datetime="2026-08-15">
 
 
 <h2>
-
 ミナトCP-8Aを購入！
-
 </h2>
 
 
@@ -1582,18 +1637,20 @@ class="zoom-image">
 
 <p>
 
-今後のDIY塗装などに使うため、ミナトのコンプレッサー
+今後のDIY塗装などに使うため、
+ミナトのコンプレッサー
 <strong>CP-8A</strong>
 を購入しました。
 
-コンパクトなので置き場所にも困りにくく、収納ボックスにもすっぽり入りました。
+コンパクトなので置き場所にも困りにくく、
+収納ボックスにもすっぽり収まります。
 
 </p>
 
 
 <div class="comment-box">
 
-まずは「箱に入れれば少し静かになるんじゃない？」という単純なところからスタート（笑）
+まずは「収納ボックスに入れたら少し静かになるんじゃない？」というところからスタート（笑）
 
 </div>
 
@@ -1608,9 +1665,7 @@ class="zoom-image">
 
 
 <h2>
-
 でも、箱に入れたら熱がこもる……
-
 </h2>
 
 
@@ -1626,16 +1681,19 @@ class="zoom-image">
 
 <p>
 
-防音だけを考えれば、なるべく密閉したくなります。
+音を外へ出したくないなら、
+できるだけ箱を閉じたくなります。
 
 でもコンプレッサーは運転中に熱を持つので、
-完全に閉じ込めてしまうわけにはいきません。
+完全に密閉してしまうわけにはいきません。
 
-そこで、
+そこで今回は、
 
-<strong>「音は抑えたい。でも空気はちゃんと通したい」</strong>
+<strong>
+「音は抑えたい。でも空気はちゃんと通したい」
+</strong>
 
-という方向で考えることにしました。
+という方向で考えました。
 
 </p>
 
@@ -1650,9 +1708,7 @@ class="zoom-image">
 
 
 <h2>
-
-家にあったUSB扇風機を使う！
-
+家にあったUSB扇風機を使ってみる
 </h2>
 
 
@@ -1668,24 +1724,26 @@ class="zoom-image">
 
 <p>
 
-冷却用に新しくファンを買おうかとも思いましたが……
+冷却用のファンを新しく買おうかとも思いましたが……
 
 家に小型のUSB扇風機がありました。
 
-そして、その横にはなぜか植木鉢（笑）
+そして、その横には植木鉢（笑）
 
 ここで思いついたのが、
 
-<strong>「この植木鉢をダクトにすればいいんじゃない？」</strong>
+<strong>
+「この植木鉢をダクトにできるんじゃない？」
+</strong>
 
-という方法。
+という方法です。
 
 </p>
 
 
 <div class="comment-box">
 
-専用品を買わず、家にある物を使うのもDIYの楽しさということで（笑）
+家にある物を使えるなら使ってみる。こういうところもDIYの楽しさ（笑）
 
 </div>
 
@@ -1700,9 +1758,7 @@ class="zoom-image">
 
 
 <h2>
-
 USB扇風機1台でどう冷やす？
-
 </h2>
 
 
@@ -1723,7 +1779,7 @@ class="zoom-image">
 
 <img
 src="images/cooling-plan-02.png"
-alt="USB扇風機1台での冷却イメージ"
+alt="USB扇風機1台での冷却構想"
 class="zoom-image">
 
 </div>
@@ -1734,13 +1790,17 @@ class="zoom-image">
 
 <p>
 
-USB扇風機は1台だけ。
+USB扇風機は1台だけなので、
+今回は排気ではなく、
 
-なので今回は排気に使うのではなく、
-<strong>外気を取り込む吸気側</strong>
-に使うことにしました。
+<strong>
+外の空気を取り込む「吸気側」
+</strong>
 
-コンプレッサー本体の通気部分へできるだけ直接風を送ります。
+として使うことにしました。
+
+できるだけコンプレッサーの通気部分へ
+直接風を送るようにします。
 
 </p>
 
@@ -1750,7 +1810,7 @@ USB扇風機は1台だけ。
 
 <div class="airflow-title">
 
-狙っている空気の流れ
+考えた空気の流れ
 
 </div>
 
@@ -1773,10 +1833,65 @@ USB扇風機は1台だけ。
 
 <i class="fa-solid fa-arrow-right"></i>
 
-<span>上部排気</span>
+<span>上部から排気</span>
 
 </div>
 
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     構想
+======================================= -->
+
+<section class="concept-section">
+
+
+<p class="concept-label">
+
+PLANNING
+
+</p>
+
+
+<h2>
+構想をまとめるとこんな感じ
+</h2>
+
+
+<div class="main-photo">
+
+<img
+src="images/cooling-plan-03.png"
+alt="USB扇風機と植木鉢ダクトを使った防音ボックス構想"
+class="zoom-image">
+
+</div>
+
+
+<p class="concept-text">
+
+USB扇風機をどこへ置くか。
+
+吸気と排気をどう分けるか。
+
+植木鉢をどうダクトとして使うか。
+
+いろいろ考えながら、
+このあたりで最終的な形を決めていきました。
+
+</p>
+
+
+<div class="comment-box">
+
+この画像はまだ構想中。<br>
+実際に作りながら、吸気・排気や防音材の配置を調整していきます。
 
 </div>
 
@@ -1791,56 +1906,7 @@ USB扇風機は1台だけ。
 
 
 <h2>
-
-植木鉢を吸気ダクトに！
-
-</h2>
-
-
-<div class="main-photo">
-
-<img
-src="images/cooling-plan-03.png"
-alt="植木鉢ダクトとUSB扇風機を使った防音ボックス"
-class="zoom-image">
-
-</div>
-
-
-<p>
-
-収納ボックスの側面に植木鉢を貫通させ、
-外側からUSB扇風機で空気を送り込む形にしました。
-
-USB扇風機から入った外気を、
-植木鉢を通してコンプレッサー側へ送ります。
-
-暖まった空気は、
-吸気側とは反対側の高い位置から外へ逃がします。
-
-</p>
-
-
-<div class="comment-box">
-
-まさか植木鉢がコンプレッサーの冷却パーツになるとは思わなかった（笑）
-
-</div>
-
-
-</section>
-
-
-
-<!-- 06 -->
-
-<section class="article-block">
-
-
-<h2>
-
 防音・防振も追加
-
 </h2>
 
 
@@ -1848,12 +1914,15 @@ USB扇風機から入った外気を、
 
 ケース内部には波型の吸音スポンジを使用。
 
-さらに底面にもクッション材や防振材を入れて、
-コンプレッサーの振動が収納ボックスへ直接伝わりにくいようにしました。
+さらに底面には防振材を入れて、
+コンプレッサーの振動が収納ボックスへ
+直接伝わりにくいようにしました。
 
 ただし、
 
-<strong>本体の通気口周辺は塞がない。</strong>
+<strong>
+コンプレッサーの通気口は塞がない。
+</strong>
 
 防音材を詰め込みすぎず、
 冷却用の空気が通れるスペースを残すようにしています。
@@ -1863,8 +1932,7 @@ USB扇風機から入った外気を、
 
 <div class="comment-box">
 
-防音だけを優先して熱がこもったら意味がないので、
-「防音と冷却のバランス」を意識しました。
+防音を優先しすぎて熱がこもったら意味がないので、冷却とのバランスを意識しました。
 
 </div>
 
@@ -1874,7 +1942,7 @@ USB扇風機から入った外気を、
 
 
 <!-- ======================================
-     完成
+     最終完成
 ======================================= -->
 
 <section class="finished-section">
@@ -1890,7 +1958,7 @@ FINISHED
 <h2 class="finished-title">
 
 そして完成！<br>
-こんな感じにできました
+最終的にこんな感じになりました
 
 </h2>
 
@@ -1899,7 +1967,7 @@ FINISHED
 
 <img
 src="images/compressor-finished.png"
-alt="ミナトCP-8A 防音冷却ボックス完成形"
+alt="ミナトCP-8A 防音冷却ボックスの最終完成形"
 class="zoom-image">
 
 </div>
@@ -1907,16 +1975,20 @@ class="zoom-image">
 
 <p class="finished-text">
 
-収納ボックスの内側に吸音材。
+最初は、
 
-側面からは
-<strong>USB扇風機＋植木鉢ダクト</strong>
-で外気を取り込み、
-反対側の上部から熱い空気を逃がす構造にしました。
+<strong>
+「収納ボックスに入れて少しでも静かにできないかな？」
+</strong>
 
-見た目はかなりDIY感がありますが……
+というところから始まりました。
 
-こういうのも自作ならでは（笑）
+USB扇風機、植木鉢ダクト、吸音材、防振材、
+そして吸気と排気の流れを考えながら、
+
+<strong>
+最終的にこの形に仕上がりました。
+</strong>
 
 <span class="finished-big">
 
@@ -1931,7 +2003,9 @@ class="zoom-image">
 
 
 
-<!-- 記事一覧へ戻る -->
+<!-- ======================================
+     戻る
+======================================= -->
 
 <div class="back-area">
 
@@ -2018,9 +2092,7 @@ alt="">
 <script>
 
 
-/* ========================================
-   スマホメニュー
-======================================== */
+/* スマホメニュー */
 
 const menuButton =
 document.getElementById("menuButton");
@@ -2066,9 +2138,6 @@ menuIcon.classList.add("fa-bars");
 );
 
 
-
-/* メニューリンクを押したら閉じる */
-
 navMenu
 .querySelectorAll("a")
 .forEach(function(link) {
@@ -2078,15 +2147,19 @@ link.addEventListener(
 "click",
 function () {
 
+
 navMenu.classList.remove("open");
+
 
 menuButton.setAttribute(
 "aria-expanded",
 "false"
 );
 
+
 menuIcon.classList.remove("fa-xmark");
 menuIcon.classList.add("fa-bars");
+
 
 }
 );
@@ -2096,9 +2169,7 @@ menuIcon.classList.add("fa-bars");
 
 
 
-/* ========================================
-   画像クリックで拡大
-======================================== */
+/* 画像クリックで拡大 */
 
 const lightbox =
 document.getElementById("lightbox");
@@ -2133,9 +2204,7 @@ lightboxImage.alt =
 image.alt;
 
 
-lightbox.classList.add(
-"open"
-);
+lightbox.classList.add("open");
 
 
 lightbox.setAttribute(
@@ -2156,9 +2225,7 @@ lightbox.setAttribute(
 function closeLightbox() {
 
 
-lightbox.classList.remove(
-"open"
-);
+lightbox.classList.remove("open");
 
 
 lightbox.setAttribute(
@@ -2167,8 +2234,7 @@ lightbox.setAttribute(
 );
 
 
-lightboxImage.src =
-"";
+lightboxImage.src = "";
 
 
 }
@@ -2179,7 +2245,6 @@ lightboxClose.addEventListener(
 "click",
 closeLightbox
 );
-
 
 
 lightbox.addEventListener(
@@ -2198,15 +2263,12 @@ closeLightbox();
 );
 
 
-
 document.addEventListener(
 "keydown",
 function(event) {
 
 
-if (
-event.key === "Escape"
-) {
+if (event.key === "Escape") {
 
 closeLightbox();
 
@@ -2223,3 +2285,4 @@ closeLightbox();
 </body>
 
 </html>
+```
