@@ -1,50 +1,2965 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TSKYMODE51 掲示板</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>掲示板 | TSKY MODE</title>
+
+<meta name="description"
+content="TSKY MODE 掲示板。ダイハツ ネイキッド、DIY整備、カスタム、メンテナンスについて気軽に情報交換できます。">
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+rel="stylesheet">
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 <style>
-body { font-family:"Hiragino Kaku Gothic ProN",sans-serif; background:#f0f0f5; margin:0; padding:0; }
-header { background: linear-gradient(90deg,#E95420,#FF6F3C); color:#fff; text-align:center; padding:1.5rem 0; }
-main { max-width:800px; margin:2rem auto; padding:2rem; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
-h1 { text-align:center; color:#FFA500; }
-form { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; }
-input, textarea, button { padding:8px; border-radius:6px; border:1px solid #ccc; font-size:14px; width:100%; }
-button { background:linear-gradient(90deg,#FF6F3C,#FFA500); color:#fff; cursor:pointer; }
-button:hover { opacity:0.9; }
-.comments { margin-top:2rem; }
-.comment { padding:0.8rem; border-bottom:1px solid #ddd; }
-a.back { display:inline-block; margin-top:2rem; text-decoration:none; color:#FF6F3C; font-weight:bold; }
+
+
+/* ========================================
+   基本設定
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        #050505;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    overflow-x:
+        hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+button,
+input,
+textarea {
+
+    font:
+        inherit;
+}
+
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+.site-header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    width:
+        100%;
+
+    padding:
+        16px 4%;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(5,5,5,0.96);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.header-inner {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    width:
+        min(1500px,100%);
+
+    margin:
+        0 auto;
+
+    gap:
+        30px;
+}
+
+
+
+/* ========================================
+   ロゴ
+======================================== */
+
+.logo {
+
+    flex-shrink:
+        0;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        clamp(2.8rem,4vw,3.8rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        0.10em;
+
+    text-shadow:
+
+        0 3px 15px rgba(0,0,0,0.95),
+
+        0 0 18px rgba(240,90,12,0.30);
+}
+
+
+.logo:hover {
+
+    color:
+        #ff6a18;
+}
+
+
+
+/* ========================================
+   ナビ
+======================================== */
+
+.site-nav {
+
+    margin-left:
+        auto;
+}
+
+
+.nav-menu {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        clamp(22px,2.8vw,45px);
+}
+
+
+.nav-menu a {
+
+    position:
+        relative;
+
+    display:
+        block;
+
+    padding:
+        10px 0;
+
+    color:
+        rgba(255,255,255,0.90);
+
+    font-size:
+        0.92rem;
+
+    font-weight:
+        700;
+}
+
+
+.nav-menu a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        0;
+
+    height:
+        3px;
+
+    background:
+        #f05a0c;
+
+    transition:
+        width 0.25s ease;
+}
+
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+
+    width:
+        100%;
+}
+
+
+
+/* ========================================
+   SNS
+======================================== */
+
+.social-links {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+}
+
+
+.social-links a {
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.25rem;
+
+    transition:
+        0.25s;
+}
+
+
+.social-links a:hover {
+
+    color:
+        #f05a0c;
+
+    transform:
+        translateY(-2px);
+}
+
+
+
+/* ========================================
+   スマホメニュー
+======================================== */
+
+.menu-button {
+
+    display:
+        none;
+
+    place-items:
+        center;
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    margin-left:
+        auto;
+
+    border:
+        1px solid rgba(255,255,255,0.22);
+
+    background:
+        rgba(0,0,0,0.55);
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.2rem;
+
+    cursor:
+        pointer;
+}
+
+
+
+/* ========================================
+   ページタイトル
+======================================== */
+
+.page-hero {
+
+    padding:
+        45px 5% 40px;
+
+    border-bottom:
+        1px solid rgba(240,90,12,0.30);
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(240,90,12,0.10),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #101010,
+            #050505 65%,
+            #100703
+        );
+}
+
+
+.page-hero-inner {
+
+    width:
+        min(1100px,100%);
+
+    margin:
+        0 auto;
+}
+
+
+.page-label {
+
+    margin-bottom:
+        4px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.18em;
+}
+
+
+.page-title {
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        clamp(2.6rem,5vw,4.8rem);
+
+    font-weight:
+        900;
+
+    line-height:
+        1.1;
+}
+
+
+.page-description {
+
+    color:
+        rgba(255,255,255,0.68);
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.8;
+}
+
+
+
+/* ========================================
+   メイン
+======================================== */
+
+.bbs-main {
+
+    width:
+        min(1100px,94%);
+
+    margin:
+        0 auto;
+
+    padding:
+        28px 0 80px;
+}
+
+
+
+/* ========================================
+   スレッド見出し
+======================================== */
+
+.thread-header {
+
+    margin-bottom:
+        18px;
+
+    padding:
+        17px 20px;
+
+    border-left:
+        4px solid #f05a0c;
+
+    background:
+        #0d0d0d;
+}
+
+
+.thread-title {
+
+    margin-bottom:
+        4px;
+
+    font-size:
+        1.3rem;
+
+    font-weight:
+        900;
+}
+
+
+.thread-note {
+
+    color:
+        rgba(255,255,255,0.52);
+
+    font-size:
+        0.76rem;
+}
+
+
+
+/* ========================================
+   利用ルール
+======================================== */
+
+.rules-box {
+
+    margin-bottom:
+        24px;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid rgba(240,90,12,0.28);
+
+    background:
+        rgba(240,90,12,0.035);
+}
+
+
+.rules-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        10px;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        900;
+}
+
+
+.rules-list {
+
+    display:
+        grid;
+
+    gap:
+        5px;
+
+    color:
+        rgba(255,255,255,0.67);
+
+    font-size:
+        0.76rem;
+
+    line-height:
+        1.6;
+}
+
+
+.rules-important {
+
+    margin-top:
+        11px;
+
+    color:
+        #ffb184;
+
+    font-size:
+        0.72rem;
+
+    line-height:
+        1.6;
+}
+
+
+
+/* ========================================
+   接続状態
+======================================== */
+
+.status-box {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        12px;
+
+    color:
+        rgba(255,255,255,0.43);
+
+    font-size:
+        0.68rem;
+}
+
+
+.status-dot {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #777;
+}
+
+
+.status-dot.online {
+
+    background:
+        #41c867;
+
+    box-shadow:
+        0 0 8px rgba(65,200,103,0.65);
+}
+
+
+.status-dot.error {
+
+    background:
+        #e44b4b;
+}
+
+
+
+/* ========================================
+   投稿一覧
+======================================== */
+
+.posts {
+
+    margin-bottom:
+        24px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.10);
+}
+
+
+.post {
+
+    padding:
+        14px 14px 16px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.09);
+
+    background:
+        #090909;
+}
+
+
+.post:nth-child(even) {
+
+    background:
+        #0b0b0b;
+}
+
+
+.post-head {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        baseline;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        0.75rem;
+
+    line-height:
+        1.6;
+}
+
+
+.post-number {
+
+    color:
+        #f05a0c;
+
+    font-weight:
+        900;
+}
+
+
+.post-name {
+
+    color:
+        #70c97b;
+
+    font-weight:
+        900;
+}
+
+
+.post-date {
+
+    color:
+        rgba(255,255,255,0.43);
+}
+
+
+.post-body {
+
+    padding-left:
+        20px;
+
+    color:
+        rgba(255,255,255,0.88);
+
+    font-size:
+        0.91rem;
+
+    line-height:
+        1.85;
+
+    white-space:
+        pre-wrap;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+
+/* ========================================
+   投稿0件
+======================================== */
+
+.empty-message {
+
+    padding:
+        35px 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    color:
+        rgba(255,255,255,0.45);
+
+    background:
+        #090909;
+
+    text-align:
+        center;
+
+    font-size:
+        0.85rem;
+}
+
+
+
+/* ========================================
+   投稿フォーム
+======================================== */
+
+.post-form-box {
+
+    padding:
+        23px;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    background:
+        #0d0d0d;
+}
+
+
+.form-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        18px;
+
+    font-size:
+        1.1rem;
+
+    font-weight:
+        900;
+}
+
+
+.form-title i {
+
+    color:
+        #f05a0c;
+}
+
+
+.form-row {
+
+    margin-bottom:
+        15px;
+}
+
+
+.form-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        rgba(255,255,255,0.70);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        700;
+}
+
+
+.name-input,
+.message-input {
+
+    width:
+        100%;
+
+    border:
+        1px solid rgba(255,255,255,0.14);
+
+    outline:
+        none;
+
+    background:
+        #050505;
+
+    color:
+        #ffffff;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.name-input {
+
+    max-width:
+        320px;
+
+    height:
+        42px;
+
+    padding:
+        0 12px;
+}
+
+
+.message-input {
+
+    min-height:
+        155px;
+
+    padding:
+        12px;
+
+    line-height:
+        1.7;
+
+    resize:
+        vertical;
+}
+
+
+.name-input:focus,
+.message-input:focus {
+
+    border-color:
+        #f05a0c;
+
+    box-shadow:
+        0 0 0 2px rgba(240,90,12,0.08);
+}
+
+
+.character-count {
+
+    margin-top:
+        4px;
+
+    color:
+        rgba(255,255,255,0.36);
+
+    font-size:
+        0.66rem;
+
+    text-align:
+        right;
+}
+
+
+
+/* ========================================
+   同意
+======================================== */
+
+.agree-row {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    margin:
+        16px 0;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size:
+        0.72rem;
+
+    line-height:
+        1.6;
+}
+
+
+.agree-row input {
+
+    margin-top:
+        4px;
+
+    accent-color:
+        #f05a0c;
+}
+
+
+
+/* ========================================
+   投稿ボタン
+======================================== */
+
+.submit-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    min-width:
+        180px;
+
+    padding:
+        12px 24px;
+
+    border:
+        1px solid #f05a0c;
+
+    background:
+        #f05a0c;
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.25s;
+}
+
+
+.submit-button:hover {
+
+    background:
+        #ff6818;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.submit-button:disabled {
+
+    opacity:
+        0.45;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+}
+
+
+
+/* ========================================
+   メッセージ
+======================================== */
+
+.form-message {
+
+    min-height:
+        22px;
+
+    margin-top:
+        12px;
+
+    font-size:
+        0.75rem;
+}
+
+
+.form-message.success {
+
+    color:
+        #58cf75;
+}
+
+
+.form-message.error {
+
+    color:
+        #ff6d6d;
+}
+
+
+
+/* ========================================
+   注意
+======================================== */
+
+.privacy-note {
+
+    margin-top:
+        18px;
+
+    padding-top:
+        15px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    color:
+        rgba(255,255,255,0.36);
+
+    font-size:
+        0.67rem;
+
+    line-height:
+        1.7;
+}
+
+
+
+/* ========================================
+   フッター
+======================================== */
+
+.site-footer {
+
+    padding:
+        24px 5%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    background:
+        #030303;
+
+    text-align:
+        center;
+}
+
+
+.footer-logo {
+
+    margin-bottom:
+        4px;
+
+    color:
+        #f05a0c;
+
+    font-family:
+        "Barlow Condensed",
+        sans-serif;
+
+    font-size:
+        1.7rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.1em;
+}
+
+
+.footer-copy {
+
+    color:
+        rgba(255,255,255,0.30);
+
+    font-size:
+        0.67rem;
+}
+
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media screen and
+(max-width:850px) {
+
+
+    .site-header {
+
+        padding:
+            14px 18px;
+    }
+
+
+    .logo {
+
+        font-size:
+            2.2rem;
+    }
+
+
+    .menu-button {
+
+        display:
+            grid;
+    }
+
+
+    .site-nav {
+
+        margin-left:
+            0;
+    }
+
+
+    .nav-menu {
+
+        position:
+            absolute;
+
+        top:
+            70px;
+
+        left:
+            15px;
+
+        right:
+            15px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            7px 18px;
+
+        border:
+            1px solid rgba(255,255,255,0.13);
+
+        background:
+            rgba(5,5,5,0.98);
+    }
+
+
+    .nav-menu.open {
+
+        display:
+            flex;
+    }
+
+
+    .nav-menu li {
+
+        border-bottom:
+            1px solid rgba(255,255,255,0.08);
+    }
+
+
+    .nav-menu a {
+
+        padding:
+            15px 4px;
+    }
+
+
+    .social-links {
+
+        display:
+            none;
+    }
+
+
+    .page-hero {
+
+        padding:
+            34px 20px 30px;
+    }
+
+
+    .bbs-main {
+
+        width:
+            calc(100% - 28px);
+
+        padding:
+            20px 0 55px;
+    }
+
+
+    .post {
+
+        padding:
+            12px 10px 14px;
+    }
+
+
+    .post-body {
+
+        padding-left:
+            10px;
+
+        font-size:
+            0.86rem;
+    }
+
+
+    .post-form-box {
+
+        padding:
+            18px 14px;
+    }
+
+
+}
+
+
+
+/* ========================================
+   小さいスマホ
+======================================== */
+
+@media screen and
+(max-width:470px) {
+
+
+    .site-header {
+
+        padding:
+            13px 14px;
+    }
+
+
+    .logo {
+
+        font-size:
+            1.9rem;
+    }
+
+
+    .page-title {
+
+        font-size:
+            2.4rem;
+    }
+
+
+    .bbs-main {
+
+        width:
+            calc(100% - 20px);
+    }
+
+
+    .thread-header {
+
+        padding:
+            14px;
+    }
+
+
+    .rules-box {
+
+        padding:
+            15px;
+    }
+
+
+    .submit-button {
+
+        width:
+            100%;
+    }
+
+
+}
+
+
 </style>
+
 </head>
+
+
 <body>
 
-<header>
-  <h1>TSKYMODE51 掲示板</h1>
+
+<!-- ======================================
+     ヘッダー
+======================================= -->
+
+<header class="site-header">
+
+
+<div class="header-inner">
+
+
+<a
+href="index.html"
+class="logo">
+
+TSKY MODE
+
+</a>
+
+
+<button
+class="menu-button"
+id="menuButton"
+type="button"
+aria-label="メニューを開く"
+aria-expanded="false">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+<nav
+class="site-nav"
+aria-label="メインメニュー">
+
+
+<ul
+class="nav-menu"
+id="navMenu">
+
+
+<li>
+
+<a href="index.html">
+HOME
+</a>
+
+</li>
+
+
+<li>
+
+<a href="diy_deck.html">
+DIY記事
+</a>
+
+</li>
+
+
+<li>
+
+<a
+href="bbs.html"
+class="active">
+
+掲示板
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="mailto:t.skymode51@gmail.com">
+お問い合わせ
+</a>
+
+</li>
+
+
+</ul>
+
+
+</nav>
+
+
+<div class="social-links">
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="X">
+
+<i class="fa-brands fa-x-twitter"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Instagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="YouTube">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
 </header>
 
-<main>
-<p>車DIY・オーディオ・Ubuntuなど、自由にコメントどうぞ！🚗💬</p>
 
-<!-- コメントフォーム -->
-<form id="comment-form" action="https://staticman3.herokuapp.com/v3/entry/github/tskymode51-blip/tskymode51.github.io/main" method="POST">
-  <input type="text" name="fields[name]" placeholder="名前" required>
-  <input type="email" name="fields[email]" placeholder="メールアドレス" required>
-  <textarea name="fields[message]" placeholder="コメント内容" rows="5" required></textarea>
-  <button type="submit">送信</button>
+
+<!-- ======================================
+     ページタイトル
+======================================= -->
+
+<section class="page-hero">
+
+
+<div class="page-hero-inner">
+
+
+<p class="page-label">
+COMMUNITY BBS
+</p>
+
+
+<h1 class="page-title">
+掲示板
+</h1>
+
+
+<p class="page-description">
+
+ネイキッド・DIY整備・カスタム・メンテナンスについて、<br>
+気軽に情報交換できる掲示板です。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     掲示板
+======================================= -->
+
+<main class="bbs-main">
+
+
+<section class="thread-header">
+
+
+<h2 class="thread-title">
+
+TSKY MODE 雑談・質問スレッド
+
+</h2>
+
+
+<p class="thread-note">
+
+ネイキッドや車DIYについて自由にどうぞ。
+
+</p>
+
+
+</section>
+
+
+
+<!-- ======================================
+     利用ルール
+======================================= -->
+
+<section class="rules-box">
+
+
+<h2 class="rules-title">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+掲示板利用ルール
+
+</h2>
+
+
+<div class="rules-list">
+
+<p>・氏名、住所、電話番号、メールアドレスなどの個人情報を書き込まないでください。</p>
+
+<p>・他人の個人情報を本人の許可なく投稿することは禁止します。</p>
+
+<p>・誹謗中傷、暴言、差別的表現、嫌がらせ、荒らし行為は禁止します。</p>
+
+<p>・他人になりすます行為は禁止します。</p>
+
+<p>・犯罪や違法行為を助長する投稿は禁止します。</p>
+
+<p>・広告、宣伝、同一内容の連続投稿などのスパムは禁止します。</p>
+
+<p>・著作権その他の権利を侵害する内容の投稿は禁止します。</p>
+
+<p>・掲示板の趣旨に合わない投稿は管理人判断で削除する場合があります。</p>
+
+<p>・DIY整備やカスタムは、安全を確認したうえで自己責任で行ってください。</p>
+
+</div>
+
+
+<p class="rules-important">
+
+※ 掲示板へ投稿した内容はインターネット上で公開されます。
+個人を特定できる情報は絶対に投稿しないでください。
+
+</p>
+
+
+</section>
+
+
+
+<!-- ======================================
+     Firebase接続状態
+======================================= -->
+
+<div class="status-box">
+
+<span
+class="status-dot"
+id="statusDot">
+</span>
+
+<span id="statusText">
+
+掲示板に接続しています...
+
+</span>
+
+</div>
+
+
+
+<!-- ======================================
+     投稿
+======================================= -->
+
+<section
+class="posts"
+id="posts">
+
+
+<div class="empty-message">
+
+投稿を読み込んでいます...
+
+</div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     投稿フォーム
+======================================= -->
+
+<section class="post-form-box">
+
+
+<h2 class="form-title">
+
+<i class="fa-regular fa-pen-to-square"></i>
+
+書き込む
+
+</h2>
+
+
+<form id="postForm">
+
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="nameInput">
+
+名前（20文字まで）
+
+</label>
+
+
+<input
+type="text"
+id="nameInput"
+class="name-input"
+maxlength="20"
+placeholder="名無しさん"
+autocomplete="nickname">
+
+
+</div>
+
+
+
+<div class="form-row">
+
+
+<label
+class="form-label"
+for="messageInput">
+
+本文（1000文字まで）
+
+</label>
+
+
+<textarea
+id="messageInput"
+class="message-input"
+maxlength="1000"
+required
+placeholder="ここに書き込んでください"></textarea>
+
+
+<div
+class="character-count"
+id="characterCount">
+
+0 / 1000
+
+</div>
+
+
+</div>
+
+
+
+<label class="agree-row">
+
+
+<input
+type="checkbox"
+id="agreeCheck">
+
+
+<span>
+
+掲示板利用ルールを読み、内容に同意して書き込みます。
+
+</span>
+
+
+</label>
+
+
+
+<button
+type="submit"
+class="submit-button"
+id="submitButton"
+disabled>
+
+
+<span>
+
+書き込む
+
+</span>
+
+
+<i class="fa-solid fa-paper-plane"></i>
+
+
+</button>
+
+
+<div
+class="form-message"
+id="formMessage">
+
+</div>
+
+
+<p class="privacy-note">
+
+名前は空欄の場合「名無しさん」と表示されます。
+ログイン登録は不要ですが、投稿処理のためFirebaseの匿名認証を利用しています。
+投稿された文章は公開されます。
+
+</p>
+
+
 </form>
 
-<!-- コメント一覧 -->
-<div class="comments">
-  <!-- マージされたコメントがここに表示されます -->
-</div>
 
-<div style="text-align:center;">
-  <a href="index.html" class="back">← トップページに戻る</a>
-</div>
+</section>
+
 
 </main>
 
+
+
+<!-- ======================================
+     フッター
+======================================= -->
+
+<footer class="site-footer">
+
+
+<div class="footer-logo">
+
+TSKY MODE
+
+</div>
+
+
+<p class="footer-copy">
+
+Tune your Style, Keep Yourself.<br>
+© TSKY MODE
+
+</p>
+
+
+</footer>
+
+
+
+<!-- ======================================
+     スマホメニュー
+======================================= -->
+
+<script>
+
+
+const menuButton =
+document.getElementById("menuButton");
+
+
+const navMenu =
+document.getElementById("navMenu");
+
+
+const menuIcon =
+menuButton.querySelector("i");
+
+
+menuButton.addEventListener(
+"click",
+function () {
+
+
+const open =
+navMenu.classList.toggle("open");
+
+
+menuButton.setAttribute(
+"aria-expanded",
+open
+);
+
+
+if (open) {
+
+
+menuIcon.classList.remove(
+"fa-bars"
+);
+
+
+menuIcon.classList.add(
+"fa-xmark"
+);
+
+
+} else {
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+
+
+}
+);
+
+
+navMenu
+.querySelectorAll("a")
+.forEach(
+function(link) {
+
+
+link.addEventListener(
+"click",
+function () {
+
+
+navMenu.classList.remove(
+"open"
+);
+
+
+menuButton.setAttribute(
+"aria-expanded",
+"false"
+);
+
+
+menuIcon.classList.remove(
+"fa-xmark"
+);
+
+
+menuIcon.classList.add(
+"fa-bars"
+);
+
+
+}
+);
+
+
+}
+);
+
+
+</script>
+
+
+
+<!-- ======================================
+     Firebase
+======================================= -->
+
+<script type="module">
+
+
+/*
+==========================================
+Firebase SDK
+==========================================
+*/
+
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInAnonymously,
+    onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+
+import {
+
+    getDatabase,
+    ref,
+    push,
+    set,
+    query,
+    orderByChild,
+    limitToLast,
+    onValue
+
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+
+/*
+==========================================
+Firebase設定
+==========================================
+*/
+
+
+const firebaseConfig = {
+
+
+    apiKey:
+    "AIzaSyDprvskC7IIrdK3hvMMcG_rJh-r602u0iA",
+
+
+    authDomain:
+    "tskymode-bbs.firebaseapp.com",
+
+
+    databaseURL:
+    "https://tskymode-bbs-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+
+    projectId:
+    "tskymode-bbs",
+
+
+    storageBucket:
+    "tskymode-bbs.firebasestorage.app",
+
+
+    messagingSenderId:
+    "202961305988",
+
+
+    appId:
+    "1:202961305988:web:ad66500a75b44ea7ff15d1"
+
+
+};
+
+
+
+/*
+==========================================
+Firebase初期化
+==========================================
+*/
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const database =
+getDatabase(app);
+
+
+
+/*
+==========================================
+HTML
+==========================================
+*/
+
+
+const postsElement =
+document.getElementById("posts");
+
+
+const postForm =
+document.getElementById("postForm");
+
+
+const nameInput =
+document.getElementById("nameInput");
+
+
+const messageInput =
+document.getElementById("messageInput");
+
+
+const agreeCheck =
+document.getElementById("agreeCheck");
+
+
+const submitButton =
+document.getElementById("submitButton");
+
+
+const formMessage =
+document.getElementById("formMessage");
+
+
+const characterCount =
+document.getElementById("characterCount");
+
+
+const statusDot =
+document.getElementById("statusDot");
+
+
+const statusText =
+document.getElementById("statusText");
+
+
+let currentUser =
+null;
+
+
+/*
+==========================================
+匿名ログイン
+==========================================
+*/
+
+
+onAuthStateChanged(
+auth,
+function(user) {
+
+
+if (user) {
+
+
+currentUser =
+user;
+
+
+statusDot.className =
+"status-dot online";
+
+
+statusText.textContent =
+"掲示板に接続しました";
+
+
+updateSubmitButton();
+
+
+}
+
+
+}
+);
+
+
+
+if (!auth.currentUser) {
+
+
+signInAnonymously(auth)
+
+.catch(
+function(error) {
+
+
+console.error(error);
+
+
+statusDot.className =
+"status-dot error";
+
+
+statusText.textContent =
+"掲示板への接続に失敗しました";
+
+
+showMessage(
+"Firebaseへの接続に失敗しました。ページを再読み込みしてください。",
+"error"
+);
+
+
+}
+);
+
+
+}
+
+
+
+/*
+==========================================
+投稿読み込み
+最新100件
+==========================================
+*/
+
+
+const postsReference =
+ref(
+database,
+"posts"
+);
+
+
+const postsQuery =
+query(
+
+postsReference,
+
+orderByChild(
+"timestamp"
+),
+
+limitToLast(
+100
+)
+
+);
+
+
+onValue(
+postsQuery,
+function(snapshot) {
+
+
+const posts =
+[];
+
+
+snapshot.forEach(
+function(childSnapshot) {
+
+
+posts.push(
+childSnapshot.val()
+);
+
+
+}
+);
+
+
+
+posts.sort(
+function(a,b) {
+
+
+return (
+a.timestamp -
+b.timestamp
+);
+
+
+}
+);
+
+
+
+renderPosts(
+posts
+);
+
+
+},
+function(error) {
+
+
+console.error(error);
+
+
+postsElement.innerHTML =
+"";
+
+
+const errorBox =
+document.createElement(
+"div"
+);
+
+
+errorBox.className =
+"empty-message";
+
+
+errorBox.textContent =
+"投稿を読み込めませんでした。";
+
+
+postsElement.appendChild(
+errorBox
+);
+
+
+}
+);
+
+
+
+/*
+==========================================
+投稿表示
+==========================================
+*/
+
+
+function renderPosts(posts) {
+
+
+postsElement.innerHTML =
+"";
+
+
+if (
+posts.length === 0
+) {
+
+
+const empty =
+document.createElement(
+"div"
+);
+
+
+empty.className =
+"empty-message";
+
+
+empty.textContent =
+"まだ投稿はありません。最初の書き込みをどうぞ！";
+
+
+postsElement.appendChild(
+empty
+);
+
+
+return;
+
+
+}
+
+
+
+posts.forEach(
+function(post,index) {
+
+
+const article =
+document.createElement(
+"article"
+);
+
+
+article.className =
+"post";
+
+
+
+const head =
+document.createElement(
+"div"
+);
+
+
+head.className =
+"post-head";
+
+
+
+const number =
+document.createElement(
+"span"
+);
+
+
+number.className =
+"post-number";
+
+
+number.textContent =
+(index + 1) + " 名前：";
+
+
+
+const name =
+document.createElement(
+"span"
+);
+
+
+name.className =
+"post-name";
+
+
+name.textContent =
+post.name || "名無しさん";
+
+
+
+const date =
+document.createElement(
+"span"
+);
+
+
+date.className =
+"post-date";
+
+
+date.textContent =
+formatDate(
+post.timestamp
+);
+
+
+
+const body =
+document.createElement(
+"div"
+);
+
+
+body.className =
+"post-body";
+
+
+/*
+textContentを使用。
+投稿内容をHTMLとして実行しない。
+*/
+
+
+body.textContent =
+post.message;
+
+
+
+head.appendChild(
+number
+);
+
+
+head.appendChild(
+name
+);
+
+
+head.appendChild(
+date
+);
+
+
+article.appendChild(
+head
+);
+
+
+article.appendChild(
+body
+);
+
+
+postsElement.appendChild(
+article
+);
+
+
+}
+);
+
+
+}
+
+
+
+/*
+==========================================
+日時
+==========================================
+*/
+
+
+function formatDate(timestamp) {
+
+
+const date =
+new Date(timestamp);
+
+
+return new Intl.DateTimeFormat(
+"ja-JP",
+{
+
+year:
+"numeric",
+
+month:
+"2-digit",
+
+day:
+"2-digit",
+
+hour:
+"2-digit",
+
+minute:
+"2-digit",
+
+second:
+"2-digit",
+
+hour12:
+false
+
+}
+).format(date);
+
+
+}
+
+
+
+/*
+==========================================
+文字数
+==========================================
+*/
+
+
+messageInput.addEventListener(
+"input",
+function () {
+
+
+characterCount.textContent =
+messageInput.value.length +
+" / 1000";
+
+
+updateSubmitButton();
+
+
+}
+);
+
+
+
+agreeCheck.addEventListener(
+"change",
+updateSubmitButton
+);
+
+
+
+function updateSubmitButton() {
+
+
+const hasMessage =
+messageInput.value.trim().length > 0;
+
+
+const ready =
+currentUser &&
+hasMessage &&
+agreeCheck.checked;
+
+
+submitButton.disabled =
+!ready;
+
+
+}
+
+
+
+/*
+==========================================
+個人情報の簡易チェック
+==========================================
+*/
+
+
+function containsPersonalInfo(text) {
+
+
+/*
+メールアドレス
+*/
+
+
+const emailPattern =
+/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+
+
+/*
+日本の電話番号らしい形式
+*/
+
+
+const phonePattern =
+/(?:0\d{1,4}[-ー－]?\d{1,4}[-ー－]?\d{3,4})/;
+
+
+/*
+メール・電話らしい文字列を検知
+*/
+
+
+return (
+emailPattern.test(text) ||
+phonePattern.test(text)
+);
+
+
+}
+
+
+
+/*
+==========================================
+ローカル連投対策
+==========================================
+*/
+
+
+function canPostNow() {
+
+
+const previous =
+Number(
+localStorage.getItem(
+"tskymodeLastPost"
+)
+|| 0
+);
+
+
+const now =
+Date.now();
+
+
+const interval =
+30000;
+
+
+if (
+now - previous <
+interval
+) {
+
+
+const remaining =
+Math.ceil(
+(interval - (now - previous))
+/ 1000
+);
+
+
+showMessage(
+"連続投稿防止のため、あと "
++
+remaining
++
+" 秒お待ちください。",
+"error"
+);
+
+
+return false;
+
+
+}
+
+
+return true;
+
+
+}
+
+
+
+/*
+==========================================
+投稿処理
+==========================================
+*/
+
+
+postForm.addEventListener(
+"submit",
+async function(event) {
+
+
+event.preventDefault();
+
+
+formMessage.textContent =
+"";
+
+
+if (!currentUser) {
+
+
+showMessage(
+"掲示板に接続中です。少し待ってからもう一度お試しください。",
+"error"
+);
+
+
+return;
+
+
+}
+
+
+
+if (!agreeCheck.checked) {
+
+
+showMessage(
+"利用ルールへの同意が必要です。",
+"error"
+);
+
+
+return;
+
+
+}
+
+
+
+let name =
+nameInput.value.trim();
+
+
+const message =
+messageInput.value.trim();
+
+
+if (!name) {
+
+
+name =
+"名無しさん";
+
+
+}
+
+
+
+if (
+name.length > 20
+) {
+
+
+showMessage(
+"名前は20文字以内にしてください。",
+"error"
+);
+
+
+return;
+
+
+}
+
+
+
+if (
+message.length < 1 ||
+message.length > 1000
+) {
+
+
+showMessage(
+"本文は1文字以上1000文字以内で入力してください。",
+"error"
+);
+
+
+return;
+
+
+}
+
+
+
+const combined =
+name +
+"\n" +
+message;
+
+
+if (
+containsPersonalInfo(
+combined
+)
+) {
+
+
+showMessage(
+"メールアドレスまたは電話番号と思われる情報が含まれています。個人情報を削除してから投稿してください。",
+"error"
+);
+
+
+return;
+
+
+}
+
+
+
+if (
+!canPostNow()
+) {
+
+
+return;
+
+
+}
+
+
+
+submitButton.disabled =
+true;
+
+
+submitButton.querySelector(
+"span"
+).textContent =
+"投稿中...";
+
+
+try {
+
+
+const newPostReference =
+push(
+postsReference
+);
+
+
+await set(
+newPostReference,
+{
+
+
+name:
+name,
+
+
+message:
+message,
+
+
+timestamp:
+Date.now(),
+
+
+uid:
+currentUser.uid
+
+
+}
+);
+
+
+
+localStorage.setItem(
+"tskymodeLastPost",
+String(Date.now())
+);
+
+
+messageInput.value =
+"";
+
+
+agreeCheck.checked =
+false;
+
+
+characterCount.textContent =
+"0 / 1000";
+
+
+showMessage(
+"書き込みました！",
+"success"
+);
+
+
+window.scrollTo(
+{
+
+top:
+postsElement.offsetTop - 100,
+
+behavior:
+"smooth"
+
+}
+);
+
+
+}
+
+
+catch(error) {
+
+
+console.error(error);
+
+
+showMessage(
+"投稿できませんでした。時間を置いてもう一度お試しください。",
+"error"
+);
+
+
+}
+
+
+finally {
+
+
+submitButton.querySelector(
+"span"
+).textContent =
+"書き込む";
+
+
+updateSubmitButton();
+
+
+}
+
+
+}
+);
+
+
+
+/*
+==========================================
+メッセージ表示
+==========================================
+*/
+
+
+function showMessage(
+text,
+type
+) {
+
+
+formMessage.textContent =
+text;
+
+
+formMessage.className =
+"form-message " + type;
+
+
+}
+
+
+</script>
+
+
 </body>
+
 </html>
