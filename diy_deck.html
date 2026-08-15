@@ -104,13 +104,13 @@ button {
     width: 100%;
 
     padding:
-        20px 4%;
+        16px 4%;
 
     border-bottom:
-        1px solid rgba(255,255,255,0.09);
+        1px solid rgba(255,255,255,0.08);
 
     background:
-        rgba(5,5,5,0.94);
+        rgba(5,5,5,0.96);
 
     backdrop-filter:
         blur(12px);
@@ -132,13 +132,13 @@ button {
         0 auto;
 
     gap:
-        35px;
+        30px;
 }
 
 
 
 /* ========================================
-   TSKY MODE ロゴ
+   TSKY MODE
 ======================================== */
 
 .logo {
@@ -155,7 +155,7 @@ button {
         sans-serif;
 
     font-size:
-        clamp(3.2rem,4.4vw,4.2rem);
+        clamp(2.8rem,4vw,3.8rem);
 
     font-weight:
         800;
@@ -172,11 +172,7 @@ button {
         rgba(0,0,0,0.95),
 
         0 0 18px
-        rgba(240,90,12,0.35);
-
-    transition:
-        color 0.25s ease,
-        text-shadow 0.25s ease;
+        rgba(240,90,12,0.30);
 }
 
 
@@ -184,100 +180,92 @@ button {
 
     color:
         #ff6a18;
-
-    text-shadow:
-
-        0 3px 15px
-        rgba(0,0,0,0.95),
-
-        0 0 25px
-        rgba(240,90,12,0.55);
 }
 
 
 
 /* ========================================
-   ナビゲーション
+   ナビ
 ======================================== */
 
 .site-nav {
-    margin-left: auto;
+
+    margin-left:
+        auto;
 }
 
 
 .nav-menu {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     gap:
-        clamp(22px,2.8vw,48px);
+        clamp(22px,2.8vw,45px);
 }
 
 
 .nav-menu a {
 
-    position: relative;
+    position:
+        relative;
 
-    display: block;
+    display:
+        block;
 
     padding:
-        11px 0;
+        10px 0;
 
     color:
         rgba(255,255,255,0.90);
 
     font-size:
-        0.95rem;
+        0.92rem;
 
     font-weight:
         700;
 
     letter-spacing:
         0.05em;
-
-    transition:
-        color 0.25s ease;
 }
 
 
 .nav-menu a::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
-    bottom: 0;
+    left:
+        0;
 
-    width: 0;
-    height: 3px;
+    bottom:
+        0;
+
+    width:
+        0;
+
+    height:
+        3px;
 
     background:
         #f05a0c;
-
-    box-shadow:
-        0 0 12px
-        rgba(240,90,12,0.65);
 
     transition:
         width 0.25s ease;
 }
 
 
-.nav-menu a:hover,
-.nav-menu a.active {
-
-    color:
-        #ffffff;
-}
-
-
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
 
-    width: 100%;
+    width:
+        100%;
 }
 
 
@@ -288,23 +276,27 @@ button {
 
 .social-links {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 22px;
+    gap:
+        20px;
 
-    flex-shrink: 0;
-
-    margin-left: 10px;
+    flex-shrink:
+        0;
 }
 
 
 .social-links a {
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
-    font-size: 1.35rem;
+    font-size:
+        1.25rem;
 
     transition:
         color 0.25s ease,
@@ -318,7 +310,7 @@ button {
         #f05a0c;
 
     transform:
-        translateY(-3px);
+        translateY(-2px);
 }
 
 
@@ -329,17 +321,23 @@ button {
 
 .menu-button {
 
-    display: none;
+    display:
+        none;
 
-    place-items: center;
+    place-items:
+        center;
 
-    width: 46px;
-    height: 46px;
+    width:
+        44px;
 
-    margin-left: auto;
+    height:
+        44px;
+
+    margin-left:
+        auto;
 
     border:
-        1px solid rgba(255,255,255,0.25);
+        1px solid rgba(255,255,255,0.22);
 
     background:
         rgba(0,0,0,0.55);
@@ -348,7 +346,7 @@ button {
         #ffffff;
 
     font-size:
-        1.3rem;
+        1.2rem;
 
     cursor:
         pointer;
@@ -362,38 +360,40 @@ button {
 
 .page-hero {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
+
+    /*
+       ここをかなり薄くしました
+    */
 
     padding:
-        95px 5% 85px;
+        46px 5% 42px;
 
     border-bottom:
-        1px solid rgba(240,90,12,0.55);
+        1px solid rgba(240,90,12,0.35);
 
     background:
 
         radial-gradient(
-            circle at 78% 30%,
-            rgba(240,90,12,0.12),
-            transparent 35%
+            circle at 80% 25%,
+            rgba(240,90,12,0.10),
+            transparent 34%
         ),
 
         linear-gradient(
             135deg,
-            #111111 0%,
-            #050505 62%,
-            #100703 100%
+            #101010,
+            #050505 63%,
+            #100703
         );
 }
 
 
 .page-hero-inner {
-
-    position: relative;
-
-    z-index: 2;
 
     width:
         min(1250px,100%);
@@ -406,7 +406,7 @@ button {
 .page-label {
 
     margin-bottom:
-        10px;
+        4px;
 
     color:
         #f05a0c;
@@ -416,7 +416,7 @@ button {
         sans-serif;
 
     font-size:
-        1.3rem;
+        1.05rem;
 
     font-weight:
         700;
@@ -429,13 +429,13 @@ button {
 .page-title {
 
     margin-bottom:
-        32px;
+        15px;
 
     color:
         #ffffff;
 
     font-size:
-        clamp(3rem,6vw,5.8rem);
+        clamp(2.6rem,5vw,4.7rem);
 
     font-weight:
         900;
@@ -454,19 +454,19 @@ button {
         720px;
 
     color:
-        rgba(255,255,255,0.76);
+        rgba(255,255,255,0.70);
 
     font-size:
-        1rem;
+        0.88rem;
 
     line-height:
-        1.95;
+        1.75;
 }
 
 
 
 /* ========================================
-   記事一覧
+   記事一覧エリア
 ======================================== */
 
 .article-section {
@@ -477,28 +477,34 @@ button {
     margin:
         0 auto;
 
+    /*
+       DIY記事一覧を上へ詰める
+    */
+
     padding:
-        70px 0 110px;
+        26px 0 70px;
 }
 
 
 .section-heading {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     gap:
-        12px;
+        10px;
 
     margin-bottom:
-        32px;
+        18px;
 
     color:
         #ffffff;
 
     font-size:
-        1.4rem;
+        1.2rem;
 
     font-weight:
         900;
@@ -514,54 +520,82 @@ button {
 
 
 /* ========================================
-   記事カード
+   記事一覧
 ======================================== */
 
 .article-list {
 
-    display: grid;
+    display:
+        grid;
+
+    /*
+       記事同士の間隔も小さく
+    */
 
     gap:
-        28px;
+        10px;
 }
 
 
+
+/* ========================================
+   ★ コンパクト記事カード
+======================================== */
+
 .article-card {
 
-    display: grid;
+    display:
+        grid;
+
+    /*
+       左画像を160pxに縮小
+    */
 
     grid-template-columns:
-        330px 1fr;
+        160px 1fr;
+
+    /*
+       今まで300px前後だったものを
+       約110〜125pxへ
+    */
 
     min-height:
-        300px;
+        118px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
-        1px solid rgba(255,255,255,0.11);
+        1px solid rgba(255,255,255,0.10);
 
     background:
-        #0d0d0d;
+
+        linear-gradient(
+            110deg,
+            #0e0e0e,
+            #0a0a0a
+        );
 
     transition:
-        transform 0.28s ease,
-        border-color 0.28s ease,
-        box-shadow 0.28s ease;
+
+        transform 0.25s ease,
+
+        border-color 0.25s ease,
+
+        background 0.25s ease;
 }
 
 
 .article-card:hover {
 
     transform:
-        translateY(-4px);
+        translateX(5px);
 
     border-color:
         rgba(240,90,12,0.55);
 
-    box-shadow:
-        0 18px 45px
-        rgba(0,0,0,0.48);
+    background:
+        #111111;
 }
 
 
@@ -572,12 +606,14 @@ button {
 
 .article-image {
 
-    position: relative;
+    width:
+        160px;
 
-    min-height:
-        300px;
+    height:
+        118px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     background:
         #111111;
@@ -586,15 +622,20 @@ button {
 
 .article-image img {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
-    height: 100%;
+    width:
+        100%;
 
-    object-fit: cover;
+    height:
+        100%;
+
+    object-fit:
+        cover;
 
     transition:
-        transform 0.4s ease;
+        transform 0.35s ease;
 }
 
 
@@ -602,41 +643,52 @@ button {
 .article-image img {
 
     transform:
-        scale(1.035);
+        scale(1.05);
 }
 
 
 
 /* ========================================
-   記事情報
+   記事内容
 ======================================== */
 
 .article-content {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    justify-content: center;
+    justify-content:
+        center;
+
+    min-width:
+        0;
 
     padding:
-        34px 40px;
+        12px 20px;
 }
 
 
+
+/* ========================================
+   カテゴリ＋日付
+======================================== */
+
 .article-meta {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
-
-    align-items: center;
+    align-items:
+        center;
 
     gap:
-        11px;
+        9px;
 
     margin-bottom:
-        16px;
+        5px;
 }
 
 
@@ -646,55 +698,72 @@ button {
         inline-block;
 
     padding:
-        5px 11px;
+        2px 7px;
 
     border:
-        1px solid
-        rgba(240,90,12,0.50);
+        1px solid rgba(240,90,12,0.45);
 
     background:
-        rgba(240,90,12,0.10);
+        rgba(240,90,12,0.08);
 
     color:
         #ff7629;
 
     font-size:
-        0.75rem;
+        0.64rem;
 
     font-weight:
         700;
-
-    letter-spacing:
-        0.04em;
 }
 
 
 .article-date {
 
     color:
-        rgba(255,255,255,0.42);
+        rgba(255,255,255,0.38);
 
     font-size:
-        0.78rem;
+        0.67rem;
 }
 
+
+
+/* ========================================
+   記事タイトル
+======================================== */
 
 .article-title {
 
     margin-bottom:
-        16px;
+        5px;
+
+    overflow:
+        hidden;
 
     color:
         #ffffff;
 
     font-size:
-        clamp(1.25rem,2vw,1.75rem);
+        clamp(0.98rem,1.5vw,1.18rem);
 
     font-weight:
         900;
 
     line-height:
-        1.55;
+        1.45;
+
+    /*
+       長いタイトルは最大2行
+    */
+
+    display:
+        -webkit-box;
+
+    -webkit-line-clamp:
+        2;
+
+    -webkit-box-orient:
+        vertical;
 
     transition:
         color 0.25s ease;
@@ -709,33 +778,55 @@ button {
 }
 
 
+
+/* ========================================
+   説明
+======================================== */
+
 .article-description {
 
-    max-width:
-        780px;
-
-    margin-bottom:
-        25px;
+    overflow:
+        hidden;
 
     color:
-        rgba(255,255,255,0.68);
+        rgba(255,255,255,0.58);
 
     font-size:
-        0.93rem;
+        0.74rem;
 
     line-height:
-        1.9;
+        1.5;
+
+    /*
+       説明はPCでは1行だけ
+    */
+
+    white-space:
+        nowrap;
+
+    text-overflow:
+        ellipsis;
+
+    margin-bottom:
+        5px;
 }
 
 
+
+/* ========================================
+   記事を読む
+======================================== */
+
 .read-more {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
     gap:
-        10px;
+        7px;
 
     width:
         fit-content;
@@ -744,7 +835,7 @@ button {
         #f05a0c;
 
     font-size:
-        0.92rem;
+        0.72rem;
 
     font-weight:
         700;
@@ -752,6 +843,9 @@ button {
 
 
 .read-more i {
+
+    font-size:
+        0.7rem;
 
     transition:
         transform 0.25s ease;
@@ -762,7 +856,7 @@ button {
 .read-more i {
 
     transform:
-        translateX(6px);
+        translateX(5px);
 }
 
 
@@ -774,16 +868,16 @@ button {
 .coming-soon {
 
     margin-top:
-        55px;
+        24px;
 
     padding:
-        34px;
+        18px;
 
     border:
-        1px dashed rgba(255,255,255,0.14);
+        1px dashed rgba(255,255,255,0.12);
 
     background:
-        rgba(255,255,255,0.025);
+        rgba(255,255,255,0.02);
 
     text-align:
         center;
@@ -793,36 +887,36 @@ button {
 .coming-soon i {
 
     margin-bottom:
-        14px;
+        6px;
 
     color:
         #f05a0c;
 
     font-size:
-        1.7rem;
+        1.3rem;
 }
 
 
 .coming-soon h2 {
 
     margin-bottom:
-        10px;
+        5px;
 
     font-size:
-        1.15rem;
+        0.95rem;
 }
 
 
 .coming-soon p {
 
     color:
-        rgba(255,255,255,0.58);
+        rgba(255,255,255,0.48);
 
     font-size:
-        0.9rem;
+        0.76rem;
 
     line-height:
-        1.8;
+        1.6;
 }
 
 
@@ -834,10 +928,10 @@ button {
 .site-footer {
 
     padding:
-        45px 5%;
+        25px 5%;
 
     border-top:
-        1px solid rgba(255,255,255,0.08);
+        1px solid rgba(255,255,255,0.07);
 
     background:
         #030303;
@@ -850,7 +944,7 @@ button {
 .footer-logo {
 
     margin-bottom:
-        12px;
+        5px;
 
     color:
         #f05a0c;
@@ -860,7 +954,7 @@ button {
         sans-serif;
 
     font-size:
-        2.2rem;
+        1.8rem;
 
     font-weight:
         800;
@@ -873,10 +967,10 @@ button {
 .footer-copy {
 
     color:
-        rgba(255,255,255,0.42);
+        rgba(255,255,255,0.35);
 
     font-size:
-        0.78rem;
+        0.7rem;
 }
 
 
@@ -885,51 +979,35 @@ button {
    タブレット
 ======================================== */
 
-@media screen and (max-width:1050px) {
+@media screen and
+(max-width:1000px) {
 
 
     .site-header {
 
         padding:
-            18px 3%;
-    }
-
-
-    .header-inner {
-
-        gap:
-            20px;
+            15px 3%;
     }
 
 
     .logo {
 
         font-size:
-            clamp(2.6rem,4vw,3.5rem);
-    }
-
-
-    .nav-menu {
-
-        gap:
-            22px;
-    }
-
-
-    .social-links {
-
-        gap:
-            15px;
-
-        margin-left:
-            0;
+            2.6rem;
     }
 
 
     .article-card {
 
         grid-template-columns:
-            290px 1fr;
+            145px 1fr;
+    }
+
+
+    .article-image {
+
+        width:
+            145px;
     }
 
 
@@ -941,30 +1019,21 @@ button {
    スマートフォン
 ======================================== */
 
-@media screen and (max-width:850px) {
+@media screen and
+(max-width:850px) {
 
 
     .site-header {
 
         padding:
-            15px 20px;
-    }
-
-
-    .header-inner {
-
-        gap:
-            12px;
+            14px 18px;
     }
 
 
     .logo {
 
         font-size:
-            2.25rem;
-
-        letter-spacing:
-            0.08em;
+            2.2rem;
     }
 
 
@@ -988,13 +1057,13 @@ button {
             absolute;
 
         top:
-            76px;
+            70px;
 
         left:
-            18px;
+            15px;
 
         right:
-            18px;
+            15px;
 
         display:
             none;
@@ -1009,7 +1078,7 @@ button {
             0;
 
         padding:
-            8px 20px;
+            7px 18px;
 
         border:
             1px solid rgba(255,255,255,0.13);
@@ -1018,8 +1087,7 @@ button {
             rgba(5,5,5,0.98);
 
         box-shadow:
-            0 20px 50px
-            rgba(0,0,0,0.65);
+            0 20px 50px rgba(0,0,0,0.65);
     }
 
 
@@ -1033,7 +1101,7 @@ button {
     .nav-menu li {
 
         border-bottom:
-            1px solid rgba(255,255,255,0.09);
+            1px solid rgba(255,255,255,0.08);
     }
 
 
@@ -1047,7 +1115,7 @@ button {
     .nav-menu a {
 
         padding:
-            17px 5px;
+            15px 4px;
     }
 
 
@@ -1058,58 +1126,120 @@ button {
     }
 
 
+    /*
+       スマホでも上部をコンパクトに
+    */
+
     .page-hero {
 
         padding:
-            65px 24px 55px;
+            35px 20px 30px;
     }
 
 
     .page-title {
 
         margin-bottom:
-            25px;
+            12px;
+
+        font-size:
+            2.8rem;
+    }
+
+
+    .page-description {
+
+        font-size:
+            0.8rem;
+    }
+
+
+    .page-description br {
+
+        display:
+            none;
     }
 
 
     .article-section {
 
         width:
-            calc(100% - 36px);
+            calc(100% - 28px);
 
         padding:
-            55px 0 80px;
+            20px 0 55px;
     }
 
 
-    .section-heading {
-
-        font-size:
-            1.25rem;
-    }
-
+    /*
+       スマホは横長カードを維持
+    */
 
     .article-card {
 
         grid-template-columns:
-            1fr;
+            110px 1fr;
 
         min-height:
-            0;
+            105px;
     }
 
 
     .article-image {
 
-        min-height:
-            250px;
+        width:
+            110px;
+
+        height:
+            105px;
     }
 
 
     .article-content {
 
         padding:
-            27px 24px 30px;
+            9px 12px;
+    }
+
+
+    .article-description {
+
+        display:
+            none;
+    }
+
+
+    .article-title {
+
+        margin-bottom:
+            4px;
+
+        font-size:
+            0.92rem;
+
+        line-height:
+            1.4;
+    }
+
+
+    .category {
+
+        font-size:
+            0.58rem;
+    }
+
+
+    .article-date {
+
+        font-size:
+            0.6rem;
+    }
+
+
+    .read-more {
+
+        font-size:
+            0.65rem;
     }
 
 
@@ -1118,96 +1248,113 @@ button {
 
 
 /* ========================================
-   小さいスマートフォン
+   小さいスマホ
 ======================================== */
 
-@media screen and (max-width:470px) {
+@media screen and
+(max-width:470px) {
 
 
     .site-header {
 
         padding:
-            14px 15px;
+            13px 14px;
     }
 
 
     .logo {
 
         font-size:
-            2rem;
+            1.9rem;
     }
 
 
     .page-hero {
 
         padding:
-            52px 18px 45px;
+            28px 16px 25px;
     }
 
 
     .page-label {
 
         font-size:
-            1.05rem;
+            0.9rem;
     }
 
 
     .page-title {
 
-        margin-bottom:
-            22px;
-
         font-size:
-            2.7rem;
-    }
-
-
-    .page-description {
-
-        font-size:
-            0.9rem;
+            2.35rem;
     }
 
 
     .article-section {
 
         width:
-            calc(100% - 28px);
+            calc(100% - 20px);
+    }
+
+
+    .section-heading {
+
+        margin-bottom:
+            13px;
+
+        font-size:
+            1rem;
+    }
+
+
+    .article-list {
+
+        gap:
+            7px;
+    }
+
+
+    .article-card {
+
+        grid-template-columns:
+            92px 1fr;
+
+        min-height:
+            92px;
     }
 
 
     .article-image {
 
-        min-height:
-            215px;
+        width:
+            92px;
+
+        height:
+            92px;
     }
 
 
     .article-content {
 
         padding:
-            23px 20px 26px;
+            7px 9px;
+    }
+
+
+    .article-meta {
+
+        gap:
+            5px;
+
+        margin-bottom:
+            3px;
     }
 
 
     .article-title {
 
         font-size:
-            1.15rem;
-    }
-
-
-    .article-description {
-
-        font-size:
-            0.88rem;
-    }
-
-
-    .coming-soon {
-
-        padding:
-            27px 18px;
+            0.82rem;
     }
 
 
@@ -1219,7 +1366,9 @@ button {
 </head>
 
 
+
 <body>
+
 
 
 <!-- ======================================
@@ -1227,6 +1376,7 @@ button {
 ======================================= -->
 
 <header class="site-header">
+
 
 <div class="header-inner">
 
@@ -1240,6 +1390,7 @@ TSKY MODE
 </a>
 
 
+
 <button
 class="menu-button"
 id="menuButton"
@@ -1250,6 +1401,7 @@ aria-expanded="false">
 <i class="fa-solid fa-bars"></i>
 
 </button>
+
 
 
 <nav
@@ -1314,6 +1466,7 @@ DIY記事
 </nav>
 
 
+
 <div class="social-links">
 
 
@@ -1354,6 +1507,7 @@ aria-label="YouTube">
 
 
 </div>
+
 
 </header>
 
@@ -1414,6 +1568,7 @@ DIY記事一覧
 </h2>
 
 
+
 <div class="article-list">
 
 
@@ -1464,6 +1619,7 @@ datetime="2026-08-15">
 </div>
 
 
+
 <h2 class="article-title">
 
 ミナトCP-8Aを購入！収納ボックスで防音＆冷却対策してみた
@@ -1471,13 +1627,13 @@ datetime="2026-08-15">
 </h2>
 
 
+
 <p class="article-description">
 
-新しく購入したミナトCP-8A。
-収納ボックスと吸音材、USB扇風機、そしてまさかの植木鉢を使って
-防音と冷却を両立させてみました。
+新しく購入したミナトCP-8A。収納ボックスと吸音材、USB扇風機、植木鉢を使って防音と冷却を両立させてみました。
 
 </p>
+
 
 
 <span class="read-more">
@@ -1494,6 +1650,82 @@ datetime="2026-08-15">
 
 </a>
 
+
+
+<!--
+================================================
+ここから下に新しい記事を追加していきます
+
+新しい記事を増やすときは
+ARTICLE START ～ ARTICLE END をコピー
+================================================
+-->
+
+
+<!-- ARTICLE START
+
+<a
+href="ここに記事ページ.html"
+class="article-card">
+
+
+<div class="article-image">
+
+<img
+src="images/ここに画像.jpg"
+alt="記事画像">
+
+</div>
+
+
+<div class="article-content">
+
+
+<div class="article-meta">
+
+<span class="category">
+カテゴリ
+</span>
+
+<time
+class="article-date"
+datetime="2026-08-15">
+
+2026.08.15
+
+</time>
+
+</div>
+
+
+<h2 class="article-title">
+
+ここに記事タイトル
+
+</h2>
+
+
+<p class="article-description">
+
+ここに記事の短い説明。
+
+</p>
+
+
+<span class="read-more">
+
+この記事を読む
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</span>
+
+
+</div>
+
+</a>
+
+ARTICLE END -->
 
 
 </div>
@@ -1519,7 +1751,7 @@ DIY記事は随時追加していきます
 
 <p>
 
-ネイキッドの整備・カスタム・塗装など、<br>
+ネイキッドの整備・カスタム・塗装など、
 実際に作業した内容を少しずつ追加していきます。
 
 </p>
@@ -1549,6 +1781,7 @@ TSKY MODE
 <p class="footer-copy">
 
 Tune your Style, Keep Yourself.<br>
+
 © TSKY MODE
 
 </p>
@@ -1627,8 +1860,6 @@ menuIcon.classList.add(
 
 
 
-/* メニューリンクを押したら閉じる */
-
 navMenu
 .querySelectorAll("a")
 .forEach(
@@ -1669,8 +1900,6 @@ menuIcon.classList.add(
 );
 
 
-
-/* メニュー外をクリックしたら閉じる */
 
 document.addEventListener(
 "click",
