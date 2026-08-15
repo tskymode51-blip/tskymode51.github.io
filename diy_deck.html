@@ -55,24 +55,21 @@ html {
 
 
 body {
+
     width: 100%;
     min-height: 100vh;
 
-    background:
-        linear-gradient(
-            180deg,
-            #050505 0%,
-            #0a0a0a 50%,
-            #050505 100%
-        );
+    overflow-x: hidden;
 
-    color: #ffffff;
+    background:
+        #050505;
+
+    color:
+        #ffffff;
 
     font-family:
         "Noto Sans JP",
         sans-serif;
-
-    overflow-x: hidden;
 }
 
 
@@ -113,7 +110,7 @@ button {
         1px solid rgba(255,255,255,0.09);
 
     background:
-        rgba(5,5,5,0.90);
+        rgba(5,5,5,0.94);
 
     backdrop-filter:
         blur(12px);
@@ -145,6 +142,8 @@ button {
 ======================================== */
 
 .logo {
+
+    display: block;
 
     flex-shrink: 0;
 
@@ -202,19 +201,15 @@ button {
 ======================================== */
 
 .site-nav {
-
-    margin-left:
-        auto;
+    margin-left: auto;
 }
 
 
 .nav-menu {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
         clamp(22px,2.8vw,48px);
@@ -223,11 +218,9 @@ button {
 
 .nav-menu a {
 
-    position:
-        relative;
+    position: relative;
 
-    display:
-        block;
+    display: block;
 
     padding:
         11px 0;
@@ -251,23 +244,15 @@ button {
 
 .nav-menu a::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
+    bottom: 0;
 
-    bottom:
-        0;
-
-    width:
-        0;
-
-    height:
-        3px;
+    width: 0;
+    height: 3px;
 
     background:
         #f05a0c;
@@ -292,8 +277,7 @@ button {
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
 
-    width:
-        100%;
+    width: 100%;
 }
 
 
@@ -304,30 +288,23 @@ button {
 
 .social-links {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        22px;
+    gap: 22px;
 
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 
-    margin-left:
-        10px;
+    margin-left: 10px;
 }
 
 
 .social-links a {
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        1.35rem;
+    font-size: 1.35rem;
 
     transition:
         color 0.25s ease,
@@ -347,29 +324,22 @@ button {
 
 
 /* ========================================
-   スマホメニューボタン
+   スマホメニュー
 ======================================== */
 
 .menu-button {
 
-    display:
-        none;
+    display: none;
 
-    place-items:
-        center;
+    place-items: center;
 
-    width:
-        46px;
+    width: 46px;
+    height: 46px;
 
-    height:
-        46px;
-
-    margin-left:
-        auto;
+    margin-left: auto;
 
     border:
-        1px solid
-        rgba(255,255,255,0.25);
+        1px solid rgba(255,255,255,0.25);
 
     background:
         rgba(0,0,0,0.55);
@@ -392,75 +362,38 @@ button {
 
 .page-hero {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     padding:
-        95px 5% 80px;
+        95px 5% 85px;
 
     border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
+        1px solid rgba(240,90,12,0.55);
 
     background:
 
         radial-gradient(
-            circle at 75% 30%,
+            circle at 78% 30%,
             rgba(240,90,12,0.12),
             transparent 35%
         ),
 
         linear-gradient(
             135deg,
-            #111111,
-            #050505 60%
+            #111111 0%,
+            #050505 62%,
+            #100703 100%
         );
-}
-
-
-.page-hero::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    left:
-        0;
-
-    bottom:
-        0;
-
-    width:
-        100%;
-
-    height:
-        3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #f05a0c,
-            transparent
-        );
-
-    opacity:
-        0.75;
 }
 
 
 .page-hero-inner {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 
     width:
         min(1250px,100%);
@@ -473,7 +406,7 @@ button {
 .page-label {
 
     margin-bottom:
-        8px;
+        10px;
 
     color:
         #f05a0c;
@@ -496,10 +429,13 @@ button {
 .page-title {
 
     margin-bottom:
-        22px;
+        32px;
+
+    color:
+        #ffffff;
 
     font-size:
-        clamp(2.8rem,6vw,5.8rem);
+        clamp(3rem,6vw,5.8rem);
 
     font-weight:
         900;
@@ -512,43 +448,19 @@ button {
 }
 
 
-.title-line {
-
-    width:
-        85px;
-
-    height:
-        5px;
-
-    margin-bottom:
-        25px;
-
-    background:
-        #f05a0c;
-
-    box-shadow:
-
-        0 0 8px
-        rgba(240,90,12,0.9),
-
-        0 0 18px
-        rgba(240,90,12,0.45);
-}
-
-
 .page-description {
 
     max-width:
         720px;
 
     color:
-        rgba(255,255,255,0.78);
+        rgba(255,255,255,0.76);
 
     font-size:
         1rem;
 
     line-height:
-        1.9;
+        1.95;
 }
 
 
@@ -560,32 +472,33 @@ button {
 .article-section {
 
     width:
-        min(1250px,90%);
+        min(1250px,94%);
 
     margin:
         0 auto;
 
     padding:
-        80px 0 110px;
+        70px 0 110px;
 }
 
 
 .section-heading {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
-        14px;
+        12px;
 
     margin-bottom:
-        35px;
+        32px;
+
+    color:
+        #ffffff;
 
     font-size:
-        1.45rem;
+        1.4rem;
 
     font-weight:
         900;
@@ -606,8 +519,7 @@ button {
 
 .article-list {
 
-    display:
-        grid;
+    display: grid;
 
     gap:
         28px;
@@ -616,18 +528,18 @@ button {
 
 .article-card {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         330px 1fr;
 
-    overflow:
-        hidden;
+    min-height:
+        300px;
+
+    overflow: hidden;
 
     border:
-        1px solid
-        rgba(255,255,255,0.10);
+        1px solid rgba(255,255,255,0.11);
 
     background:
         #0d0d0d;
@@ -642,7 +554,7 @@ button {
 .article-card:hover {
 
     transform:
-        translateY(-5px);
+        translateY(-4px);
 
     border-color:
         rgba(240,90,12,0.55);
@@ -660,33 +572,26 @@ button {
 
 .article-image {
 
-    position:
-        relative;
+    position: relative;
 
     min-height:
-        225px;
+        300px;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     background:
-        #181818;
+        #111111;
 }
 
 
 .article-image img {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        100%;
+    width: 100%;
+    height: 100%;
 
-    height:
-        100%;
-
-    object-fit:
-        cover;
+    object-fit: cover;
 
     transition:
         transform 0.4s ease;
@@ -697,70 +602,41 @@ button {
 .article-image img {
 
     transform:
-        scale(1.045);
-}
-
-
-.article-image::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 55%,
-            rgba(13,13,13,0.45) 100%
-        );
-
-    pointer-events:
-        none;
+        scale(1.035);
 }
 
 
 
 /* ========================================
-   記事本文部分
+   記事情報
 ======================================== */
 
 .article-content {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    justify-content:
-        center;
+    justify-content: center;
 
     padding:
-        30px 38px;
+        34px 40px;
 }
 
 
 .article-meta {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        wrap;
+    flex-wrap: wrap;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
-        10px;
+        11px;
 
     margin-bottom:
-        14px;
+        16px;
 }
 
 
@@ -770,17 +646,17 @@ button {
         inline-block;
 
     padding:
-        5px 10px;
-
-    background:
-        rgba(240,90,12,0.14);
+        5px 11px;
 
     border:
         1px solid
-        rgba(240,90,12,0.45);
+        rgba(240,90,12,0.50);
+
+    background:
+        rgba(240,90,12,0.10);
 
     color:
-        #ff7b32;
+        #ff7629;
 
     font-size:
         0.75rem;
@@ -789,14 +665,14 @@ button {
         700;
 
     letter-spacing:
-        0.05em;
+        0.04em;
 }
 
 
 .article-date {
 
     color:
-        rgba(255,255,255,0.48);
+        rgba(255,255,255,0.42);
 
     font-size:
         0.78rem;
@@ -806,7 +682,10 @@ button {
 .article-title {
 
     margin-bottom:
-        14px;
+        16px;
+
+    color:
+        #ffffff;
 
     font-size:
         clamp(1.25rem,2vw,1.75rem);
@@ -815,7 +694,7 @@ button {
         900;
 
     line-height:
-        1.5;
+        1.55;
 
     transition:
         color 0.25s ease;
@@ -832,27 +711,28 @@ button {
 
 .article-description {
 
+    max-width:
+        780px;
+
     margin-bottom:
-        22px;
+        25px;
 
     color:
-        rgba(255,255,255,0.72);
+        rgba(255,255,255,0.68);
 
     font-size:
         0.93rem;
 
     line-height:
-        1.8;
+        1.9;
 }
 
 
 .read-more {
 
-    display:
-        inline-flex;
+    display: inline-flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
         10px;
@@ -897,17 +777,16 @@ button {
         55px;
 
     padding:
-        32px;
+        34px;
 
     border:
-        1px dashed
-        rgba(255,255,255,0.16);
-
-    text-align:
-        center;
+        1px dashed rgba(255,255,255,0.14);
 
     background:
         rgba(255,255,255,0.025);
+
+    text-align:
+        center;
 }
 
 
@@ -920,7 +799,7 @@ button {
         #f05a0c;
 
     font-size:
-        1.8rem;
+        1.7rem;
 }
 
 
@@ -930,20 +809,20 @@ button {
         10px;
 
     font-size:
-        1.2rem;
+        1.15rem;
 }
 
 
 .coming-soon p {
 
     color:
-        rgba(255,255,255,0.6);
+        rgba(255,255,255,0.58);
 
     font-size:
         0.9rem;
 
     line-height:
-        1.7;
+        1.8;
 }
 
 
@@ -955,11 +834,10 @@ button {
 .site-footer {
 
     padding:
-        42px 5%;
+        45px 5%;
 
     border-top:
-        1px solid
-        rgba(255,255,255,0.08);
+        1px solid rgba(255,255,255,0.08);
 
     background:
         #030303;
@@ -1007,8 +885,7 @@ button {
    タブレット
 ======================================== */
 
-@media screen and
-(max-width: 1000px) {
+@media screen and (max-width:1050px) {
 
 
     .site-header {
@@ -1064,8 +941,7 @@ button {
    スマートフォン
 ======================================== */
 
-@media screen and
-(max-width: 850px) {
+@media screen and (max-width:850px) {
 
 
     .site-header {
@@ -1136,8 +1012,7 @@ button {
             8px 20px;
 
         border:
-            1px solid
-            rgba(255,255,255,0.13);
+            1px solid rgba(255,255,255,0.13);
 
         background:
             rgba(5,5,5,0.98);
@@ -1158,8 +1033,7 @@ button {
     .nav-menu li {
 
         border-bottom:
-            1px solid
-            rgba(255,255,255,0.09);
+            1px solid rgba(255,255,255,0.09);
     }
 
 
@@ -1187,17 +1061,31 @@ button {
     .page-hero {
 
         padding:
-            65px 25px 55px;
+            65px 24px 55px;
+    }
+
+
+    .page-title {
+
+        margin-bottom:
+            25px;
     }
 
 
     .article-section {
 
         width:
-            calc(100% - 40px);
+            calc(100% - 36px);
 
         padding:
             55px 0 80px;
+    }
+
+
+    .section-heading {
+
+        font-size:
+            1.25rem;
     }
 
 
@@ -1205,31 +1093,23 @@ button {
 
         grid-template-columns:
             1fr;
+
+        min-height:
+            0;
     }
 
 
     .article-image {
 
         min-height:
-            230px;
-    }
-
-
-    .article-image::after {
-
-        background:
-            linear-gradient(
-                180deg,
-                transparent 65%,
-                rgba(13,13,13,0.45) 100%
-            );
+            250px;
     }
 
 
     .article-content {
 
         padding:
-            25px;
+            27px 24px 30px;
     }
 
 
@@ -1241,8 +1121,7 @@ button {
    小さいスマートフォン
 ======================================== */
 
-@media screen and
-(max-width: 470px) {
+@media screen and (max-width:470px) {
 
 
     .site-header {
@@ -1262,7 +1141,7 @@ button {
     .page-hero {
 
         padding:
-            55px 18px 45px;
+            52px 18px 45px;
     }
 
 
@@ -1275,36 +1154,46 @@ button {
 
     .page-title {
 
+        margin-bottom:
+            22px;
+
         font-size:
-            2.5rem;
+            2.7rem;
+    }
+
+
+    .page-description {
+
+        font-size:
+            0.9rem;
     }
 
 
     .article-section {
 
         width:
-            calc(100% - 30px);
+            calc(100% - 28px);
     }
 
 
     .article-image {
 
         min-height:
-            205px;
+            215px;
     }
 
 
     .article-content {
 
         padding:
-            22px 20px;
+            23px 20px 26px;
     }
 
 
     .article-title {
 
         font-size:
-            1.18rem;
+            1.15rem;
     }
 
 
@@ -1315,13 +1204,19 @@ button {
     }
 
 
+    .coming-soon {
+
+        padding:
+            27px 18px;
+    }
+
+
 }
 
 
 </style>
 
 </head>
-
 
 
 <body>
@@ -1336,18 +1231,14 @@ button {
 <div class="header-inner">
 
 
-<!-- ロゴ -->
-
-<a href="index.html"
+<a
+href="index.html"
 class="logo">
 
 TSKY MODE
 
 </a>
 
-
-
-<!-- スマホ用メニューボタン -->
 
 <button
 class="menu-button"
@@ -1360,9 +1251,6 @@ aria-expanded="false">
 
 </button>
 
-
-
-<!-- ナビゲーション -->
 
 <nav
 class="site-nav"
@@ -1426,9 +1314,6 @@ DIY記事
 </nav>
 
 
-
-<!-- SNS -->
-
 <div class="social-links">
 
 
@@ -1480,6 +1365,7 @@ aria-label="YouTube">
 
 <section class="page-hero">
 
+
 <div class="page-hero-inner">
 
 
@@ -1497,13 +1383,9 @@ DIY記事
 </h1>
 
 
-<div class="title-line"></div>
-
-
 <p class="page-description">
 
-ダイハツ ネイキッドを中心に、
-DIY整備・メンテナンス・塗装・カー用品など、
+ダイハツ ネイキッドを中心に、DIY整備・メンテナンス・塗装・カー用品など、<br>
 実際に作業した内容を記録しています。
 
 </p>
@@ -1511,12 +1393,13 @@ DIY整備・メンテナンス・塗装・カー用品など、
 
 </div>
 
+
 </section>
 
 
 
 <!-- ======================================
-     DIY記事一覧
+     記事一覧
 ======================================= -->
 
 <main class="article-section">
@@ -1531,8 +1414,8 @@ DIY記事一覧
 </h2>
 
 
-
 <div class="article-list">
+
 
 
 <!-- ======================================
@@ -1545,18 +1428,6 @@ class="article-card">
 
 
 <div class="article-image">
-
-
-<!--
-    ↓↓↓
-    この画像を記事一覧用の画像に変更してください。
-
-    画像ファイル名：
-    compressor-box.jpg
-
-    保存場所：
-    images/compressor-box.jpg
--->
 
 
 <img
@@ -1593,25 +1464,20 @@ datetime="2026-08-15">
 </div>
 
 
-
 <h2 class="article-title">
 
-ミナトCP-8Aを購入！
-収納ボックスで防音＆冷却対策してみた
+ミナトCP-8Aを購入！収納ボックスで防音＆冷却対策してみた
 
 </h2>
-
 
 
 <p class="article-description">
 
 新しく購入したミナトCP-8A。
-収納ボックスと吸音材、
-USB扇風機、そしてまさかの植木鉢を使って
+収納ボックスと吸音材、USB扇風機、そしてまさかの植木鉢を使って
 防音と冷却を両立させてみました。
 
 </p>
-
 
 
 <span class="read-more">
@@ -1693,7 +1559,7 @@ Tune your Style, Keep Yourself.<br>
 
 
 <!-- ======================================
-     スマホメニュー
+     JavaScript
 ======================================= -->
 
 <script>
@@ -1763,12 +1629,10 @@ menuIcon.classList.add(
 
 /* メニューリンクを押したら閉じる */
 
-const navigationLinks =
-navMenu.querySelectorAll("a");
-
-
-navigationLinks.forEach(
-function (link) {
+navMenu
+.querySelectorAll("a")
+.forEach(
+function(link) {
 
 
 link.addEventListener(
@@ -1810,7 +1674,7 @@ menuIcon.classList.add(
 
 document.addEventListener(
 "click",
-function (event) {
+function(event) {
 
 
 const clickedMenuButton =
