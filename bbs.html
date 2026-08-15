@@ -57,18 +57,15 @@ body {
 
     min-height: 100vh;
 
-    background:
-        #050505;
+    background: #050505;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-family:
         "Noto Sans JP",
         sans-serif;
 
-    overflow-x:
-        hidden;
+    overflow-x: hidden;
 }
 
 
@@ -86,9 +83,7 @@ ul {
 button,
 input,
 textarea {
-
-    font:
-        inherit;
+    font: inherit;
 }
 
 
@@ -99,20 +94,14 @@ textarea {
 
 .site-header {
 
-    position:
-        sticky;
+    position: sticky;
+    top: 0;
 
-    top:
-        0;
+    z-index: 1000;
 
-    z-index:
-        1000;
+    width: 100%;
 
-    width:
-        100%;
-
-    padding:
-        16px 4%;
+    padding: 16px 4%;
 
     border-bottom:
         1px solid rgba(255,255,255,0.08);
@@ -127,23 +116,18 @@ textarea {
 
 .header-inner {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     width:
         min(1500px,100%);
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    gap:
-        30px;
+    gap: 30px;
 }
 
 
@@ -154,11 +138,9 @@ textarea {
 
 .logo {
 
-    flex-shrink:
-        0;
+    flex-shrink: 0;
 
-    color:
-        #f05a0c;
+    color: #f05a0c;
 
     font-family:
         "Barlow Condensed",
@@ -167,27 +149,20 @@ textarea {
     font-size:
         clamp(2.8rem,4vw,3.8rem);
 
-    font-weight:
-        800;
+    font-weight: 800;
 
-    line-height:
-        0.9;
+    line-height: 0.9;
 
-    letter-spacing:
-        0.10em;
+    letter-spacing: 0.10em;
 
     text-shadow:
-
         0 3px 15px rgba(0,0,0,0.95),
-
         0 0 18px rgba(240,90,12,0.30);
 }
 
 
 .logo:hover {
-
-    color:
-        #ff6a18;
+    color: #ff6a18;
 }
 
 
@@ -197,19 +172,15 @@ textarea {
 ======================================== */
 
 .site-nav {
-
-    margin-left:
-        auto;
+    margin-left: auto;
 }
 
 
 .nav-menu {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     gap:
         clamp(22px,2.8vw,45px);
@@ -218,48 +189,34 @@ textarea {
 
 .nav-menu a {
 
-    position:
-        relative;
+    position: relative;
 
-    display:
-        block;
+    display: block;
 
-    padding:
-        10px 0;
+    padding: 10px 0;
 
     color:
         rgba(255,255,255,0.90);
 
-    font-size:
-        0.92rem;
+    font-size: 0.92rem;
 
-    font-weight:
-        700;
+    font-weight: 700;
 }
 
 
 .nav-menu a::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
+    bottom: 0;
 
-    bottom:
-        0;
+    width: 0;
+    height: 3px;
 
-    width:
-        0;
-
-    height:
-        3px;
-
-    background:
-        #f05a0c;
+    background: #f05a0c;
 
     transition:
         width 0.25s ease;
@@ -269,8 +226,7 @@ textarea {
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
 
-    width:
-        100%;
+    width: 100%;
 }
 
 
@@ -281,34 +237,27 @@ textarea {
 
 .social-links {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        20px;
+    gap: 20px;
 }
 
 
 .social-links a {
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        1.25rem;
+    font-size: 1.25rem;
 
-    transition:
-        0.25s;
+    transition: 0.25s;
 }
 
 
 .social-links a:hover {
 
-    color:
-        #f05a0c;
+    color: #f05a0c;
 
     transform:
         translateY(-2px);
@@ -322,20 +271,14 @@ textarea {
 
 .menu-button {
 
-    display:
-        none;
+    display: none;
 
-    place-items:
-        center;
+    place-items: center;
 
-    width:
-        44px;
+    width: 44px;
+    height: 44px;
 
-    height:
-        44px;
-
-    margin-left:
-        auto;
+    margin-left: auto;
 
     border:
         1px solid rgba(255,255,255,0.22);
@@ -343,14 +286,11 @@ textarea {
     background:
         rgba(0,0,0,0.55);
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        1.2rem;
+    font-size: 1.2rem;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 }
 
 
@@ -396,8 +336,7 @@ textarea {
 
 .page-label {
 
-    margin-bottom:
-        4px;
+    margin-bottom: 4px;
 
     color:
         #f05a0c;
@@ -409,8 +348,7 @@ textarea {
     font-size:
         1.05rem;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
     letter-spacing:
         0.18em;
@@ -425,11 +363,9 @@ textarea {
     font-size:
         clamp(2.6rem,5vw,4.8rem);
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    line-height:
-        1.1;
+    line-height: 1.1;
 }
 
 
@@ -460,13 +396,13 @@ textarea {
         0 auto;
 
     padding:
-        28px 0 80px;
+        28px 0 70px;
 }
 
 
 
 /* ========================================
-   スレッド見出し
+   スレッド
 ======================================== */
 
 .thread-header {
@@ -531,14 +467,11 @@ textarea {
 
 .rules-title {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        9px;
+    gap: 9px;
 
     margin-bottom:
         10px;
@@ -556,11 +489,9 @@ textarea {
 
 .rules-list {
 
-    display:
-        grid;
+    display: grid;
 
-    gap:
-        5px;
+    gap: 5px;
 
     color:
         rgba(255,255,255,0.67);
@@ -591,19 +522,16 @@ textarea {
 
 
 /* ========================================
-   接続状態
+   状態
 ======================================== */
 
 .status-box {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        8px;
+    gap: 8px;
 
     margin-bottom:
         12px;
@@ -618,11 +546,8 @@ textarea {
 
 .status-dot {
 
-    width:
-        7px;
-
-    height:
-        7px;
+    width: 7px;
+    height: 7px;
 
     border-radius:
         50%;
@@ -638,7 +563,19 @@ textarea {
         #41c867;
 
     box-shadow:
-        0 0 8px rgba(65,200,103,0.65);
+        0 0 8px
+        rgba(65,200,103,0.65);
+}
+
+
+.status-dot.admin {
+
+    background:
+        #f05a0c;
+
+    box-shadow:
+        0 0 10px
+        rgba(240,90,12,0.8);
 }
 
 
@@ -666,6 +603,9 @@ textarea {
 
 .post {
 
+    position:
+        relative;
+
     padding:
         14px 14px 16px;
 
@@ -678,25 +618,22 @@ textarea {
 
 
 .post:nth-child(even) {
-
-    background:
-        #0b0b0b;
+    background: #0b0b0b;
 }
 
 
 .post-head {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-wrap:
-        wrap;
+    flex-wrap: wrap;
 
-    align-items:
-        baseline;
+    align-items: center;
 
-    gap:
-        7px;
+    gap: 7px;
+
+    padding-right:
+        85px;
 
     margin-bottom:
         8px;
@@ -741,6 +678,9 @@ textarea {
     padding-left:
         20px;
 
+    padding-right:
+        80px;
+
     color:
         rgba(255,255,255,0.88);
 
@@ -760,7 +700,79 @@ textarea {
 
 
 /* ========================================
-   投稿0件
+   管理人削除
+======================================== */
+
+.delete-button {
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        12px;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        5px 9px;
+
+    border:
+        1px solid rgba(255,75,75,0.55);
+
+    background:
+        rgba(120,0,0,0.18);
+
+    color:
+        #ff7777;
+
+    font-size:
+        0.65rem;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s;
+}
+
+
+body.admin-mode
+.delete-button {
+
+    display:
+        inline-flex;
+}
+
+
+.delete-button:hover {
+
+    background:
+        #9e1c1c;
+
+    border-color:
+        #ff7777;
+
+    color:
+        #ffffff;
+}
+
+
+
+/* ========================================
+   空
 ======================================== */
 
 .empty-message {
@@ -805,14 +817,11 @@ textarea {
 
 .form-title {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        9px;
+    gap: 9px;
 
     margin-bottom:
         18px;
@@ -826,23 +835,18 @@ textarea {
 
 
 .form-title i {
-
-    color:
-        #f05a0c;
+    color: #f05a0c;
 }
 
 
 .form-row {
-
-    margin-bottom:
-        15px;
+    margin-bottom: 15px;
 }
 
 
 .form-label {
 
-    display:
-        block;
+    display: block;
 
     margin-bottom:
         6px;
@@ -859,10 +863,10 @@ textarea {
 
 
 .name-input,
-.message-input {
+.message-input,
+.admin-input {
 
-    width:
-        100%;
+    width: 100%;
 
     border:
         1px solid rgba(255,255,255,0.14);
@@ -875,10 +879,6 @@ textarea {
 
     color:
         #ffffff;
-
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
 }
 
 
@@ -912,13 +912,15 @@ textarea {
 
 
 .name-input:focus,
-.message-input:focus {
+.message-input:focus,
+.admin-input:focus {
 
     border-color:
         #f05a0c;
 
     box-shadow:
-        0 0 0 2px rgba(240,90,12,0.08);
+        0 0 0 2px
+        rgba(240,90,12,0.08);
 }
 
 
@@ -945,14 +947,12 @@ textarea {
 
 .agree-row {
 
-    display:
-        flex;
+    display: flex;
 
     align-items:
         flex-start;
 
-    gap:
-        9px;
+    gap: 9px;
 
     margin:
         16px 0;
@@ -980,7 +980,7 @@ textarea {
 
 
 /* ========================================
-   投稿ボタン
+   ボタン
 ======================================== */
 
 .submit-button {
@@ -994,8 +994,7 @@ textarea {
     justify-content:
         center;
 
-    gap:
-        10px;
+    gap: 10px;
 
     min-width:
         180px;
@@ -1049,11 +1048,6 @@ textarea {
 }
 
 
-
-/* ========================================
-   メッセージ
-======================================== */
-
 .form-message {
 
     min-height:
@@ -1068,23 +1062,14 @@ textarea {
 
 
 .form-message.success {
-
-    color:
-        #58cf75;
+    color: #58cf75;
 }
 
 
 .form-message.error {
-
-    color:
-        #ff6d6d;
+    color: #ff6d6d;
 }
 
-
-
-/* ========================================
-   注意
-======================================== */
 
 .privacy-note {
 
@@ -1105,6 +1090,224 @@ textarea {
 
     line-height:
         1.7;
+}
+
+
+
+/* ========================================
+   管理人エリア
+======================================== */
+
+.admin-section {
+
+    width:
+        min(1100px,94%);
+
+    margin:
+        0 auto 60px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
+}
+
+
+.admin-toggle {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    width:
+        100%;
+
+    padding:
+        15px 5px;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        rgba(255,255,255,0.30);
+
+    font-size:
+        0.68rem;
+
+    cursor:
+        pointer;
+}
+
+
+.admin-toggle:hover {
+    color:
+        rgba(255,255,255,0.65);
+}
+
+
+.admin-panel {
+
+    display:
+        none;
+
+    max-width:
+        520px;
+
+    margin:
+        0 auto;
+
+    padding:
+        22px;
+
+    border:
+        1px solid rgba(240,90,12,0.25);
+
+    background:
+        #090909;
+}
+
+
+.admin-panel.open {
+    display: block;
+}
+
+
+.admin-title {
+
+    margin-bottom:
+        15px;
+
+    color:
+        #f05a0c;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        900;
+}
+
+
+.admin-input {
+
+    height:
+        42px;
+
+    margin-bottom:
+        10px;
+
+    padding:
+        0 12px;
+}
+
+
+.admin-buttons {
+
+    display: flex;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        6px;
+}
+
+
+.admin-login-button,
+.admin-logout-button {
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid #f05a0c;
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+
+.admin-login-button {
+
+    background:
+        #f05a0c;
+
+    color:
+        #ffffff;
+}
+
+
+.admin-logout-button {
+
+    display:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        #f05a0c;
+}
+
+
+body.admin-mode
+.admin-login-form {
+
+    display:
+        none;
+}
+
+
+body.admin-mode
+.admin-logout-button {
+
+    display:
+        inline-block;
+}
+
+
+.admin-status {
+
+    margin-top:
+        12px;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.6;
+}
+
+
+.admin-status.ok {
+
+    color:
+        #61d379;
+}
+
+
+.admin-status.error {
+
+    color:
+        #ff7070;
 }
 
 
@@ -1179,23 +1382,17 @@ textarea {
 
 
     .logo {
-
-        font-size:
-            2.2rem;
+        font-size: 2.2rem;
     }
 
 
     .menu-button {
-
-        display:
-            grid;
+        display: grid;
     }
 
 
     .site-nav {
-
-        margin-left:
-            0;
+        margin-left: 0;
     }
 
 
@@ -1237,9 +1434,7 @@ textarea {
 
 
     .nav-menu.open {
-
-        display:
-            flex;
+        display: flex;
     }
 
 
@@ -1251,16 +1446,12 @@ textarea {
 
 
     .nav-menu a {
-
-        padding:
-            15px 4px;
+        padding: 15px 4px;
     }
 
 
     .social-links {
-
-        display:
-            none;
+        display: none;
     }
 
 
@@ -1288,13 +1479,32 @@ textarea {
     }
 
 
+    .post-head {
+
+        padding-right:
+            65px;
+    }
+
+
     .post-body {
 
         padding-left:
             10px;
 
+        padding-right:
+            0;
+
         font-size:
             0.86rem;
+    }
+
+
+    .delete-button {
+
+        right: 8px;
+
+        font-size:
+            0.58rem;
     }
 
 
@@ -1318,51 +1528,37 @@ textarea {
 
 
     .site-header {
-
-        padding:
-            13px 14px;
+        padding: 13px 14px;
     }
 
 
     .logo {
-
-        font-size:
-            1.9rem;
+        font-size: 1.9rem;
     }
 
 
     .page-title {
-
-        font-size:
-            2.4rem;
+        font-size: 2.4rem;
     }
 
 
     .bbs-main {
-
-        width:
-            calc(100% - 20px);
+        width: calc(100% - 20px);
     }
 
 
     .thread-header {
-
-        padding:
-            14px;
+        padding: 14px;
     }
 
 
     .rules-box {
-
-        padding:
-            15px;
+        padding: 15px;
     }
 
 
     .submit-button {
-
-        width:
-            100%;
+        width: 100%;
     }
 
 
@@ -1377,12 +1573,12 @@ textarea {
 <body>
 
 
+
 <!-- ======================================
-     ヘッダー
+     HEADER
 ======================================= -->
 
 <header class="site-header">
-
 
 <div class="header-inner">
 
@@ -1419,25 +1615,20 @@ id="navMenu">
 
 
 <li>
-
 <a href="index.html">
 HOME
 </a>
-
 </li>
 
 
 <li>
-
 <a href="diy_deck.html">
 DIY記事
 </a>
-
 </li>
 
 
 <li>
-
 <a
 href="bbs.html"
 class="active">
@@ -1445,77 +1636,49 @@ class="active">
 掲示板
 
 </a>
-
 </li>
 
 
 <li>
-
 <a href="mailto:t.skymode51@gmail.com">
 お問い合わせ
 </a>
-
 </li>
 
 
 </ul>
-
 
 </nav>
 
 
 <div class="social-links">
 
-
-<a
-href="#"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="X">
-
+<a href="#" aria-label="X">
 <i class="fa-brands fa-x-twitter"></i>
-
 </a>
 
-
-<a
-href="#"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Instagram">
-
+<a href="#" aria-label="Instagram">
 <i class="fa-brands fa-instagram"></i>
-
 </a>
 
-
-<a
-href="#"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="YouTube">
-
+<a href="#" aria-label="YouTube">
 <i class="fa-brands fa-youtube"></i>
-
 </a>
 
-
 </div>
 
 
 </div>
-
 
 </header>
 
 
 
 <!-- ======================================
-     ページタイトル
+     HERO
 ======================================= -->
 
 <section class="page-hero">
-
 
 <div class="page-hero-inner">
 
@@ -1540,20 +1703,18 @@ COMMUNITY BBS
 
 </div>
 
-
 </section>
 
 
 
 <!-- ======================================
-     掲示板
+     BBS
 ======================================= -->
 
 <main class="bbs-main">
 
 
 <section class="thread-header">
-
 
 <h2 class="thread-title">
 
@@ -1568,14 +1729,11 @@ TSKY MODE 雑談・質問スレッド
 
 </p>
 
-
 </section>
 
 
 
-<!-- ======================================
-     利用ルール
-======================================= -->
+<!-- 利用ルール -->
 
 <section class="rules-box">
 
@@ -1614,7 +1772,7 @@ TSKY MODE 雑談・質問スレッド
 
 <p class="rules-important">
 
-※ 掲示板へ投稿した内容はインターネット上で公開されます。
+※ 投稿内容はインターネット上で公開されます。
 個人を特定できる情報は絶対に投稿しないでください。
 
 </p>
@@ -1624,9 +1782,7 @@ TSKY MODE 雑談・質問スレッド
 
 
 
-<!-- ======================================
-     Firebase接続状態
-======================================= -->
+<!-- 接続状態 -->
 
 <div class="status-box">
 
@@ -1636,38 +1792,28 @@ id="statusDot">
 </span>
 
 <span id="statusText">
-
 掲示板に接続しています...
-
 </span>
 
 </div>
 
 
 
-<!-- ======================================
-     投稿
-======================================= -->
+<!-- 投稿 -->
 
 <section
 class="posts"
 id="posts">
 
-
 <div class="empty-message">
-
 投稿を読み込んでいます...
-
 </div>
-
 
 </section>
 
 
 
-<!-- ======================================
-     投稿フォーム
-======================================= -->
+<!-- 投稿フォーム -->
 
 <section class="post-form-box">
 
@@ -1686,7 +1832,6 @@ id="posts">
 
 <div class="form-row">
 
-
 <label
 class="form-label"
 for="nameInput">
@@ -1704,13 +1849,11 @@ maxlength="20"
 placeholder="名無しさん"
 autocomplete="nickname">
 
-
 </div>
 
 
 
 <div class="form-row">
-
 
 <label
 class="form-label"
@@ -1744,18 +1887,13 @@ id="characterCount">
 
 <label class="agree-row">
 
-
 <input
 type="checkbox"
 id="agreeCheck">
 
-
 <span>
-
 掲示板利用ルールを読み、内容に同意して書き込みます。
-
 </span>
-
 
 </label>
 
@@ -1767,16 +1905,11 @@ class="submit-button"
 id="submitButton"
 disabled>
 
-
 <span>
-
 書き込む
-
 </span>
 
-
 <i class="fa-solid fa-paper-plane"></i>
-
 
 </button>
 
@@ -1784,21 +1917,19 @@ disabled>
 <div
 class="form-message"
 id="formMessage">
-
 </div>
 
 
 <p class="privacy-note">
 
 名前は空欄の場合「名無しさん」と表示されます。
-ログイン登録は不要ですが、投稿処理のためFirebaseの匿名認証を利用しています。
+ログイン登録は不要ですが、投稿処理のためFirebase匿名認証を利用しています。
 投稿された文章は公開されます。
 
 </p>
 
 
 </form>
-
 
 </section>
 
@@ -1808,18 +1939,117 @@ id="formMessage">
 
 
 <!-- ======================================
-     フッター
+     管理人
 ======================================= -->
 
-<footer class="site-footer">
+<section class="admin-section">
 
 
-<div class="footer-logo">
+<button
+type="button"
+class="admin-toggle"
+id="adminToggle">
 
-TSKY MODE
+<span>
+
+<i class="fa-solid fa-lock"></i>
+管理人
+
+</span>
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</button>
+
+
+
+<div
+class="admin-panel"
+id="adminPanel">
+
+
+<h2 class="admin-title">
+
+管理人ログイン
+
+</h2>
+
+
+
+<div
+class="admin-login-form"
+id="adminLoginForm">
+
+
+<input
+type="email"
+class="admin-input"
+id="adminEmail"
+placeholder="管理人メールアドレス"
+autocomplete="username">
+
+
+<input
+type="password"
+class="admin-input"
+id="adminPassword"
+placeholder="パスワード"
+autocomplete="current-password">
+
+
+<div class="admin-buttons">
+
+<button
+type="button"
+class="admin-login-button"
+id="adminLoginButton">
+
+ログイン
+
+</button>
 
 </div>
 
+
+</div>
+
+
+
+<div class="admin-buttons">
+
+<button
+type="button"
+class="admin-logout-button"
+id="adminLogoutButton">
+
+管理人ログアウト
+
+</button>
+
+</div>
+
+
+<p
+class="admin-status"
+id="adminStatus">
+
+一般ユーザーモード
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<footer class="site-footer">
+
+<div class="footer-logo">
+TSKY MODE
+</div>
 
 <p class="footer-copy">
 
@@ -1828,13 +2058,12 @@ Tune your Style, Keep Yourself.<br>
 
 </p>
 
-
 </footer>
 
 
 
 <!-- ======================================
-     スマホメニュー
+     MENU
 ======================================= -->
 
 <script>
@@ -1869,71 +2098,15 @@ open
 
 if (open) {
 
-
-menuIcon.classList.remove(
-"fa-bars"
-);
-
-
-menuIcon.classList.add(
-"fa-xmark"
-);
-
+menuIcon.classList.remove("fa-bars");
+menuIcon.classList.add("fa-xmark");
 
 } else {
 
-
-menuIcon.classList.remove(
-"fa-xmark"
-);
-
-
-menuIcon.classList.add(
-"fa-bars"
-);
-
+menuIcon.classList.remove("fa-xmark");
+menuIcon.classList.add("fa-bars");
 
 }
-
-
-}
-);
-
-
-navMenu
-.querySelectorAll("a")
-.forEach(
-function(link) {
-
-
-link.addEventListener(
-"click",
-function () {
-
-
-navMenu.classList.remove(
-"open"
-);
-
-
-menuButton.setAttribute(
-"aria-expanded",
-"false"
-);
-
-
-menuIcon.classList.remove(
-"fa-xmark"
-);
-
-
-menuIcon.classList.add(
-"fa-bars"
-);
-
-
-}
-);
 
 
 }
@@ -1945,17 +2118,10 @@ menuIcon.classList.add(
 
 
 <!-- ======================================
-     Firebase
+     FIREBASE
 ======================================= -->
 
 <script type="module">
-
-
-/*
-==========================================
-Firebase SDK
-==========================================
-*/
 
 
 import {
@@ -1966,9 +2132,13 @@ from
 
 
 import {
+
     getAuth,
     signInAnonymously,
+    signInWithEmailAndPassword,
+    signOut,
     onAuthStateChanged
+
 }
 from
 "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
@@ -1983,7 +2153,8 @@ import {
     query,
     orderByChild,
     limitToLast,
-    onValue
+    onValue,
+    remove
 
 }
 from
@@ -1991,53 +2162,40 @@ from
 
 
 
-/*
-==========================================
-Firebase設定
-==========================================
-*/
-
+/* ========================================
+   Firebase設定
+======================================== */
 
 const firebaseConfig = {
-
 
     apiKey:
     "AIzaSyDprvskC7IIrdK3hvMMcG_rJh-r602u0iA",
 
-
     authDomain:
     "tskymode-bbs.firebaseapp.com",
-
 
     databaseURL:
     "https://tskymode-bbs-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-
     projectId:
     "tskymode-bbs",
-
 
     storageBucket:
     "tskymode-bbs.firebasestorage.app",
 
-
     messagingSenderId:
     "202961305988",
 
-
     appId:
     "1:202961305988:web:ad66500a75b44ea7ff15d1"
-
 
 };
 
 
 
-/*
-==========================================
-Firebase初期化
-==========================================
-*/
+const ADMIN_EMAIL =
+"t.skymode51@gmail.com";
+
 
 
 const app =
@@ -2053,12 +2211,9 @@ getDatabase(app);
 
 
 
-/*
-==========================================
-HTML
-==========================================
-*/
-
+/* ========================================
+   ELEMENT
+======================================== */
 
 const postsElement =
 document.getElementById("posts");
@@ -2100,27 +2255,124 @@ const statusText =
 document.getElementById("statusText");
 
 
+const adminToggle =
+document.getElementById("adminToggle");
+
+
+const adminPanel =
+document.getElementById("adminPanel");
+
+
+const adminEmail =
+document.getElementById("adminEmail");
+
+
+const adminPassword =
+document.getElementById("adminPassword");
+
+
+const adminLoginButton =
+document.getElementById("adminLoginButton");
+
+
+const adminLogoutButton =
+document.getElementById("adminLogoutButton");
+
+
+const adminStatus =
+document.getElementById("adminStatus");
+
+
 let currentUser =
 null;
 
 
-/*
-==========================================
-匿名ログイン
-==========================================
-*/
+let isAdmin =
+false;
 
+
+
+/* ========================================
+   AUTH状態
+======================================== */
 
 onAuthStateChanged(
 auth,
-function(user) {
+async function(user) {
 
 
-if (user) {
+if (!user) {
+
+
+try {
+
+await signInAnonymously(auth);
+
+}
+
+catch(error) {
+
+console.error(error);
+
+statusDot.className =
+"status-dot error";
+
+statusText.textContent =
+"掲示板への接続に失敗しました";
+
+}
+
+
+return;
+
+}
+
 
 
 currentUser =
 user;
+
+
+isAdmin =
+(
+!user.isAnonymous &&
+user.email === ADMIN_EMAIL
+);
+
+
+if (isAdmin) {
+
+
+document.body.classList.add(
+"admin-mode"
+);
+
+
+statusDot.className =
+"status-dot admin";
+
+
+statusText.textContent =
+"管理人モード";
+
+
+adminStatus.textContent =
+"管理人としてログイン中";
+
+
+adminStatus.className =
+"admin-status ok";
+
+
+}
+
+
+else {
+
+
+document.body.classList.remove(
+"admin-mode"
+);
 
 
 statusDot.className =
@@ -2131,58 +2383,28 @@ statusText.textContent =
 "掲示板に接続しました";
 
 
+adminStatus.textContent =
+"一般ユーザーモード";
+
+
+adminStatus.className =
+"admin-status";
+
+
+}
+
+
 updateSubmitButton();
 
 
 }
-
-
-}
 );
 
 
 
-if (!auth.currentUser) {
-
-
-signInAnonymously(auth)
-
-.catch(
-function(error) {
-
-
-console.error(error);
-
-
-statusDot.className =
-"status-dot error";
-
-
-statusText.textContent =
-"掲示板への接続に失敗しました";
-
-
-showMessage(
-"Firebaseへの接続に失敗しました。ページを再読み込みしてください。",
-"error"
-);
-
-
-}
-);
-
-
-}
-
-
-
-/*
-==========================================
-投稿読み込み
-最新100件
-==========================================
-*/
-
+/* ========================================
+   投稿読み込み
+======================================== */
 
 const postsReference =
 ref(
@@ -2221,7 +2443,14 @@ function(childSnapshot) {
 
 
 posts.push(
-childSnapshot.val()
+{
+
+id:
+childSnapshot.key,
+
+...childSnapshot.val()
+
+}
 );
 
 
@@ -2229,55 +2458,19 @@ childSnapshot.val()
 );
 
 
-
 posts.sort(
 function(a,b) {
-
 
 return (
 a.timestamp -
 b.timestamp
 );
 
-
 }
 );
 
 
-
-renderPosts(
-posts
-);
-
-
-},
-function(error) {
-
-
-console.error(error);
-
-
-postsElement.innerHTML =
-"";
-
-
-const errorBox =
-document.createElement(
-"div"
-);
-
-
-errorBox.className =
-"empty-message";
-
-
-errorBox.textContent =
-"投稿を読み込めませんでした。";
-
-
-postsElement.appendChild(
-errorBox
-);
+renderPosts(posts);
 
 
 }
@@ -2285,12 +2478,9 @@ errorBox
 
 
 
-/*
-==========================================
-投稿表示
-==========================================
-*/
-
+/* ========================================
+   投稿表示
+======================================== */
 
 function renderPosts(posts) {
 
@@ -2382,7 +2572,8 @@ name.className =
 
 
 name.textContent =
-post.name || "名無しさん";
+post.name ||
+"名無しさん";
 
 
 
@@ -2413,45 +2604,115 @@ body.className =
 "post-body";
 
 
-/*
-textContentを使用。
-投稿内容をHTMLとして実行しない。
-*/
-
-
 body.textContent =
 post.message;
 
 
 
-head.appendChild(
-number
+const deleteButton =
+document.createElement(
+"button"
 );
 
 
-head.appendChild(
-name
+deleteButton.type =
+"button";
+
+
+deleteButton.className =
+"delete-button";
+
+
+deleteButton.innerHTML =
+'<i class="fa-solid fa-trash"></i> 削除';
+
+
+
+deleteButton.addEventListener(
+"click",
+async function() {
+
+
+if (!isAdmin) {
+
+alert(
+"管理人のみ削除できます。"
+);
+
+return;
+
+}
+
+
+
+const confirmed =
+confirm(
+"この書き込みを削除しますか？\n\n" +
+post.message
 );
 
 
-head.appendChild(
-date
+if (!confirmed) {
+
+return;
+
+}
+
+
+
+try {
+
+
+await remove(
+ref(
+database,
+"posts/" + post.id
+)
 );
 
 
-article.appendChild(
-head
+alert(
+"削除しました。"
 );
 
 
-article.appendChild(
-body
+}
+
+
+catch(error) {
+
+
+console.error(error);
+
+
+alert(
+"削除できませんでした。"
 );
 
 
-postsElement.appendChild(
-article
+}
+
+
+}
 );
+
+
+
+head.appendChild(number);
+
+head.appendChild(name);
+
+head.appendChild(date);
+
+
+article.appendChild(head);
+
+article.appendChild(body);
+
+article.appendChild(deleteButton);
+
+
+postsElement.appendChild(article);
 
 
 }
@@ -2462,12 +2723,9 @@ article
 
 
 
-/*
-==========================================
-日時
-==========================================
-*/
-
+/* ========================================
+   日付
+======================================== */
 
 function formatDate(timestamp) {
 
@@ -2509,16 +2767,36 @@ false
 
 
 
-/*
-==========================================
-文字数
-==========================================
-*/
+/* ========================================
+   投稿ボタン状態
+======================================== */
 
+function updateSubmitButton() {
+
+
+const hasMessage =
+messageInput.value.trim().length > 0;
+
+
+submitButton.disabled =
+!(
+currentUser &&
+hasMessage &&
+agreeCheck.checked
+);
+
+
+}
+
+
+
+/* ========================================
+   文字数
+======================================== */
 
 messageInput.addEventListener(
 "input",
-function () {
+function() {
 
 
 characterCount.textContent =
@@ -2533,7 +2811,6 @@ updateSubmitButton();
 );
 
 
-
 agreeCheck.addEventListener(
 "change",
 updateSubmitButton
@@ -2541,58 +2818,19 @@ updateSubmitButton
 
 
 
-function updateSubmitButton() {
-
-
-const hasMessage =
-messageInput.value.trim().length > 0;
-
-
-const ready =
-currentUser &&
-hasMessage &&
-agreeCheck.checked;
-
-
-submitButton.disabled =
-!ready;
-
-
-}
-
-
-
-/*
-==========================================
-個人情報の簡易チェック
-==========================================
-*/
-
+/* ========================================
+   個人情報簡易チェック
+======================================== */
 
 function containsPersonalInfo(text) {
-
-
-/*
-メールアドレス
-*/
 
 
 const emailPattern =
 /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
 
 
-/*
-日本の電話番号らしい形式
-*/
-
-
 const phonePattern =
 /(?:0\d{1,4}[-ー－]?\d{1,4}[-ー－]?\d{3,4})/;
-
-
-/*
-メール・電話らしい文字列を検知
-*/
 
 
 return (
@@ -2605,12 +2843,9 @@ phonePattern.test(text)
 
 
 
-/*
-==========================================
-ローカル連投対策
-==========================================
-*/
-
+/* ========================================
+   連投対策
+======================================== */
 
 function canPostNow() {
 
@@ -2640,8 +2875,11 @@ interval
 
 const remaining =
 Math.ceil(
-(interval - (now - previous))
-/ 1000
+(
+interval -
+(now - previous)
+)
+/1000
 );
 
 
@@ -2668,12 +2906,9 @@ return true;
 
 
 
-/*
-==========================================
-投稿処理
-==========================================
-*/
-
+/* ========================================
+   投稿
+======================================== */
 
 postForm.addEventListener(
 "submit",
@@ -2689,15 +2924,12 @@ formMessage.textContent =
 
 if (!currentUser) {
 
-
 showMessage(
-"掲示板に接続中です。少し待ってからもう一度お試しください。",
+"接続中です。少し待ってください。",
 "error"
 );
 
-
 return;
-
 
 }
 
@@ -2705,15 +2937,12 @@ return;
 
 if (!agreeCheck.checked) {
 
-
 showMessage(
 "利用ルールへの同意が必要です。",
 "error"
 );
 
-
 return;
-
 
 }
 
@@ -2729,31 +2958,10 @@ messageInput.value.trim();
 
 if (!name) {
 
-
 name =
 "名無しさん";
 
-
 }
-
-
-
-if (
-name.length > 20
-) {
-
-
-showMessage(
-"名前は20文字以内にしてください。",
-"error"
-);
-
-
-return;
-
-
-}
-
 
 
 if (
@@ -2761,53 +2969,37 @@ message.length < 1 ||
 message.length > 1000
 ) {
 
-
 showMessage(
-"本文は1文字以上1000文字以内で入力してください。",
+"本文は1000文字以内で入力してください。",
 "error"
 );
 
-
 return;
-
 
 }
 
-
-
-const combined =
-name +
-"\n" +
-message;
 
 
 if (
 containsPersonalInfo(
-combined
+name + "\n" + message
 )
 ) {
 
-
 showMessage(
-"メールアドレスまたは電話番号と思われる情報が含まれています。個人情報を削除してから投稿してください。",
+"メールアドレスまたは電話番号と思われる情報が含まれています。",
 "error"
 );
 
-
 return;
-
 
 }
 
 
 
-if (
-!canPostNow()
-) {
-
+if (!canPostNow()) {
 
 return;
-
 
 }
 
@@ -2826,36 +3018,30 @@ submitButton.querySelector(
 try {
 
 
-const newPostReference =
+const newPost =
 push(
 postsReference
 );
 
 
 await set(
-newPostReference,
+newPost,
 {
-
 
 name:
 name,
 
-
 message:
 message,
-
 
 timestamp:
 Date.now(),
 
-
 uid:
 currentUser.uid
 
-
 }
 );
-
 
 
 localStorage.setItem(
@@ -2882,19 +3068,6 @@ showMessage(
 );
 
 
-window.scrollTo(
-{
-
-top:
-postsElement.offsetTop - 100,
-
-behavior:
-"smooth"
-
-}
-);
-
-
 }
 
 
@@ -2905,7 +3078,7 @@ console.error(error);
 
 
 showMessage(
-"投稿できませんでした。時間を置いてもう一度お試しください。",
+"投稿できませんでした。",
 "error"
 );
 
@@ -2933,12 +3106,216 @@ updateSubmitButton();
 
 
 
-/*
-==========================================
-メッセージ表示
-==========================================
-*/
+/* ========================================
+   管理人パネル
+======================================== */
 
+adminToggle.addEventListener(
+"click",
+function() {
+
+
+adminPanel.classList.toggle(
+"open"
+);
+
+
+}
+);
+
+
+
+/* ========================================
+   管理人ログイン
+======================================== */
+
+adminLoginButton.addEventListener(
+"click",
+async function() {
+
+
+const email =
+adminEmail.value.trim();
+
+
+const password =
+adminPassword.value;
+
+
+if (
+!email ||
+!password
+) {
+
+
+adminStatus.textContent =
+"メールとパスワードを入力してください。";
+
+
+adminStatus.className =
+"admin-status error";
+
+
+return;
+
+
+}
+
+
+
+adminLoginButton.disabled =
+true;
+
+
+adminLoginButton.textContent =
+"ログイン中...";
+
+
+try {
+
+
+const credential =
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+
+if (
+credential.user.email !==
+ADMIN_EMAIL
+) {
+
+
+await signOut(auth);
+
+
+throw new Error(
+"not-admin"
+);
+
+
+}
+
+
+
+adminPassword.value =
+"";
+
+
+adminStatus.textContent =
+"管理人としてログインしました。";
+
+
+adminStatus.className =
+"admin-status ok";
+
+
+}
+
+
+catch(error) {
+
+
+console.error(error);
+
+
+adminStatus.textContent =
+"管理人ログインに失敗しました。";
+
+
+adminStatus.className =
+"admin-status error";
+
+
+}
+
+
+finally {
+
+
+adminLoginButton.disabled =
+false;
+
+
+adminLoginButton.textContent =
+"ログイン";
+
+
+}
+
+
+}
+);
+
+
+
+/* ========================================
+   管理人ログアウト
+======================================== */
+
+adminLogoutButton.addEventListener(
+"click",
+async function() {
+
+
+try {
+
+
+await signOut(auth);
+
+
+document.body.classList.remove(
+"admin-mode"
+);
+
+
+isAdmin =
+false;
+
+
+adminStatus.textContent =
+"ログアウトしました。";
+
+
+adminStatus.className =
+"admin-status";
+
+
+await signInAnonymously(
+auth
+);
+
+
+}
+
+
+catch(error) {
+
+
+console.error(error);
+
+
+adminStatus.textContent =
+"ログアウトに失敗しました。";
+
+
+adminStatus.className =
+"admin-status error";
+
+
+}
+
+
+}
+);
+
+
+
+/* ========================================
+   メッセージ
+======================================== */
 
 function showMessage(
 text,
