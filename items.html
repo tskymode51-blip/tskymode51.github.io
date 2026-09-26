@@ -2,7 +2,6 @@
 <html lang="ja">
 
 <head>
-
 <meta charset="UTF-8">
 
 <meta
@@ -43,24 +42,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <style>
 
-
 /* ========================================
    基本
 ======================================== */
 
 * {
-
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
-
 body {
-
     background: #f5f5f5;
-
     color: #333333;
 
     font-family:
@@ -68,25 +61,17 @@ body {
         sans-serif;
 
     line-height: 1.7;
-
 }
-
 
 a {
-
     color: inherit;
     text-decoration: none;
-
 }
-
 
 img {
-
     display: block;
     max-width: 100%;
-
 }
-
 
 
 /* ========================================
@@ -94,23 +79,16 @@ img {
 ======================================== */
 
 .site-header {
-
     width: 100%;
-
     background: #080808;
 
     border-bottom:
         3px solid #f05a0c;
-
 }
 
-
 .header-inner {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     width:
@@ -124,12 +102,9 @@ img {
 
     gap:
         30px;
-
 }
 
-
 .logo {
-
     color:
         #f05a0c;
 
@@ -145,24 +120,17 @@ img {
 
     letter-spacing:
         0.08em;
-
 }
 
-
 .site-nav {
-
     display: flex;
-
     align-items: center;
 
     gap:
         28px;
-
 }
 
-
 .site-nav a {
-
     color:
         #dddddd;
 
@@ -174,17 +142,12 @@ img {
 
     transition:
         color 0.2s ease;
-
 }
-
 
 .site-nav a:hover {
-
     color:
         #f05a0c;
-
 }
-
 
 
 /* ========================================
@@ -192,18 +155,14 @@ img {
 ======================================== */
 
 .page-header {
-
     background:
         #ffffff;
 
     border-bottom:
         1px solid #dddddd;
-
 }
 
-
 .page-header-inner {
-
     width:
         min(1050px,92%);
 
@@ -212,14 +171,10 @@ img {
 
     padding:
         45px 0 35px;
-
 }
 
-
 .page-title {
-
     display: flex;
-
     align-items: center;
 
     gap:
@@ -236,33 +191,21 @@ img {
 
     font-weight:
         800;
-
 }
-
 
 .page-title i {
-
     color:
         #1769c2;
-
 }
 
-
 .page-description {
-
     color:
         #555555;
 
     font-size:
         0.95rem;
-
 }
 
-
-
-/* ========================================
-   広告表記
-======================================== */
 
 /* ========================================
    広告表記
@@ -272,9 +215,12 @@ img {
     width: min(1050px, 92%);
     margin: 8px auto 0;
     padding: 0;
+
     background: transparent;
     border: none;
+
     color: #888888;
+
     font-size: 0.65rem;
     text-align: right;
 }
@@ -285,7 +231,6 @@ img {
 ======================================== */
 
 .items-section {
-
     width:
         min(1050px,92%);
 
@@ -297,9 +242,7 @@ img {
 
     border-top:
         1px solid #dddddd;
-
 }
-
 
 
 /* ========================================
@@ -307,7 +250,6 @@ img {
 ======================================== */
 
 .item-row {
-
     display: grid;
 
     grid-template-columns:
@@ -321,9 +263,7 @@ img {
 
     border-bottom:
         1px solid #dddddd;
-
 }
-
 
 
 /* ========================================
@@ -331,7 +271,6 @@ img {
 ======================================== */
 
 .item-image {
-
     width:
         130px;
 
@@ -349,12 +288,9 @@ img {
 
     background:
         #eeeeee;
-
 }
 
-
 .item-image img {
-
     width:
         100%;
 
@@ -363,9 +299,7 @@ img {
 
     object-fit:
         cover;
-
 }
-
 
 
 /* ========================================
@@ -373,14 +307,10 @@ img {
 ======================================== */
 
 .item-body {
-
     min-width: 0;
-
 }
 
-
 .item-title {
-
     display: inline-block;
 
     margin-bottom:
@@ -397,20 +327,14 @@ img {
 
     line-height:
         1.5;
-
 }
-
 
 .item-title:hover {
-
     text-decoration:
         underline;
-
 }
 
-
 .item-description {
-
     position: relative;
 
     margin-bottom:
@@ -424,12 +348,9 @@ img {
 
     font-size:
         0.9rem;
-
 }
 
-
 .item-description::before {
-
     content:
         "•";
 
@@ -441,31 +362,23 @@ img {
 
     color:
         #444444;
-
 }
 
 
-
 /* ========================================
-   Yahooリンク
+   商品リンク
 ======================================== */
 
 .item-link-area {
-
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
 
     gap:
         10px;
-
 }
 
-
 .pr-label {
-
     display: inline-block;
 
     padding:
@@ -485,12 +398,10 @@ img {
 
     font-weight:
         700;
-
 }
 
-
-.yahoo-link {
-
+.yahoo-link,
+.article-link {
     color:
         #1670d2;
 
@@ -499,25 +410,19 @@ img {
 
     font-weight:
         700;
-
 }
 
-
-.yahoo-link:hover {
-
+.yahoo-link:hover,
+.article-link:hover {
     text-decoration:
         underline;
-
 }
 
-
-.yahoo-link i {
-
+.yahoo-link i,
+.article-link i {
     margin-right:
         5px;
-
 }
-
 
 
 /* ========================================
@@ -525,18 +430,14 @@ img {
 ======================================== */
 
 .back-area {
-
     width:
         min(1050px,92%);
 
     margin:
         0 auto 70px;
-
 }
 
-
 .back-button {
-
     display:
         inline-flex;
 
@@ -554,17 +455,12 @@ img {
 
     font-weight:
         700;
-
 }
-
 
 .back-button:hover {
-
     text-decoration:
         underline;
-
 }
-
 
 
 /* ========================================
@@ -572,7 +468,6 @@ img {
 ======================================== */
 
 footer {
-
     padding:
         35px 20px;
 
@@ -587,12 +482,9 @@ footer {
 
     font-size:
         0.75rem;
-
 }
 
-
 .footer-logo {
-
     margin-bottom:
         5px;
 
@@ -611,9 +503,7 @@ footer {
 
     letter-spacing:
         0.08em;
-
 }
-
 
 
 /* ========================================
@@ -622,9 +512,7 @@ footer {
 
 @media screen and (max-width: 650px) {
 
-
     .header-inner {
-
         flex-direction:
             column;
 
@@ -633,31 +521,22 @@ footer {
 
         gap:
             12px;
-
     }
 
-
     .site-nav {
-
         gap:
             16px;
 
         flex-wrap:
             wrap;
-
     }
-
 
     .site-nav a {
-
         font-size:
             0.78rem;
-
     }
 
-
     .item-row {
-
         grid-template-columns:
             90px 1fr;
 
@@ -666,50 +545,35 @@ footer {
 
         padding:
             15px 5px;
-
     }
 
-
     .item-image {
-
         width:
             90px;
 
         height:
             75px;
-
     }
-
 
     .item-title {
-
         font-size:
             0.94rem;
-
     }
 
-
     .item-description {
-
         font-size:
             0.8rem;
 
         padding-left:
             15px;
-
     }
 
-
-    .yahoo-link {
-
+    .yahoo-link,
+    .article-link {
         font-size:
             0.78rem;
-
     }
-
-
 }
-
 
 </style>
 
@@ -719,7 +583,6 @@ footer {
 <body>
 
 
-
 <!-- ========================================
      HEADER
 ======================================== -->
@@ -727,7 +590,6 @@ footer {
 <header class="site-header">
 
 <div class="header-inner">
-
 
 <a
 href="index.html"
@@ -758,7 +620,6 @@ DIY記事
 
 </nav>
 
-
 </div>
 
 </header>
@@ -772,7 +633,6 @@ DIY記事
 <section class="page-header">
 
 <div class="page-header-inner">
-
 
 <h1 class="page-title">
 
@@ -789,7 +649,6 @@ DIY記事
 実際に使ったカー用品・工具・パーツを一覧にまとめています。
 
 </p>
-
 
 </div>
 
@@ -816,14 +675,12 @@ DIY記事
 <main class="items-section">
 
 
-
 <!-- ========================================
      商品 1
      トヨックス トヨロンホース
 ======================================== -->
 
 <article class="item-row">
-
 
 <div class="item-image">
 
@@ -834,9 +691,7 @@ alt="ネイキッドのオイルキャッチタンクに使用したトヨロン
 </div>
 
 
-
 <div class="item-body">
-
 
 <a
 href="https://yahoo.jp/TkNTLE7"
@@ -863,7 +718,6 @@ class="item-title">
 PR
 </span>
 
-
 <a
 href="https://yahoo.jp/TkNTLE7"
 target="_blank"
@@ -876,14 +730,14 @@ Yahoo!ショッピングで見る
 
 </a>
 
-
 </div>
 
-
 </div>
-
 
 </article>
+
+
+
 <!-- ========================================
      商品 2
      ミナトワークス オイルレスエアーコンプレッサー CP-8A
@@ -891,121 +745,105 @@ Yahoo!ショッピングで見る
 
 <article class="item-row">
 
-    <div class="item-image">
-
-        <img
-        src="images/compressor-cp8a.jpg"
-        alt="ミナトワークス オイルレスエアーコンプレッサー CP-8A">
-
-    </div>
-
-
-    <div class="item-body">
-
-        <a
-        href="https://yahoo.jp/8QCduq"
-        target="_blank"
-        rel="nofollow sponsored noopener"
-        class="item-title">
-
-        ミナトワークス オイルレスエアーコンプレッサー CP-8A
-
-        </a>
-
-
-        <p class="item-description">
-
-        全塗装などのDIY作業用に購入したオイルレスコンプレッサーです。
-
-        </p>
-
-
-        <div class="item-link-area">
-
-            <span class="pr-label">
-            PR
-            </span>
-
-
-            <a
-            href="https://yahoo.jp/8QCduq"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-            class="yahoo-link">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            Yahoo!ショッピングで見る
-
-            </a>
-
-        </div>
-
-    </div>
-
-</article>
-
-
-
-
-<!-- =====================================================
-
-     ↓↓↓ 新しい商品はここから追加 ↓↓↓
-
-
-     下のテンプレートをコピーして、
-     商品1の </article> の下へ貼り付けます。
-
-
-===================================================== -->
-
-
-<!--
-
-<article class="item-row">
-
-
 <div class="item-image">
 
 <img
-src="images/ここに画像名.jpg"
-alt="ここに商品名">
+src="images/compressor-cp8a.jpg"
+alt="ミナトワークス オイルレスエアーコンプレッサー CP-8A">
 
 </div>
 
 
-
 <div class="item-body">
 
-
 <a
-href="ここにYahooアフィリエイトURL"
+href="https://yahoo.jp/8QCduq"
 target="_blank"
 rel="nofollow sponsored noopener"
 class="item-title">
 
-ここに商品名
+ミナトワークス オイルレスエアーコンプレッサー CP-8A
 
 </a>
 
 
 <p class="item-description">
 
-ここに短い説明を書く。
+全塗装などのDIY作業用に購入したオイルレスコンプレッサーです。
 
 </p>
 
 
 <div class="item-link-area">
 
+<span class="pr-label">
+PR
+</span>
+
+<a
+href="https://yahoo.jp/8QCduq"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="yahoo-link">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Yahoo!ショッピングで見る
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- ========================================
+     商品 3
+     HKS SUPER FIRE RACING スパークプラグ
+======================================== -->
+
+<article class="item-row">
+
+<div class="item-image">
+
+<img
+src="images/2329.jpg"
+alt="ダイハツ ネイキッド L750Sで使用したHKS SUPER FIRE RACING スパークプラグ">
+
+</div>
+
+
+<div class="item-body">
+
+<a
+href="https://yahoo.jp/PVxKVjU"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="item-title">
+
+HKS SUPER FIRE RACING スパークプラグ
+
+</a>
+
+
+<p class="item-description">
+
+ダイハツ ネイキッド L750Sのプラグ交換で実際に使用しました。
+
+</p>
+
+
+<div class="item-link-area">
 
 <span class="pr-label">
 PR
 </span>
 
-
 <a
-href="ここにYahooアフィリエイトURL"
+href="https://yahoo.jp/PVxKVjU"
 target="_blank"
 rel="nofollow sponsored noopener"
 class="yahoo-link">
@@ -1017,15 +855,169 @@ Yahoo!ショッピングで見る
 </a>
 
 
+<a
+href="naked-plug-coil.html"
+class="article-link">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+取付記事を見る
+
+</a>
+
 </div>
 
-
 </div>
-
 
 </article>
 
--->
+
+
+<!-- ========================================
+     商品 4
+     イグニッションコイル
+======================================== -->
+
+<article class="item-row">
+
+<div class="item-image">
+
+<img
+src="images/2328.jpg"
+alt="ダイハツ ネイキッド L750Sで使用した新品イグニッションコイル">
+
+</div>
+
+
+<div class="item-body">
+
+<a
+href="https://yahoo.jp/ngYhvQ"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="item-title">
+
+ダイハツ ネイキッド L750S用 イグニッションコイル 3本セット
+
+</a>
+
+
+<p class="item-description">
+
+ネイキッド L750Sの点火系リフレッシュで、
+3本まとめて交換しました。
+
+</p>
+
+
+<div class="item-link-area">
+
+<span class="pr-label">
+PR
+</span>
+
+<a
+href="https://yahoo.jp/ngYhvQ"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="yahoo-link">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Yahoo!ショッピングで見る
+
+</a>
+
+
+<a
+href="naked-plug-coil.html"
+class="article-link">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+取付記事を見る
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- ========================================
+     商品 5
+     エアクリーナー
+======================================== -->
+
+<article class="item-row">
+
+<div class="item-image">
+
+<img
+src="images/2318.jpg"
+alt="ダイハツ ネイキッド L750Sのエアクリーナー交換">
+
+</div>
+
+
+<div class="item-body">
+
+<a
+href="https://yahoo.jp/ZkDzJ4"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="item-title">
+
+ダイハツ ネイキッド L750S用 エアクリーナー
+
+</a>
+
+
+<p class="item-description">
+
+プラグ・イグニッションコイル交換と同時に、
+新品へ交換しました。
+
+</p>
+
+
+<div class="item-link-area">
+
+<span class="pr-label">
+PR
+</span>
+
+<a
+href="https://yahoo.jp/ZkDzJ4"
+target="_blank"
+rel="nofollow sponsored noopener"
+class="yahoo-link">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Yahoo!ショッピングで見る
+
+</a>
+
+
+<a
+href="naked-plug-coil.html"
+class="article-link">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+取付記事を見る
+
+</a>
+
+</div>
+
+</div>
+
+</article>
 
 
 </main>
@@ -1038,7 +1030,6 @@ Yahoo!ショッピングで見る
 
 <div class="back-area">
 
-
 <a
 href="index.html"
 class="back-button">
@@ -1048,7 +1039,6 @@ class="back-button">
 HOMEへ戻る
 
 </a>
-
 
 </div>
 
@@ -1060,20 +1050,17 @@ HOMEへ戻る
 
 <footer>
 
-
 <div class="footer-logo">
 
 TSKY MODE
 
 </div>
 
-
 <p>
 
 ダイハツ ネイキッド DIY整備＆チョイカスタム
 
 </p>
-
 
 </footer>
 
